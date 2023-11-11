@@ -18,7 +18,7 @@
 }
 
 .bg-light-orange {
-    background-color: #DB4444;
+    background-color: #DB4444 !important;
 }
 
 .fs-14 {
@@ -78,6 +78,12 @@ input::placeholder {
     top: 108%;
 }
 
+.icon-carousel {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50%;
+    border: 2px solid #F5F5F5 !important;
+}
 
 /* responsive */
 @media (max-width: 1024px) {
