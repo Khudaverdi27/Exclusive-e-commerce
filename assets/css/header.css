@@ -79,14 +79,19 @@ input::placeholder {
 }
 
 .icon-carousel {
-    width: 10px !important;
-    height: 10px !important;
+    width: 8px !important;
+    height: 8px !important;
     border-radius: 50%;
     border: 2px solid #F5F5F5 !important;
 }
 
 /* responsive */
-@media (max-width: 1024px) {
+
+@media (max-width: 1200px) {
+    .left-navbar-icons {
+        display: none;
+    }
+
     .header-top-content {
         margin-left: 1rem;
     }
@@ -100,6 +105,48 @@ input::placeholder {
         flex-direction: row;
     }
 
+    .carousel-indicators {
+        top: 90%;
+    }
+}
+
+@media (max-width: 991px) {
+    .left-navbar {
+
+        border: none;
+        margin-top: 50px;
+        font-size: 12px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .left-navbar li {
+        padding: 2px 3px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .carousel-text {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .carousel-content span {
+        margin-left: 2px !important;
+    }
+
+    .carousel-link {
+        margin-top: 5px !important;
+        padding-bottom: 20px;
+    }
+
+    .carousel-link,
+    .carousel-content span {
+        font-size: 12px;
+    }
+
 
 }
 
@@ -108,4 +155,5 @@ input::placeholder {
     .navbar-toggler {
         display: block;
     }
+
 }
