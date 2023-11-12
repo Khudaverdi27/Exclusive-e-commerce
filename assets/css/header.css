@@ -21,6 +21,10 @@
     background-color: #DB4444 !important;
 }
 
+.text-light-orange {
+    color: #DB4444 !important;
+}
+
 .fs-14 {
     font-size: 14px;
 }
@@ -151,6 +155,7 @@ input::placeholder {
 }
 
 @media (max-width: 420px) {
+
 
     .navbar-toggler {
         display: block;

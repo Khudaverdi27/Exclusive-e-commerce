@@ -1,0 +1,31 @@
+.fs-12 {
+    font-size: 12px;
+}
+
+.middleSec-icons div {
+    height: 46px;
+    width: 46px;
+    border-radius: 50%;
+}
+
+/* responsive */
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 991px) {}
+
+@media (max-width: 768px) {
+    .div-timer-section {
+        margin-left: 5px !important;
+    }
+
+    .f-size-sm {
+        font-size: 15px !important;
+    }
+
+    .f-size-xsm {
+        font-size: 10px !important;
+    }
+}
+
+@media (max-width: 420px) {}
