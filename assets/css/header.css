@@ -37,6 +37,10 @@
     margin-left: 3rem;
 }
 
+.m-top-5 {
+    margin-top: 3.5rem;
+}
+
 .crusor-p {
     cursor: pointer;
 }
@@ -79,7 +83,7 @@ input::placeholder {
 }
 
 .carousel-indicators {
-    top: 108%;
+    top: 100%;
 }
 
 .icon-carousel {
@@ -110,7 +114,7 @@ input::placeholder {
     }
 
     .carousel-indicators {
-        top: 90%;
+        top: 105%;
     }
 }
 
@@ -128,6 +132,10 @@ input::placeholder {
         padding: 2px 3px;
     }
 
+    .carousel-indicators {
+        top: 90%;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -141,6 +149,11 @@ input::placeholder {
         margin-left: 2px !important;
     }
 
+    .carousel-content img {
+        width: 30px;
+        height: 39px;
+    }
+
     .carousel-link {
         margin-top: 5px !important;
         padding-bottom: 20px;
@@ -148,14 +161,16 @@ input::placeholder {
 
     .carousel-link,
     .carousel-content span {
-        font-size: 12px;
+        font-size: 13px;
     }
 
 
 }
 
 @media (max-width: 420px) {
-
+    .m-left-2 {
+        margin-left: 1rem;
+    }
 
     .navbar-toggler {
         display: block;
