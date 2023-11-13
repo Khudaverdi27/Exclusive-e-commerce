@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.aboutContainer {
+  margin: 10% auto;
+}
+@media (max-width: 768px) {
+  .aboutContainer {
+    margin-top: 15%;
+  }
+}
+@media (min-width: 350px) and (max-width: 552px) {
+  .aboutContainer {
+    margin-top: 25%;
+  }
+}
