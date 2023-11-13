@@ -25,9 +25,8 @@ a {
 }
 .haveAccount {
   display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 5px;
+  justify-content: space-around;
+
   width: 30rem;
 }
 .content {
@@ -49,4 +48,23 @@ a {
 .iconSend {
   top: 0;
   right: 4%;
+}
+.borderHr {
+  border: 1px solid #fff;
+}
+/* responsive signUp */
+@media (min-width: 368px) and (max-width: 767px) {
+  .haveAccount {
+    width: 24rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .shoppingImg {
+    width: 500px !important;
+    height: 400px !important;
+    object-fit: cover;
+  }
+  .formContainer {
+    margin-left: 80px !important;
+  }
 }
