@@ -5,6 +5,7 @@
 .aboutContainer {
   margin: 10% auto;
 }
+
 @media (max-width: 768px) {
   .aboutContainer {
     margin-top: 15%;
