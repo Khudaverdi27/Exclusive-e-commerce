@@ -1,136 +1,52 @@
-body {
-  font-family: "Inter", sans-serif;
-}
-/* signUp css begin */
-
-.inputSearch::placeholder {
-  width: 15rem;
-}
-
-.buyIcon,
-.wishlistIcon {
-  cursor: pointer;
-  transition: 0.9s;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-}
 a {
   text-decoration: none;
 }
 
-.signUpImg {
-  height: calc(100vh-10px);
-}
-
-.contentInput {
-  margin: 12% 0;
-}
-
-.inputTitle {
-  color: var(--Text2, #000);
-  font-size: 49px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 30px;
-  /* 83.333% */
-
-  margin: 20px 0px;
-}
-
-.inputDescription {
-  color: var(--Text2, #000);
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-}
-
-.input {
-  width: 30rem;
+.borderlessInput {
   border: none;
   outline: none;
-  border-bottom: 1px solid #ddd;
-  margin: 10px 0;
+  border-bottom: 1px solid #ccc;
 }
-.input::placeholder {
-  text-align: start;
-  font-size: 18px;
+.borderlessInput::placeholder {
+  font-size: 20px;
 }
-.btns {
-  width: 30rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.btnGoogle {
-  position: relative;
-  text-align: center;
-  cursor: pointer;
-  width: 30rem !important;
-  margin-top: 10px;
-  border: 1px solid #ddd;
+.button {
+  padding: 10px 30px;
+  border: none;
   border-radius: 5px;
 }
-
-.googleIcon {
-  position: absolute;
-  left: 9rem;
-  top: 0.5rem;
-  width: 18px;
+.createBtn {
+  background-color: #db4444;
+  color: #fff;
 }
-
 .googleBtn {
-  font-size: 14px;
-  width: 30rem;
+  background-color: transparent;
+  border: 1px solid #ccc;
 }
-
-.login {
-  margin-top: 10px;
+.haveAccount {
   display: flex;
   align-items: baseline;
-  gap: 2px;
   justify-content: center;
-  width: 30rem !important;
-  color: rgb(94, 94, 94);
+  gap: 5px;
+  width: 30rem;
+}
+.content {
+  margin-top: 100px;
 }
 
-.loginLink {
-  color: black;
+.saveApp {
+  font-size: 12px;
+  color: #ccc;
 }
-
-/* signUp css end */
-
-/* footer css begin */
-
-.text-white {
-  color: white;
-}
-
 .inputEmail {
-  width: 13rem;
-  padding: 5px;
+  padding: 12px;
   border: 1px solid #fff;
-  border-radius: 5px;
+  outline: none;
 }
 .inputEmail::placeholder {
   font-size: 14px;
-  color: #fff;
 }
-.sendIcon {
-  position: relative;
-  left: -35px;
-  width: 20px;
-  cursor: pointer;
+.iconSend {
+  top: 0;
+  right: 4%;
 }
-.saveApp {
-  color: #ccc;
-  font-size: 12px;
-  width: 27ch;
-}
-.copyRight {
-  font-size: 14px;
-  color: #ccc;
-}
-
-/* footer css end */
