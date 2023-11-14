@@ -4,7 +4,7 @@ let hours = 23;
 let days = 3;
 let intervalsec;
 
-function geriyeSay() {
+function count() {
     function second() {
         if (seconds > 0) {
             seconds--;
@@ -38,4 +38,6 @@ function geriyeSay() {
     intervalsec = setInterval(second, 1000);
 }
 
-geriyeSay();
+count();
+
+export default count
