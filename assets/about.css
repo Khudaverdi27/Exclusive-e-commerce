@@ -12,18 +12,50 @@
   padding: 20px 30px 0 30px;
 }
 .services {
-  margin-top: 100px;
+  margin: 100px 0;
 }
 .services h4 {
   font-weight: 600;
+}
+.statitcsCard {
+  border: 1px solid #ddd;
+  padding: 20px 30px 0 30px;
+  width: 270px;
+}
+.active {
+  background-color: #db4444;
+  color: #fff;
+}
+.staticsCount {
+  font-size: 30px;
+  font-weight: 600;
+}
+.staticsCardText {
+  width: 22ch;
+}
+@media (max-width: 992px) {
+  .statitcsCard {
+    margin: 20px;
+  }
 }
 @media (max-width: 768px) {
   .aboutContainer {
     margin-top: 15%;
   }
+  .statics {
+    display: flex;
+  }
+  .statitcsCard {
+    margin: 20px;
+  }
 }
 @media (min-width: 350px) and (max-width: 552px) {
   .aboutContainer {
     margin-top: 25%;
+  }
+  .statitcsCard {
+    width: 300px;
+    margin-bottom: 30px;
+    height: 200px;
   }
 }
