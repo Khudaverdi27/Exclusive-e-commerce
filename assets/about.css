@@ -21,11 +21,26 @@
   border: 1px solid #ddd;
   padding: 20px 30px 0 30px;
   width: 270px;
+  &:hover {
+    color: #fff;
+    background-color: #db4444;
+  }
+  cursor: pointer;
 }
-.active {
-  background-color: #db4444;
-  color: #fff;
+
+.imageBorderlessContainer {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  background: url(images/aboutPageImg/borderDark.svg);
 }
+.borderlessImg {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+}
+
 .staticsCount {
   font-size: 30px;
   font-weight: 600;
