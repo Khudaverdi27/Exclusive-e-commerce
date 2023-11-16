@@ -1,30 +1,52 @@
-const statisctics = [
+const statistics = [
   {
     id: 1,
     imgSrc: "assets/images/aboutPageImg/statitc1.png",
     statisctic: "10.5 K",
-    decription: "Sallers active our site",
+    decription: "Sellers active on our site",
   },
   {
     id: 2,
     imgSrc: "assets/images/aboutPageImg/Icon-Sale.svg",
     statisctic: "33 K",
-    decription: "Monthly Produduct Sale",
+    decription: "Monthly Product Sale",
   },
   {
     id: 3,
     imgSrc: "assets/images/aboutPageImg/statitc3.png",
     statisctic: "45.5 K",
-    decription: "Customer active in our site",
+    decription: "Customers active on our site",
   },
   {
     id: 4,
     imgSrc: "assets/images/aboutPageImg/statitc4.png",
     statisctic: "25 K",
-    decription: "Anual gross sale in our site",
+    decription: "Annual gross sale on our site",
   },
 ];
 
+const statisticsContainer = document.getElementById("statisticsContainer");
+const statistic = statistics
+  .map((item) => {
+    return `<div class="data-id-${item.id} statitcsCard text-center col-12 col-sm-12 col-md-5 col-lg-6 col-xl-2 mx-auto ">
+                <img src="${item.imgSrc}" alt="">
+                <h3 class="staticsCount mt-3">${item.statisctic}</h3>
+                <p class="staticsCardText">${item.decription}</p>
+            </div>`;
+  })
+  .join("");
+
+statisticsContainer.innerHTML = statistic;
+export default statistics;
+
+// sectionContainer.innerHTML = product;
+
+// export default product;
+
+//  <section id="middleSection-products"
+// class="products-section d-flex  container-lg mt-5 crusor-p flex-wrap flex-sm-wrap flex-md-wrap flex-xl-nowrap">
+// <!-- products from json -->
+// </section>
 // const products = [
 //   {
 //     id: 1,
