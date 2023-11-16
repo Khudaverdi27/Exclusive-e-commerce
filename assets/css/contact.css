@@ -1,6 +1,9 @@
 .contactContainer {
   margin: 250px 0 !important;
 }
+.writeUsContainer {
+  border-top: 1px solid #ccc;
+}
 .inputs {
   display: flex;
   align-items: center;
