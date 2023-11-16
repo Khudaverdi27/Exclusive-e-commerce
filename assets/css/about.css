@@ -26,7 +26,7 @@
   padding: 20px 30px 0px 30px;
   width: 270px;
   height: 250px !important;
-  transition: 0.9s;
+  transition: 0.5s;
   &:hover {
     color: #fff;
     background-color: #db4444;
@@ -55,11 +55,21 @@
 .staticsCardText {
   width: 22ch;
 }
+.servicesCard {
+  padding: 20px 0;
+  transition: 0.5s;
+  &:hover {
+    background-color: #db4444;
+    transform: scale(1.1);
+  }
+}
+
 @media (max-width: 992px) {
   .statitcsCard {
     margin: 20px;
   }
 }
+
 @media (max-width: 768px) {
   .aboutContainer {
     margin-top: 15%;
