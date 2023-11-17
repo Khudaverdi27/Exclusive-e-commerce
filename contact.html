@@ -9,9 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/home.css">
-    <link rel="stylesheet" href="assets/css/signUp.css">
-    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/contact.css">
 </head>
 
 <body>
@@ -97,10 +96,10 @@
                                 </div> -->
     <!-- Content start -->
     <div class="contactContainer ">
-        <div class="container">
-            <div class="row">
+        <div class="container-fluid d-flex justify-content-around">
+            <div class="firstDiv row d-flex justify-content-between flex-wrap">
                 <div class="col-3 callUsContainer">
-                    <div class="callUs mb-3 d-flex gap-2 align-items-center">
+                    <div class="callUs my-2 d-flex gap-2 align-items-center">
                         <img src="assets/images/contactImg/icons-phone.svg" alt="">
                         <h4 class="mt-2">Call to us</h4>
                     </div>
@@ -108,115 +107,46 @@
                     <p>Phone: +8801611112222</p>
                 </div>
 
-                <div class="col-8 mx-auto inputContainer">
+                <div class="col-8 inputContainer">
                     <div class="inputs d-flex">
                         <input class="input" type="text" placeholder="Your Name">
                         <input class="input" type="email" placeholder="Your Email">
                         <input class="input" type="text" placeholder="Your Phone">
                     </div>
                     <input type="text" class="msjInput" placeholder="Your Message">
+                    <button class="btn">Send Message</button>
                 </div>
-                <div class="divider"></div>
-                <div class="col-3 writeUsContainer">
-                    <div class="writeUs d-flex gap-2 mb-3">
-                        <img src="assets/images/contactImg/icons-mail.svg" alt="">
-                        <h4 class="mt-2">Write to us</h4>
-                    </div>
-                    <p>Fill out our form and we will contact you within 24 hours.</p>
-                    <p>Emails: customer@exclusive.com</p>
-                    <p>Emails: support@exclusive.com</p>
+            </div>
+            <div class="divider"></div>
+
+        </div>
+        <div class="container px-4">
+            <div class="col-3 callUsContainer">
+                <div class="callUs my-2 d-flex gap-2 align-items-center">
+                    <img src="assets/images/contactImg/icons-mail.svg" alt="">
+                    <h4 class="mt-2">Write To US</h4>
                 </div>
-                </siv>
+                <p>Fill out our form and we will contact you within 24 hours.</p>
+                <p>Emails: customer@exclusive.com</p>
+                <p>Emails: support@exclusive.com</p>
+            </div>
+            <div>
             </div>
         </div>
-        <!-- Content end -->
+    </div>
+    <!-- Content end -->
+
+    <!-- Footer start -->
+    <footer class="footerContainer bg-dark p-5 overflow-hidden ">
+
+    </footer>
+    <!-- Footer end -->
 
 
-        <!-- Footer start -->
-        <footer class="bg-dark p-5">
-            <div class="container ">
-                <div class="row ">
-                    <div class=" mb-3 col-sm-6 col-md-6 col-lg-6 col-xl-3 ">
-
-                        <a href="#">
-                            <h5 class="text-white mb-4">Exclusive</h5>
-                        </a>
-                        <p><a href="" class="text-white">Subscribe</a></p>
-                        <p class="text-white">Get 10% off your first order</p>
-                        <span class="position-relative">
-                            <input type="text" placeholder="Enter your email" class=" bg-dark inputEmail ">
-                            <span class="iconSend position-absolute"><img src="assets/images/icon-send.svg"
-                                    alt=""></span>
-                        </span>
-                    </div>
-                    <hr class="borderHr d-block d-sm-none d-md-none d-xl-none d-xxl-none ">
-                    <div class=" col-sm-6 col-md-6 col-lg-6 col-xl-2 ">
-
-                        <h5 class="text-white mb-4">Support</h5>
-                        <p class="text-white">111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</p>
-                        <p class="text-white">exclusive@gmail.com</p>
-                        <p class="text-white">+88015-88888-9999</p>
-
-                    </div>
-                    <hr class="borderHr d-block d-md-block d-sm-block d-xl-none d-xxl-none">
-                    <div class=" col-sm-6 col-md-4 col-lg-4 col-xl-2">
-
-                        <h5 class="text-white mb-4">Account</h5>
-                        <p><a class="text-white" href="">My Account</a></p>
-                        <p><a class="text-white" href="">Login / Register</a></p>
-                        <p><a class="text-white" href="">Cart</a></p>
-                        <p><a class="text-white" href="">Wishlist</a></p>
-                        <p><a class="text-white" href="">Shop</a></p>
-
-                    </div>
-                    <hr class="borderHr d-none d-sm-none d-md-none d-lg-none d-xl-none d-xxl-none ">
-                    <div class=" col-sm-6 col-md-4 col-lg-4 col-xl-2">
-
-                        <h5 class="text-white mb-4">Quick Link</h5>
-                        <p><a class="text-white" href="">Privacy Policy</a></p>
-                        <p><a class="text-white" href="">Terms Of Use</a></p>
-                        <p><a class="text-white" href="">FAQ</a></p>
-                        <p><a class="text-white" href="">Contact</a></p>
-
-                    </div>
-                    <hr class="borderHr d-block d-sm-block d-md-none d-lg-none d-xl-none d-xxl-none ">
-                    <div class=" col-sm-12 col-md-4 col-lg-4 col-xl-2 ">
-
-                        <h5 class="text-white mb-4">Download App</h5>
-                        <p class="text-light saveApp">Save $3 with App New User Only</p>
-                        <div class="qrAndStores d-flex  ">
-                            <a href=""><img src="assets/images/Qr Code (1).png" alt=""></a>
-                            <div class="stores d-flex flex-column  gap-2">
-                                <a href=""><img src="assets/images/download-appstore.png" alt=""></a>
-                                <a href=""><img
-                                        src="assets/images/png-transparent-google-play-store-logo-google-play-app-store-android-wallets-text-label-logo (1).png"
-                                        alt=""></a>
-                            </div>
-                        </div>
-                        <div class="socialMedia d-flex   gap-4 mt-2">
-                            <a href=""><img src="assets/images/Icon-Facebook.svg" alt=""></a>
-                            <a href=""><img src="assets/images/Icon-Linkedin.svg" alt=""></a>
-                            <a href=""><img src="assets/images/Group (1).svg" alt=""></a>
-                            <a href=""><img src="assets/images/Group (2).svg" alt=""></a>
-                        </div>
-                    </div>
-                    <hr class="borderHr d-none d-md-block d-xl-none">
-                </div>
-            </div>
-            <p class="text-white text-center mt-5"> © Copyright Xudaverdi 2023. All right reserved</p>
-        </footer>
-        <!-- Footer end -->
-
-
-
-
-
-
-
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="./assets/js/footer.js"></script>
 </body>
 
 </html>
