@@ -292,15 +292,17 @@ const categoryItem = categories.map((item) => {
 category.innerHTML = categoryItem
 
 
+
+
 //navigation
 const productsSectionScroll = document.getElementById('middleSection-products');
 // scroll with keyboard navigation
 window.addEventListener('keydown', (e) => {
 
     if (e.keyCode === 37) {
-        productsSectionScroll -= 50;
+        productsSectionScroll.scrollLeft -= 50;
     } else if (e.keyCode === 39) {
-        productsSectionScroll += 50;
+        productsSectionScroll.scrollLeft += 50;
     }
 });
 // scroll with mouse navigation
@@ -308,8 +310,8 @@ const leftBtn = document.getElementById('leftBtnArrow')
 const rightBtn = document.getElementById('rightBtnArrow')
 
 leftBtn.addEventListener('mousedown', () => {
-    productsSectionScroll -= 50;
+    productsSectionScroll.scrollLeft -= 50;
 })
 rightBtn.addEventListener('mousedown', () => {
-    productsSectionScroll += 50;
+    productsSectionScroll.scrollLeft += 50;
 })
