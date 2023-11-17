@@ -5,6 +5,7 @@
 .aboutContainer {
   margin: 10% auto;
 }
+
 .workersImages {
   width: 354px;
   height: 417px;
@@ -34,7 +35,12 @@
 .staticsCount {
   font-weight: 600;
 }
-
+.servicesContainer {
+  width: 50px;
+}
+.workersContainer {
+  width: 100%;
+}
 @media (max-width: 992px) {
   .statitcsCard {
     margin: 20px;
@@ -44,6 +50,10 @@
 @media (max-width: 768px) {
   .aboutContainer {
     margin-top: 15%;
+    text-align: center;
+  }
+  .activeWorkers {
+    margin: 0 auto;
   }
   .statics {
     display: flex;
@@ -59,6 +69,16 @@
   }
 }
 @media (min-width: 350px) and (max-width: 552px) {
+  .aboutTitle {
+    text-align: center;
+    font-size: 12px;
+  }
+  .aboutTitle p {
+    font-size: 10px;
+  }
+  .aboutImg {
+    width: 85%;
+  }
   .aboutContainer {
     margin-top: 25%;
   }
@@ -69,5 +89,16 @@
   }
   .staticsCardText {
     margin-top: 2px;
+  }
+  .footerContainer {
+    text-align: left;
+  }
+  .footerSection {
+    margin: 0 35px;
+  }
+}
+@media (max-width: 1600px) {
+  .footerRes {
+    margin-left: 17px;
   }
 }

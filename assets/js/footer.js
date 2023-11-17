@@ -5,7 +5,7 @@ const footer = () => {
 
   div.innerHTML = `  <!-- Footer start -->
     // <div class="container">
-        <div class="row d-flex ">
+        <div class="footerSection row footerRes ">
             <div class=" mb-3 col-sm-6 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
 
                 <a href="#">

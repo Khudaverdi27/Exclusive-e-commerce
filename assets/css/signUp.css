@@ -51,6 +51,7 @@ a {
 .borderHr {
   border: 1px solid #fff;
 }
+
 /* responsive signUp */
 @media (min-width: 368px) and (max-width: 767px) {
   .haveAccount {
@@ -69,5 +70,10 @@ a {
   }
   .haveAccount {
     width: 20rem !important;
+  }
+}
+@media (max-width: 1600px) {
+  .footerRes {
+    margin-left: 17px;
   }
 }
