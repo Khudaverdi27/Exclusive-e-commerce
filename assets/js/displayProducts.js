@@ -292,6 +292,69 @@ const categoryItem = categories.map((item) => {
 category.innerHTML = categoryItem
 
 
+const posterSection = [
+    {
+        title1: 'Enhance Your',
+        title2: 'Music Experience',
+        img: 'assets/images/products/JBL.png'
+    },
+    {
+        title1: 'Last Hours',
+        title2: 'On sale',
+        img: 'assets/images/products/jbl-2.png'
+    }
+]
+
+
+const posters = (products) => {
+
+    return products.map((item) => {
+        return `    <div class="row">
+        <div class="col-6 bgBlack d-flex justify-content-center flex-column">
+            <div class="ms-5">
+                <h6 class=" color-light-green my-3">Categories</h6>
+                <p class="h1 text-white">${item.title1} <br>${item.title2} </p>
+            </div>
+            <div class="d-flex  div-timer-section my-5 ms-5">
+                <div
+                    class="d-flex-container timer-rounded text-center flex-column rounded-circle bg-white me-3">
+                    <span class=" d-flex align-items-center justify-content-center">
+                        <span id="" class="days fw-bolder f-size-sm">03</span>
+                    </span>
+                    <span class="fs-12  f-size-xsm">Days</span>
+                </div>
+                <div
+                    class="d-flex-container timer-rounded text-center flex-column rounded-circle bg-white me-3">
+                    <span class=" d-flex align-items-center justify-content-center">
+                        <span id="" class="hours fw-bolder f-size-sm">23</span>
+                    </span>
+                    <span class="fs-12  f-size-xsm">Hours</span>
+                </div>
+                <div
+                    class="d-flex-container timer-rounded text-center flex-column rounded-circle bg-white me-3">
+                    <span class=" d-flex align-items-center justify-content-center">
+                        <span id="" class="minutes fw-bolder f-size-sm">19</span>
+                    </span>
+                    <span class="fs-12  me-1 f-size-xsm">Minutes</span>
+                </div>
+                <div class="d-flex-container timer-rounded text-center flex-column rounded-circle bg-white">
+                    <span id="" class="seconds fw-bolder f-size-sm">56</span>
+                    <span class="fs-12  f-size-xsm">Seconds</span>
+                </div>
+            </div>
+            <div class="btn-ONposter ms-5">
+                <button class="btn bg-light-green text-white py-2 px-5">Buy Now</button>
+            </div>
+        </div>
+        <div class="col-6 poster-img d-flex-container"><img src="${item.img}" alt="">
+
+        </div>
+    </div>`
+    }).join("")
+
+}
+const posterProduct = posters(posterSection)
+document.querySelector('.inner-poster').innerHTML = posterProduct
 
 
 //navigation
