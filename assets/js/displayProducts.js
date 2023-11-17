@@ -298,9 +298,9 @@ const productsSectionScroll = document.getElementById('middleSection-products');
 window.addEventListener('keydown', (e) => {
 
     if (e.keyCode === 37) {
-        productsSectionScroll.scrollLeft -= 50;
+        productsSectionScroll -= 50;
     } else if (e.keyCode === 39) {
-        productsSectionScroll.scrollLeft += 50;
+        productsSectionScroll += 50;
     }
 });
 // scroll with mouse navigation
@@ -308,8 +308,8 @@ const leftBtn = document.getElementById('leftBtnArrow')
 const rightBtn = document.getElementById('rightBtnArrow')
 
 leftBtn.addEventListener('mousedown', () => {
-    productsSectionScroll.scrollLeft -= 50;
+    productsSectionScroll -= 50;
 })
 rightBtn.addEventListener('mousedown', () => {
-    productsSectionScroll.scrollLeft += 50;
+    productsSectionScroll += 50;
 })

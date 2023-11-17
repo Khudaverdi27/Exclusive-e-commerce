@@ -18,6 +18,11 @@
     width: 34px;
 }
 
+.timer-rounded {
+    height: 62px;
+    width: 62px;
+}
+
 .products-section {
     overflow: hidden;
     white-space: nowrap;
@@ -100,6 +105,43 @@
 .layerCategory {
     background-color: #DB4444;
 }
+
+/* poster section */
+.color-light-green {
+    color: #0F6;
+}
+
+.bg-light-green {
+    background-color: #0F6;
+}
+
+.poster-img {
+    background: radial-gradient(circle, rgba(57, 57, 57, 1) 40%, rgba(0, 0, 0, 1) 78%);
+}
+
+.inner-poster {
+    height: 355px;
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+.inner-poster::-webkit-scrollbar {
+    width: 12px;
+}
+
+.inner-poster::-webkit-scrollbar-track,
+.inner-poster::-webkit-scrollbar-thumb {
+    background: #0a0a0a;
+}
+
+.inner-poster::-webkit-scrollbar-thumb {
+    border: 1px solid #575757;
+    border-radius: 6px;
+}
+
+.inner-poster::-webkit-scrollbar-thumb:hover {
+    background-color: #212121;
+}
+
 
 /* responsive */
 

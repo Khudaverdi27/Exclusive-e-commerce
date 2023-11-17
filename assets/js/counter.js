@@ -28,10 +28,19 @@ function count() {
             days = "0";
         }
 
-        document.getElementById("seconds").textContent = seconds <= 9 ? `0${seconds}` : seconds;
-        document.getElementById("minutes").textContent = minutes <= 9 ? `0${minutes}` : minutes;
-        document.getElementById("hours").textContent = hours <= 9 ? `0${hours}` : hours;
-        document.getElementById("days").textContent = days <= 9 ? `0${days}` : days;
+
+        const updateDisplay = (selector, value) => {
+            document.querySelectorAll(selector).forEach(item => {
+                item.textContent = value <= 9 ? `0${value}` : value;
+            });
+        };
+
+        updateDisplay(".seconds", seconds);
+        updateDisplay(".minutes", minutes);
+        updateDisplay(".hours", hours);
+        updateDisplay(".days", days);
+
+
     }
 
 
