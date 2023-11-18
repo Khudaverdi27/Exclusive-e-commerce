@@ -142,6 +142,10 @@
     background-color: #212121;
 }
 
+.posterSectionContent {
+    padding-bottom: 50px;
+
+}
 
 /* responsive */
 
@@ -155,7 +159,12 @@
     }
 }
 
-@media (max-width: 991px) {}
+@media (max-width: 991px) {
+    .posterSectionContent {
+        margin: 10px !important;
+
+    }
+}
 
 @media (max-width: 768px) {
     .div-timer-section {
@@ -169,6 +178,7 @@
     .f-size-xsm {
         font-size: 10px !important;
     }
+
 
 
 

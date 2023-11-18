@@ -296,12 +296,14 @@ const posterSection = [
     {
         title1: 'Enhance Your',
         title2: 'Music Experience',
-        img: 'assets/images/products/JBL.png'
+        img: 'assets/images/products/JBL.png',
+        value: true
     },
     {
         title1: 'Last Hours',
         title2: 'On sale',
-        img: 'assets/images/products/jbl-2.png'
+        img: 'assets/images/products/jbl-2.png',
+        value: false
     }
 ]
 
@@ -310,12 +312,13 @@ const posters = (products) => {
 
     return products.map((item) => {
         return `    <div class="row">
-        <div class="col-6 bgBlack d-flex justify-content-center flex-column">
-            <div class="ms-5">
+        <div class=" col-lg-6 col-md-12 co-sm-12 bgBlack d-flex justify-content-center flex-column">
+        <div class="ms-5 posterSectionContent">
+        <div class="${item.value ? "" : "text-center"}">
                 <h6 class=" color-light-green my-3">Categories</h6>
-                <p class="h1 text-white">${item.title1} <br>${item.title2} </p>
+                <p class="h1 text-white ">${item.title1} <br>${item.title2} </p>
             </div>
-            <div class="d-flex  div-timer-section my-5 ms-5">
+            <div class="${item.value ? "" : "d-none"} d-flex div-timer-section my-5">
                 <div
                     class="d-flex-container timer-rounded text-center flex-column rounded-circle bg-white me-3">
                     <span class=" d-flex align-items-center justify-content-center">
@@ -342,11 +345,12 @@ const posters = (products) => {
                     <span class="fs-12  f-size-xsm">Seconds</span>
                 </div>
             </div>
-            <div class="btn-ONposter ms-5">
-                <button class="btn bg-light-green text-white py-2 px-5">Buy Now</button>
+            <div class=" ${item.value ? "d-none" : "btn-ONposter text-center"}">
+                <button class=" btn bg-light-green text-white py-2 px-5">Buy Now</button>
             </div>
         </div>
-        <div class="col-6 poster-img d-flex-container"><img src="${item.img}" alt="">
+        </div>
+        <div class="col-lg-6 col-md-12 co-sm-12 poster-img d-flex-container"><img class="img-fluid" src="${item.img}" alt="">
 
         </div>
     </div>`
