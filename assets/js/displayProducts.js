@@ -2,7 +2,7 @@ const products = [
     {
         id: 1,
         name: 'HAVIT HV-G92 Gamepad',
-        discount: 40,
+        discount: '-40%',
         image: 'assets/images/products/joystick.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
@@ -15,7 +15,7 @@ const products = [
     {
         id: 2,
         name: 'AK-900 Wired Keyboard',
-        discount: 35,
+        discount: '-35%',
         image: 'assets/images/products/keyboard.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
@@ -29,7 +29,7 @@ const products = [
     {
         id: 3,
         name: 'IPS LCD Gaming Monitor',
-        discount: 30,
+        discount: '-30%',
         image: 'assets/images/products/tv.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
@@ -43,7 +43,7 @@ const products = [
     {
         id: 4,
         name: 'S-Series Comfort Chair',
-        discount: 25,
+        discount: '-25%',
         image: 'assets/images/products/chair.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
@@ -56,7 +56,7 @@ const products = [
     {
         id: 5,
         name: 'S-Series Comfort Chair',
-        discount: 25,
+        discount: '-25%',
         image: 'assets/images/products/chair.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
@@ -121,17 +121,120 @@ const bestProducts = [
         comments: 65
     }
 ];
+// our product section
+const ourProducts = [
+    {
+        id: 1,
+        name: 'Breed Dry Dog Food',
+        image: 'assets/images/products/ourProducts1.png',
+        imgHeart: 'assets/images/svg/heart-small.svg',
+        imgEye: 'assets/images/svg/eye.svg',
+        textLayer: 'Add To Cart',
+        price: 100,
+        imgStar: 'assets/images/svg/star-fill.svg',
+        imgEmptyStar: 'assets/images/svg/star-empty.svg',
+        comments: 35
+    },
+    {
+        id: 2,
+        name: 'CANON EOS DSLR Camera',
+        image: 'assets/images/products/ourProducts2.png',
+        imgHeart: 'assets/images/svg/heart-small.svg',
+        imgEye: 'assets/images/svg/eye.svg',
+        textLayer: 'Add To Cart',
+        price: 360,
+        imgStar: 'assets/images/svg/star-fill.svg',
+        imgEmptyStar: 'assets/images/svg/star-empty.svg',
+        comments: 95
+    },
+    {
+        id: 3,
+        name: 'ASUS FHD Gaming Laptop',
+        image: 'assets/images/products/ourProducts3.png',
+        imgHeart: 'assets/images/svg/heart-small.svg',
+        imgEye: 'assets/images/svg/eye.svg',
+        textLayer: 'Add To Cart',
+        price: 700,
+        imgStar: 'assets/images/svg/star-fill.svg',
+        comments: 325
+    },
+    {
+        id: 4,
+        name: 'Curology Product Set',
+        image: 'assets/images/products/ourProducts4.png',
+        imgHeart: 'assets/images/svg/heart-small.svg',
+        imgEye: 'assets/images/svg/eye.svg',
+        textLayer: 'Add To Cart',
+        price: 500,
+        imgStar: 'assets/images/svg/star-fill.svg',
+        imgEmptyStar: 'assets/images/svg/star-empty.svg',
+        comments: 145
+    },
+    {
+        id: 5,
+        name: 'Kids Electric Car',
+        image: 'assets/images/products/ourProducts5.png',
+        discount: 'New',
+        imgHeart: 'assets/images/svg/heart-small.svg',
+        imgEye: 'assets/images/svg/eye.svg',
+        textLayer: 'Add To Cart',
+        price: 960,
+        imgStar: 'assets/images/svg/star-fill.svg',
+        comments: 65,
+        colorSelect: true
+    },
+    {
+        id: 6,
+        name: 'Jr. Zoom Soccer Cleats',
+        image: 'assets/images/products/ourProducts6.png',
+        imgHeart: 'assets/images/svg/heart-small.svg',
+        imgEye: 'assets/images/svg/eye.svg',
+        textLayer: 'Add To Cart',
+        price: 1160,
+        imgStar: 'assets/images/svg/star-fill.svg',
+        comments: 35,
+        colorSelect: true
+    },
+    {
+        id: 7,
+        name: 'GP11 Shooter USB Gamepad',
+        image: 'assets/images/products/ourProducts7.png',
+        discount: 'New',
+        imgHeart: 'assets/images/svg/heart-small.svg',
+        imgEye: 'assets/images/svg/eye.svg',
+        textLayer: 'Add To Cart',
+        price: 660,
+        imgStar: 'assets/images/svg/star-fill.svg',
+        imgEmptyStar: 'assets/images/svg/star-half-filled.svg',
+        comments: 55,
+        colorSelect: true
+    },
+    {
+        id: 8,
+        name: 'Quilted Satin Jacket',
+        image: 'assets/images/products/ourProducts4.png',
+        imgHeart: 'assets/images/svg/heart-small.svg',
+        imgEye: 'assets/images/svg/eye.svg',
+        textLayer: 'Add To Cart',
+        price: 660,
+        imgStar: 'assets/images/svg/star-fill.svg',
+        imgEmptyStar: 'assets/images/svg/star-half-filled.svg',
+        comments: 55,
+        colorSelect: true
+    }
+
+];
 // prodtucs to UI
 const map = (products) => {
 
     return products.map((item) => {
         return `        <div class="products-container "data-id="${item.id}">
-    <div class="products d-flex-container position-relative">
+    <div class="products bg-solid-secondary mx-1 my-2 d-flex-container position-relative">
         <img src=${item.image} alt="">
         <div class="product-icons  position-absolute d-flex ${item.discount ? 'justify-content-between' : 'justify-content-end'} w-100">
-<span class="${item.discount ? 'discount-product bg-light-orange text-center text-white fs-12 ms-2' : 'd-none'} ">-${item.discount}%</span>
+<span class="${item.discount ? 'discount-product text-center text-white fs-12 ms-2' : 'd-none'} ${item.disPrice ? 'bg-light-orange' : 'bg-light-green'} ">${item.discount}</span>
             <div class="me-2">
-                <span class="icon-bg-rounded bg-white rounded-circle d-flex-container">
+                <span class="mb-1 icon-bg-rounded bg-white rounded-circle d-flex-container">
                     <img src=${item.imgHeart} alt="">
                 </span>
                 <span class="icon-bg-rounded bg-white rounded-circle d-flex-container">
@@ -144,7 +247,7 @@ const map = (products) => {
     <p>${item.name}</p>
     <span class="text-danger me-2">$${item.price}</span><span
         class="text-secondary text-decoration-line-through">${item.disPrice ? item.disPrice : ''}</span>
-    <div>
+    <div class=${item.disPrice ? "d-block" : "d-inline"}>
         <span><img src=${item.imgStar} alt=""></span>
         <span><img src=${item.imgStar} alt=""></span>
         <span><img src=${item.imgStar} alt=""></span>
@@ -152,12 +255,18 @@ const map = (products) => {
         <span><img src=${item.imgEmptyStar ? item.imgEmptyStar : item.imgStar} alt=""></span>
         <span class="fs-14">(${item.comments})</span>
     </div>
+    <div class="${item.colorSelect ? "d-block" : "d-none"}">
+    <button class="btnColorSelect rounded-circle" type="button"></button>
+    <button class="btnColorSelect rounded-circle" type="button"></button>
+    </div>
+</button>
     </div>`
     }).join("")
 
 }
 const sectionContainer = document.getElementById('middleSection-products');
 const bestProductContainer = document.getElementById('bestProducts');
+const exploreProductsSec = document.getElementById('exploreProductsSec');
 
 // products to product section
 const product = map(products)
@@ -165,6 +274,9 @@ sectionContainer.innerHTML = product
 // products to Best product section
 const bestProduct = map(bestProducts)
 bestProductContainer.innerHTML = bestProduct
+// products to Best product section
+const ourProduct = map(ourProducts)
+exploreProductsSec.innerHTML = ourProduct
 
 
 
