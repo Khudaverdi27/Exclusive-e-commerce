@@ -181,7 +181,8 @@ const ourProducts = [
         price: 960,
         imgStar: 'assets/images/svg/star-fill.svg',
         comments: 65,
-        colorSelect: true
+        colorSelect: true,
+        firstColor: 'bg-danger'
     },
     {
         id: 6,
@@ -193,7 +194,8 @@ const ourProducts = [
         price: 1160,
         imgStar: 'assets/images/svg/star-fill.svg',
         comments: 35,
-        colorSelect: true
+        colorSelect: true,
+        firstColor: 'bg-yellow'
     },
     {
         id: 7,
@@ -207,7 +209,8 @@ const ourProducts = [
         imgStar: 'assets/images/svg/star-fill.svg',
         imgEmptyStar: 'assets/images/svg/star-half-filled.svg',
         comments: 55,
-        colorSelect: true
+        colorSelect: true,
+        firstColor: 'bg-dark'
     },
     {
         id: 8,
@@ -220,7 +223,8 @@ const ourProducts = [
         imgStar: 'assets/images/svg/star-fill.svg',
         imgEmptyStar: 'assets/images/svg/star-half-filled.svg',
         comments: 55,
-        colorSelect: true
+        colorSelect: true,
+        firstColor: 'bg-dark-green'
     }
 
 ];
@@ -256,8 +260,8 @@ const map = (products) => {
         <span class="fs-14">(${item.comments})</span>
     </div>
     <div class="${item.colorSelect ? "d-block" : "d-none"}">
-    <button class="btnColorSelect rounded-circle" type="button"></button>
-    <button class="btnColorSelect rounded-circle" type="button"></button>
+    <button class="btnColorSelect border-0 ${item.firstColor ? item.firstColor : ''} rounded-circle" type="button"></button>
+    <button class="btnColorSelect bg-light-orange border-0 rounded-circle" type="button"></button>
     </div>
 </button>
     </div>`

@@ -152,6 +152,30 @@
     height: 20px;
 }
 
+.bg-dark-green {
+    background-color: #184A48;
+}
+
+.bg-yellow {
+    background-color: #EEFF61;
+}
+
+/* new arrivals */
+.bg-soft-dark {
+    background-color: #0D0D0D;
+}
+
+.text-block {
+    bottom: 70px;
+    left: 35px;
+}
+
+.text-block-right {
+    bottom: 5px;
+    left: 15px;
+}
+
+
 /* responsive */
 
 @media (max-width: 1024px) {
