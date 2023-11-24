@@ -27,7 +27,7 @@ const navbar = () => {
             <div class="collapse show " id="navbarNav">
                 <ul class="navbar-nav  mt-1 mb-lg-0 nav-underline crusor-p fs-16 ">
                     <li class="nav-item">
-                        <a class="nav-link " href="home.html">Home</a>
+                        <a class="nav-link " href="header.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
