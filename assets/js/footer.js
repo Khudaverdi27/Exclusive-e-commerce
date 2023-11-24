@@ -74,7 +74,6 @@ const footer = () => {
             </div>
             <p class="text-white text-center mt-5"> © Copyright Xudaverdi 2023. All right reserved</p>`;
     footerContainer.appendChild(div);
-    console.log(footerContainer);
 };
 footer();
 

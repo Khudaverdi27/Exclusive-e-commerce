@@ -41,10 +41,13 @@ const worker = workers
     </div>
     </div>
     `;
-  })
-  .join("");
+  }).join("");
+
 
 const workersCards = document.querySelector(".rowContainer");
-workersCards.innerHTML = worker;
+if (workersCards) {
+  workersCards.innerHTML = worker;
+}
+
 
 export default worker;

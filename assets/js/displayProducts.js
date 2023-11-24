@@ -507,9 +507,13 @@ window.addEventListener('keydown', (e) => {
 const leftBtn = document.getElementById('leftBtnArrow')
 const rightBtn = document.getElementById('rightBtnArrow')
 
-leftBtn.addEventListener('mousedown', () => {
-    productsSectionScroll.scrollLeft -= 50;
-})
-rightBtn.addEventListener('mousedown', () => {
-    productsSectionScroll.scrollLeft += 50;
-})
+if (leftBtn) {
+    leftBtn.addEventListener('mousedown', () => {
+        productsSectionScroll.scrollLeft -= 50;
+    })
+}
+if (rightBtn) {
+    rightBtn.addEventListener('mousedown', () => {
+        productsSectionScroll.scrollLeft += 50;
+    })
+}
