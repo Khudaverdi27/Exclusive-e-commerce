@@ -1,0 +1,49 @@
+.contactContainer {
+  margin: 250px 0 !important;
+}
+.writeUsContainer {
+  border-top: 1px solid #ccc;
+}
+.firstDiv {
+  max-width: 70%;
+}
+.inputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.input {
+  padding: 10px 40px;
+  background-color: #f5f5f5;
+  border: none;
+  outline: none;
+}
+.input::placeholder,
+.msjInput::placeholder {
+  font-size: 18px;
+}
+.msjInput {
+  margin-top: 20px;
+  padding: 70px 330px;
+  background-color: #f5f5f5;
+  border: none;
+  outline: none;
+}
+.inputContainer {
+  position: relative;
+}
+.btn {
+  position: absolute;
+  right: 0;
+  background-color: #db4444;
+  color: white;
+  padding: 10px 30px;
+  &:hover {
+    border: 1px solid #db4444;
+  }
+}
+@media (max-width: 1600px) {
+  .footerRes {
+    margin-left: 17px;
+  }
+}

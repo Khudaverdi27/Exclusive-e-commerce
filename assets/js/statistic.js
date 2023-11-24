@@ -1,0 +1,67 @@
+const statistics = [
+  {
+    imgSrc: "assets/images/aboutPageImg/statitc1.png",
+    title: "10.5 K",
+    description: "Sellers active on our site",
+    value: true,
+  },
+  {
+    imgSrc: "assets/images/aboutPageImg/statitc4.png",
+    title: "33 K",
+    description: "Monthly Product Sale",
+    value: true,
+  },
+  {
+    imgSrc: "assets/images/aboutPageImg/statitc3.png",
+    title: "45.5 K",
+    description: "Customers active on our site",
+    value: true,
+  },
+  {
+    imgSrc: "assets/images/aboutPageImg/statitc4.png",
+    title: "25 K",
+    description: "Annual gross sale on our site",
+    value: true,
+  },
+];
+const services = [
+  {
+    imgSrc: "assets/images/aboutPageImg/Services (2).png",
+    title: "FREE AND FAST DELIVERY",
+    description: "Free delivery for all orders over $140",
+  },
+  {
+    imgSrc: "assets/images/aboutPageImg/Services.png",
+    title: "24/7 CUSTOMER SERVICE",
+    description: "Friendly 24/7 customer support",
+  },
+  {
+    imgSrc: "assets/images/aboutPageImg/Services (1).png",
+    title: "MONEY BACK GUARANTEE",
+    description: "We reurn money within 30 days",
+  },
+];
+
+const objectsToUi = (statistc) => {
+  return statistc
+    .map((item) => {
+      return `<div class="  ${
+        item.value ? "border " : "col-xl-4"
+      } statitcsCard col-12 col-sm-12 col-md-5 col-lg-6 col-xl-2 px-3 mx-auto ">
+<img class="mt-3" src="${item.imgSrc} " alt="">
+<h4 class="staticsCount mt-3">${item.title}</h4>
+<p class="mb-3">${item.description}</p>
+</div>`;
+    })
+    .join("");
+};
+const result = objectsToUi(statistics);
+const service = objectsToUi(services);
+
+const statisticsContainer = document.getElementById("statisticsContainer");
+const servicesContainer = document.getElementById("servicesContainer");
+
+servicesContainer.innerHTML = service;
+statisticsContainer.innerHTML = result;
+
+export default objectsToUi;
