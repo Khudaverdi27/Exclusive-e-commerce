@@ -274,13 +274,21 @@ const exploreProductsSec = document.getElementById('exploreProductsSec');
 
 // products to product section
 const product = map(products)
-sectionContainer.innerHTML = product
+if (sectionContainer) {
+    sectionContainer.innerHTML = product
+}
 // products to Best product section
 const bestProduct = map(bestProducts)
-bestProductContainer.innerHTML = bestProduct
+if (bestProductContainer) {
+    bestProductContainer.innerHTML = bestProduct
+}
+
 // products to Best product section
 const ourProduct = map(ourProducts)
-exploreProductsSec.innerHTML = ourProduct
+if (exploreProductsSec) {
+    exploreProductsSec.innerHTML = ourProduct
+}
+
 
 
 
@@ -405,7 +413,10 @@ const categoryItem = categories.map((item) => {
 </div>`
 
 }).join('')
-category.innerHTML = categoryItem
+if (category) {
+    category.innerHTML = categoryItem
+}
+
 
 
 const posterSection = [
@@ -474,7 +485,11 @@ const posters = (products) => {
 
 }
 const posterProduct = posters(posterSection)
-document.querySelector('.inner-poster').innerHTML = posterProduct
+
+if (document.querySelector('.inner-poster')) {
+    document.querySelector('.inner-poster').innerHTML = posterProduct
+}
+
 
 
 //navigation

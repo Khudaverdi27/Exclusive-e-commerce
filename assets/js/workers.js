@@ -44,7 +44,7 @@ const worker = workers
   })
   .join("");
 
-const workersCards = document.querySelector(".carousel-inner");
+const workersCards = document.querySelector(".rowContainer");
 workersCards.innerHTML = worker;
 
 export default worker;
