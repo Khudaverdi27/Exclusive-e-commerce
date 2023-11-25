@@ -22,7 +22,7 @@ const navbar = () => {
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg bg-white border-bottom">
         <div class=" container-fluid d-flex justify-content-around">
-            <a class="navbar-brand" href="#"><img src="assets/images/other img/Logo.png" alt=""></a>
+            <a class="navbar-brand" href="header.html"><img src="assets/images/logo/Logo.png" alt=""></a>
  
             <div class="collapse show " id="navbarNav">
                 <ul class="navbar-nav  mt-1 mb-lg-0 nav-underline crusor-p fs-16 ">

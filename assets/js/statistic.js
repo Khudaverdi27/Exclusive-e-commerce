@@ -1,24 +1,24 @@
 const statistics = [
   {
-    imgSrc: "assets/images/aboutPageImg/statitc1.png",
+    imgSrc: "assets/images/other/statitc1.png",
     title: "10.5 K",
     description: "Sellers active on our site",
     value: true,
   },
   {
-    imgSrc: "assets/images/aboutPageImg/statitc4.png",
+    imgSrc: "assets/images/other/statitcs2.png",
     title: "33 K",
     description: "Monthly Product Sale",
     value: true,
   },
   {
-    imgSrc: "assets/images/aboutPageImg/statitc3.png",
+    imgSrc: "assets/images/other/statitc3.png",
     title: "45.5 K",
     description: "Customers active on our site",
     value: true,
   },
   {
-    imgSrc: "assets/images/aboutPageImg/statitc4.png",
+    imgSrc: "assets/images/other/statitc4.png",
     title: "25 K",
     description: "Annual gross sale on our site",
     value: true,
@@ -26,17 +26,17 @@ const statistics = [
 ];
 const services = [
   {
-    imgSrc: "assets/images/aboutPageImg/Services (2).png",
+    imgSrc: "assets/images/other/Services (2).png",
     title: "FREE AND FAST DELIVERY",
     description: "Free delivery for all orders over $140",
   },
   {
-    imgSrc: "assets/images/aboutPageImg/Services.png",
+    imgSrc: "assets/images/other/Services.png",
     title: "24/7 CUSTOMER SERVICE",
     description: "Friendly 24/7 customer support",
   },
   {
-    imgSrc: "assets/images/aboutPageImg/Services (1).png",
+    imgSrc: "assets/images/other/Services (1).png",
     title: "MONEY BACK GUARANTEE",
     description: "We reurn money within 30 days",
   },

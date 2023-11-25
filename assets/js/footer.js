@@ -15,7 +15,7 @@ const footer = () => {
                 <p class="text-white">Get 10% off your first order</p>
                 <span class="position-relative">
                     <input type="text" placeholder="Enter your email" class=" bg-dark inputEmail ">
-                    <span class="iconSend position-absolute"><img src="assets/images/icon-send.svg" alt=""></span>
+                    <span class="iconSend position-absolute"><img src="assets/images/svg/icon-send.svg" alt=""></span>
                 </span>
             </div>
             <hr class="borderHr d-block d-sm-none d-md-none d-xl-none d-xxl-none ">
@@ -54,25 +54,25 @@ const footer = () => {
                 <h5 class="text-white mb-4">Download App</h5>
                 <p class="text-light saveApp">Save $3 with App New User Only</p>
                 <div class="qrAndStores d-flex  ">
-                    <a href=""><img src="assets/images/Qr Code (1).png" alt=""></a>
-                    <div class="stores d-flex flex-column  gap-2">
-                        <a href=""><img src="assets/images/download-appstore.png" alt=""></a>
+                    <a href=""><img src="assets/images/other/Qr Code (1).png" alt=""></a>
+                    <div class="stores d-flex flex-column  gap-2 ms-2">
+                        <a href=""><img src="assets/images/icon/download-appstore.png" alt=""></a>
                         <a href=""><img
-                                src="assets/images/png-transparent-google-play-store-logo-google-play-app-store-android-wallets-text-label-logo (1).png"
+                                src="assets/images/icon/png-transparent-google-play-store-logo-google-play-app-store-android-wallets-text-label-logo (1).png"
                                 alt=""></a>
                     </div>
                 </div>
                 <div class="socialMedia d-flex gap-4 mt-2">
-                    <a href=""><img src="assets/images/Icon-Facebook.svg" alt=""></a>
-                    <a href=""><img src="assets/images/Icon-Linkedin.svg" alt=""></a>
-                    <a href=""><img src="assets/images/Group (1).svg" alt=""></a>
-                    <a href=""><img src="assets/images/Group (2).svg" alt=""></a>
+                    <a href=""><img src="assets/images/svg/Icon-Facebook.svg" alt=""></a>
+                    <a href=""><img src="assets/images/svg/Icon-Linkedin.svg" alt=""></a>
+                    <a href=""><img src="assets/images/svg/Group (1).svg" alt=""></a>
+                    <a href=""><img src="assets/images/svg/Group (2).svg" alt=""></a>
                 </div>
             </div>
             <hr class="borderHr d-none d-md-block col-lg-none d-xl-none">
             </div>
             </div>
-            <p class="text-white text-center mt-5"> © Copyright Xudaverdi 2023. All right reserved</p>`;
+            <p class="text-white text-center mt-5"> © Copyright Exclusive 2023. All right reserved</p>`;
     footerContainer.appendChild(div);
 };
 footer();
