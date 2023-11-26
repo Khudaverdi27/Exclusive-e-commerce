@@ -182,7 +182,8 @@ const ourProducts = [
         imgStar: 'assets/images/svg/star-fill.svg',
         comments: 65,
         colorSelect: true,
-        firstColor: 'bg-danger'
+        firstColor: 'bg-danger',
+        radioBtn: 'group1'
     },
     {
         id: 6,
@@ -195,7 +196,8 @@ const ourProducts = [
         imgStar: 'assets/images/svg/star-fill.svg',
         comments: 35,
         colorSelect: true,
-        firstColor: 'bg-yellow'
+        firstColor: 'bg-yellow',
+        radioBtn: 'group2'
     },
     {
         id: 7,
@@ -210,12 +212,13 @@ const ourProducts = [
         imgEmptyStar: 'assets/images/svg/star-half-filled.svg',
         comments: 55,
         colorSelect: true,
-        firstColor: 'bg-dark'
+        firstColor: 'bg-dark',
+        radioBtn: 'group3'
     },
     {
         id: 8,
         name: 'Quilted Satin Jacket',
-        image: 'assets/images/products/ourProducts4.png',
+        image: 'assets/images/products/ourProducts8.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
         textLayer: 'Add To Cart',
@@ -224,14 +227,17 @@ const ourProducts = [
         imgEmptyStar: 'assets/images/svg/star-half-filled.svg',
         comments: 55,
         colorSelect: true,
-        firstColor: 'bg-dark-green'
+        firstColor: 'bg-dark-green',
+        radioBtn: 'group4'
     }
 
 ];
 // prodtucs to UI
+
 const map = (products) => {
 
     return products.map((item) => {
+
         return `        <div class="products-container "data-id="${item.id}">
     <div class="products bg-solid-secondary mx-1 my-2 d-flex-container position-relative">
         <img src=${item.image} alt="">
@@ -259,15 +265,18 @@ const map = (products) => {
         <span><img src=${item.imgEmptyStar ? item.imgEmptyStar : item.imgStar} alt=""></span>
         <span class="fs-14">(${item.comments})</span>
     </div>
-    <div class="${item.colorSelect ? "d-block" : "d-none"}">
-    <button class="btnColorSelect border-0 ${item.firstColor ? item.firstColor : ''} rounded-circle" type="button"></button>
-    <button class="btnColorSelect bg-light-orange border-0 rounded-circle" type="button"></button>
+    <div class="${item.radioBtn ? "d-block" : "d-none"}">
+    <input type="radio" name="${item.radioBtn}"  class="btnColorSelect">
+    <input type="radio" name="${item.radioBtn}"  class="btnColorSelect">
     </div>
-</button>
     </div>`
+
     }).join("")
 
+
 }
+
+
 const sectionContainer = document.getElementById('middleSection-products');
 const bestProductContainer = document.getElementById('bestProducts');
 const exploreProductsSec = document.getElementById('exploreProductsSec');
