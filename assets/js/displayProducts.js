@@ -218,7 +218,7 @@ const ourProducts = [
     {
         id: 8,
         name: 'Quilted Satin Jacket',
-        image: 'assets/images/products/ourProducts4.png',
+        image: 'assets/images/products/ourProducts8.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
         textLayer: 'Add To Cart',
