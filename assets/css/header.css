@@ -31,6 +31,11 @@
     cursor: pointer;
 }
 
+a {
+    text-decoration: none;
+    color: var(--color-solid-secondary);
+}
+
 /* header  */
 .header-top-content {
     margin-left: 20rem;
@@ -76,7 +81,7 @@ input::placeholder {
     width: 8px !important;
     height: 8px !important;
     border-radius: 50%;
-    border: 2px solid #F5F5F5 !important;
+    border: 2px var(--color-solid-secondary) !important;
 }
 
 /* responsive */
