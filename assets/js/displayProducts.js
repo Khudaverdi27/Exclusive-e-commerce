@@ -265,9 +265,13 @@ const map = (products) => {
         <span><img src=${item.imgEmptyStar ? item.imgEmptyStar : item.imgStar} alt=""></span>
         <span class="fs-14">(${item.comments})</span>
     </div>
-    <div class="${item.radioBtn ? "d-block" : "d-none"}">
-    <input type="radio" name="${item.radioBtn}"  class="btnColorSelect">
-    <input type="radio" name="${item.radioBtn}"  class="btnColorSelect">
+    <div class="${item.radioBtn ? "d-block" : "d-none"} input-group">
+  
+    <input data-id=${item.id} class="form-check-input bg-image btnColorSelect mt-0 rounded-pill" type="radio" value=""name="${item.radioBtn}" >
+
+   
+    
+    <input data-id=${item.id} checked class="form-check-input bg-image btnColorSelect mt-0 ms-1 rounded-pill" type="radio" value=""name="${item.radioBtn}" >
     </div>
     </div>`
 
@@ -282,10 +286,32 @@ const bestProductContainer = document.getElementById('bestProducts');
 const exploreProductsSec = document.getElementById('exploreProductsSec');
 
 // products to product section
-const product = map(products)
+const product = map(products);
+
 if (sectionContainer) {
-    sectionContainer.innerHTML = product
+    sectionContainer.innerHTML = product;
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.form-check-input').forEach((input) => {
+            input.addEventListener('change', () => {
+                let index = (input.getAttribute('data-id'));
+                const prod = ourProducts[index - 1];
+                if (input.checked) {
+                    input.classList.add(`${prod.firstColor}`)
+                    input.checked = false
+                    input.classList.remove('layerCategory')
+                } else {
+                    input.classList.add('layerCategory')
+                    input.classList.remove(`${prod.firstColor}`)
+                    input.checked = true
+
+                }
+
+            });
+        });
+    });
 }
+
+
 // products to Best product section
 const bestProduct = map(bestProducts)
 if (bestProductContainer) {

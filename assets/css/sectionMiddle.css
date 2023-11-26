@@ -160,27 +160,6 @@
     background-color: #EEFF61;
 }
 
-input[type='radio']:after {
-    width: 20px;
-    height: 20px;
-    border-radius: 15px;
-    position: relative;
-    background-color: #DB4444;
-    content: '';
-    display: inline-block;
-}
-
-input[type='radio']:checked:after {
-    width: 20px;
-    height: 20px;
-    border-radius: 15px;
-    top: 0px;
-    left: 0px;
-    position: relative;
-    content: '';
-    display: inline-block;
-    border: 2px solid #0D0D0D;
-}
 
 /* new arrivals */
 .bg-soft-dark {
@@ -195,6 +174,14 @@ input[type='radio']:checked:after {
 .text-block-right {
     bottom: 5px;
     left: 15px;
+}
+
+.bg-image {
+    background-image: none;
+}
+
+.form-check-input:checked {
+    background-color: #DB4444;
 }
 
 
