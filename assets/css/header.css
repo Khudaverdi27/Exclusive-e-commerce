@@ -6,24 +6,9 @@
     font-family: 'Poppins', sans-serif;
 }
 
-
 /* common classes */
-.bg-solid-secondary {
-    background-color: #F5F5F5;
-}
-
-
-.bgBlack {
-    background-color: rgb(0, 0, 0);
-
-}
-
-.bg-light-orange {
-    background-color: #DB4444 !important;
-}
-
-.text-light-orange {
-    color: #DB4444 !important;
+.fs-12 {
+    font-size: 12px;
 }
 
 .fs-14 {
