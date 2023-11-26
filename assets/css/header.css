@@ -81,7 +81,7 @@ input::placeholder {
     width: 8px !important;
     height: 8px !important;
     border-radius: 50%;
-    border: 2px var(--color-solid-secondary) !important;
+    border: 2px solid var(--color-solid-secondary) !important;
 }
 
 /* responsive */
