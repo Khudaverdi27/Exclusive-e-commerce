@@ -5,9 +5,17 @@
 .aboutContainer {
   margin: 10% auto;
 }
-
+.arrivingPage {
+  color: #ccc;
+}
+.pageSlash {
+  margin: 0 10px;
+}
+.currentPage {
+  color: black;
+}
 .workersImages {
-  width: 354px;
+  width: 340px;
   height: 417px;
   background-color: #f5f5f5;
   padding: 20px 30px 0 30px;
