@@ -182,7 +182,7 @@ const ourProducts = [
         imgStar: 'assets/images/svg/star-fill.svg',
         comments: 65,
         colorSelect: true,
-        firstColor: 'bg-danger',
+        firstColor: 'bg-red',
         radioBtn: 'group1'
     },
     {
@@ -267,11 +267,9 @@ const map = (products) => {
     </div>
     <div class="${item.radioBtn ? "d-block" : "d-none"} input-group">
   
-    <input data-id=${item.id} class="form-check-input bg-image btnColorSelect mt-0 rounded-pill" type="radio" value=""name="${item.radioBtn}" >
+    <input checked data-id=${item.id}  class="${item.checked ? '' : item.firstColor} form-check-input bg-image btnColorSelect mt-0 rounded-pill" type="radio" value=""name="${item.radioBtn}" >
 
-   
-    
-    <input data-id=${item.id} checked class="form-check-input bg-image btnColorSelect mt-0 ms-1 rounded-pill" type="radio" value=""name="${item.radioBtn}" >
+    <input data-id=${item.id} checked class="form-check-input bg-image btnColorSelect mt-0 ms-1 rounded-pill ${item.checked ? item.firstColor : 'bg-light-orange'}" type="radio" value=""name="${item.radioBtn}" >
     </div>
     </div>`
 
@@ -290,25 +288,7 @@ const product = map(products);
 
 if (sectionContainer) {
     sectionContainer.innerHTML = product;
-    document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.form-check-input').forEach((input) => {
-            input.addEventListener('change', () => {
-                let index = (input.getAttribute('data-id'));
-                const prod = ourProducts[index - 1];
-                if (input.checked) {
-                    input.classList.add(`${prod.firstColor}`)
-                    input.checked = false
-                    input.classList.remove('layerCategory')
-                } else {
-                    input.classList.add('layerCategory')
-                    input.classList.remove(`${prod.firstColor}`)
-                    input.checked = true
 
-                }
-
-            });
-        });
-    });
 }
 
 
