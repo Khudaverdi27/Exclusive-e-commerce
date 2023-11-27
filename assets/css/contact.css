@@ -2,18 +2,6 @@
   margin: 180px 0 !important;
 }
 
-.arrivingPage {
-  color: #ccc;
-  &:hover {
-    color: black;
-  }
-}
-.pageSlash {
-  margin: 0 10px;
-}
-.currentPage {
-  color: black;
-}
 .inputContainer {
   width: 837px;
   max-width: 100%;
@@ -28,7 +16,6 @@
 }
 .inputs {
   display: flex;
-
   position: relative;
 }
 .input {

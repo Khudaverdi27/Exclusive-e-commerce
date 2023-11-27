@@ -5,18 +5,6 @@
 .aboutContainer {
   margin: 10% auto;
 }
-.arrivingPage {
-  color: #ccc;
-  &:hover {
-    color: black;
-  }
-}
-.pageSlash {
-  margin: 0 10px;
-}
-.currentPage {
-  color: black;
-}
 .workersImages {
   width: 340px;
   height: 417px;
