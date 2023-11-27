@@ -27,6 +27,10 @@
     margin-top: 3.5rem;
 }
 
+.m-top-10 {
+    margin-top: 10rem;
+}
+
 .crusor-p {
     cursor: pointer;
 }
