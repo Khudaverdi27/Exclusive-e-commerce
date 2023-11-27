@@ -30,7 +30,7 @@ const workers = [
 
 const worker = workers
   .map((item) => {
-    return `<div class=" col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mt-5 ">
+    return `<div class=" col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 mx-auto mt-5 ">
   <img src="${item.imgSrc}" class="workersImages" alt="">
     <h3>${item.name}</h3>
     <p>${item.position}</p>
@@ -41,13 +41,12 @@ const worker = workers
     </div>
     </div>
     `;
-  }).join("");
-
+  })
+  .join("");
 
 const workersCards = document.querySelector(".rowContainer");
 if (workersCards) {
   workersCards.innerHTML = worker;
 }
-
 
 export default worker;

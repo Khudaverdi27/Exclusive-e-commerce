@@ -6,7 +6,7 @@ const statistics = [
     value: true,
   },
   {
-    imgSrc: "assets/images/other/statitcs2.png",
+    imgSrc: "assets/images/other/statitc4.png",
     title: "33 K",
     description: "Monthly Product Sale",
     value: true,
@@ -45,8 +45,9 @@ const services = [
 const objectsToUi = (statistc) => {
   return statistc
     .map((item) => {
-      return `<div class="  ${item.value ? "border " : "col-xl-4"
-        } statitcsCard col-12 col-sm-12 col-md-5 col-lg-6 col-xl-2 px-3 mx-auto ">
+      return `<div class="  ${
+        item.value ? "border " : "col-xl-4"
+      } statitcsCard col-12 col-sm-12 col-md-5 col-lg-6 col-xl-2 px-3 mx-auto ">
 <img class="mt-3" src="${item.imgSrc} " alt="">
 <h4 class="staticsCount mt-3">${item.title}</h4>
 <p class="mb-3">${item.description}</p>
@@ -65,6 +66,5 @@ if (servicesContainer) {
 if (statisticsContainer) {
   statisticsContainer.innerHTML = result;
 }
-
 
 export default objectsToUi;
