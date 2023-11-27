@@ -7,6 +7,9 @@
 }
 .arrivingPage {
   color: #ccc;
+  &:hover {
+    color: black;
+  }
 }
 .pageSlash {
   margin: 0 10px;
