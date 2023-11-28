@@ -35,6 +35,21 @@
     height: 300px;
 }
 
+.box-btn {
+    width: 32px;
+    height: 32px;
+}
+
+.box-btn-md {
+    width: 39px;
+    height: 40px;
+}
+
+.box-btn-xl {
+    width: 80px;
+    height: 40px;
+}
+
 .crusor-p {
     cursor: pointer;
 }

@@ -5,4 +5,5 @@ import worker from "./workers.js";
 import objectsToUi from "./statistic.js";
 import loginPage from "./login.js";
 import wishlistMap from "./wishlist.js";
+import updateCount from "./productDetails.js";
 import footer from "./footer.js";
