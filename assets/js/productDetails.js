@@ -14,13 +14,18 @@ function updateCount(action) {
     }
 }
 
-ui.minusBtn.addEventListener('click', function () {
-    updateCount('decrease');
-});
+if (ui.minusBtn) {
+    ui.minusBtn.addEventListener('click', function () {
+        updateCount('decrease');
+    });
+}
 
-ui.plusBtn.addEventListener('click', function () {
-    updateCount('increase');
-});
+if (ui.plusBtn) {
+    ui.plusBtn.addEventListener('click', function () {
+        updateCount('increase');
+    });
+}
+
 
 export default updateCount;
 
