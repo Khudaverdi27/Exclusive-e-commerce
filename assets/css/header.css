@@ -31,6 +31,10 @@
     margin-top: 10rem;
 }
 
+.box-div {
+    height: 300px;
+}
+
 .crusor-p {
     cursor: pointer;
 }
@@ -77,7 +81,7 @@ input::placeholder {
     margin-top: 2rem;
 }
 
-.carousel-indicators {
+.home-carousel-indicators {
     top: 100%;
 }
 
@@ -108,7 +112,7 @@ input::placeholder {
         flex-direction: row;
     }
 
-    .carousel-indicators {
+    .home-carousel-indicators {
         top: 105%;
     }
 }
@@ -127,7 +131,7 @@ input::placeholder {
         padding: 2px 3px;
     }
 
-    .carousel-indicators {
+    .home-carousel-indicators {
         top: 90%;
     }
 

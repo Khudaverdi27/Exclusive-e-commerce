@@ -110,7 +110,7 @@ const wishlistMap = (products) => {
                 </span>
             </div>
         </div>
-        <div class="layer text-white"><a href='singUp.html'>${item.textLayer}</a></div>
+        <div class="layer text-white">${item.textLayer}</div>
     </div>
     <p>${item.name}</p>
     <span class="text-danger me-2">$${item.price}</span><span

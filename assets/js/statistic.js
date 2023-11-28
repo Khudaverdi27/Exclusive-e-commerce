@@ -38,7 +38,7 @@ const services = [
   {
     imgSrc: "assets/images/other/Services (1).png",
     title: "MONEY BACK GUARANTEE",
-    description: "We reurn money within 30 days",
+    description: "We return money within 30 days",
   },
 ];
 
@@ -51,8 +51,7 @@ const objectsToUi = (statistc) => {
 <h4 class="staticsCount mt-3">${item.title}</h4>
 <p class="mb-3">${item.description}</p>
 </div>`;
-    })
-    .join("");
+    }).join("");
 };
 const result = objectsToUi(statistics);
 const service = objectsToUi(services);

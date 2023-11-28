@@ -1,0 +1,12 @@
+.thumbnail {
+    top: 0px;
+    left: -13px;
+}
+
+.thumbnail [data-bs-target] {
+    box-sizing: border-box;
+}
+
+.thumbnail button {
+    width: 100px !important;
+}
