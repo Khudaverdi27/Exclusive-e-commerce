@@ -31,6 +31,10 @@
     border: 2px solid #0000;
 }
 
+.input-coupon::placeholder {
+    font-size: 14px !important;
+}
+
 @media (max-width: 568px) {
 
     .thumbnail {

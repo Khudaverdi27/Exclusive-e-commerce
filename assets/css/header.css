@@ -31,6 +31,10 @@
     margin-top: 10rem;
 }
 
+.p-end {
+    padding-right: 6rem;
+}
+
 .box-div {
     height: 300px;
 }
@@ -43,6 +47,11 @@
 .box-btn-md {
     width: 39px;
     height: 40px;
+}
+
+.box-btn-l {
+    width: 54px;
+    height: 54px;
 }
 
 .box-btn-xl {
@@ -64,7 +73,7 @@ a {
     margin-left: 20rem;
 }
 
-input::placeholder {
+.srch-input::placeholder {
     font-size: 12px;
     opacity: 0.5;
     padding: 7px 12px 7px 20px;
@@ -105,6 +114,10 @@ input::placeholder {
     height: 8px !important;
     border-radius: 50%;
     border: 2px solid var(--color-solid-secondary) !important;
+}
+
+.w-full {
+    width: 85%;
 }
 
 /* responsive */
@@ -150,6 +163,11 @@ input::placeholder {
         top: 90%;
     }
 
+    .p-end {
+        padding-right: 0rem;
+    }
+
+
 }
 
 @media (max-width: 768px) {
@@ -176,6 +194,10 @@ input::placeholder {
     .carousel-link,
     .carousel-content span {
         font-size: 13px;
+    }
+
+    .w-full {
+        width: 100%;
     }
 
 

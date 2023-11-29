@@ -44,7 +44,7 @@ const navbar = () => {
             <div class="input-section">
                 <form class="d-flex" role="search">
                     <div class="position-relative">
-                        <input class="form-control me-2 p-1 bg-solid-secondary position-relative"
+                        <input class="srch-input form-control me-2 p-1 bg-solid-secondary position-relative"
                             placeholder="What are you looking for?" type="search" aria-label="Search">
                         <img src="assets/images/svg/searcg-icon.svg" class="position-absolute search-icon crusor-p"
                             alt="">
