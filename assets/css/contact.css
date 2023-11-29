@@ -83,12 +83,8 @@
   }
 }
 @media (min-width: 320px) and (max-width: 767px) {
-  .pathLinks {
-    text-align: center;
-    margin-top: 180px !important;
-  }
   .contactContainer {
-    margin: 120px 0px 80px 0 !important;
+    margin: 160px 0px 80px 0 !important;
   }
 
   .callUsAndWriteuS {
