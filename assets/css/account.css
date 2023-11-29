@@ -1,5 +1,5 @@
 .cartTopSection {
-  margin: 140px 0 70px 0;
+  margin: 100px 0 70px 0;
 }
 .labelForControlled {
   font-weight: 600;
@@ -44,6 +44,26 @@
   position: absolute;
   top: 10px;
   left: 0px;
+}
+.cancelBtn {
+  padding: 10px 25px;
+  background-color: #fff;
+  outline: none;
+  border: none;
+  margin-right: 10px;
+}
+.savechangesBtn {
+  background-color: #db4444;
+  color: #fff;
+  padding: 10px 25px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  &:hover {
+    color: black;
+    background-color: #fff;
+    border: 1px solid #db4444;
+  }
 }
 @media (min-width: 981px) and (max-width: 1200px) {
   .inputCart {

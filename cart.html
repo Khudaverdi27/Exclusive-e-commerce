@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="shortcut icon" href="./assets/images/logo/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <!-- Navbar begin -->
+    <header class="header-top  bg-dark fixed-top">
+    </header>
+    <!-- Navbar end -->
+    <!-- Content start -->
+    <div class="container">
+        <div class="cartTopSection d-flex justify-content-between">
+            <div class="pathLinks m-4">
+                <a href="./header.html" class="arrivingPage">Home</a><span><a href="./cart.html"
+                        class="currentPage"><span class="pageSlash">/</span>Cart</a></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-6 d-flex flex-column gap-3 align-items-baseline">
+                <p>Product</p>
+                <div class="productSecond d-flex align-items-center justify-content-around gap-4">
+                    <img src="assets/images/other/cartFullImg2.jpg" alt=""><span>LCD monitor</span>
+                </div>
+                <div class="productImgAndTitle d-flex align-items-center justify-content-around gap-4 ">
+                    <img src="assets/images/other/cartFullImg1.png" alt=""><span>H1 gamepad</span>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 d-flex flex-column gap-3 align-items-center">
+                <p>Price</p>
+                <p>650$</p>
+                <p>550$</p>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 d-flex flex-column gap-3 align-items-center">
+                <p>Quantity</p>
+                <input type="number" class="quantityInput" value="1">
+                <input type="number" class="quantityInput" value="2">
+
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 d-flex flex-column gap-3 align-items-center">
+
+                <p>Subtotal</p>
+                <p>650$</p>
+                <p>1100$</p>
+
+            </div>
+        </div>
+        <div class="buttonsCart d-flex justify-content-between mt-5">
+            <button class="buttonCart">Return to Shop</button>
+            <button class="buttonCart">Update cart</button>
+        </div>
+
+        <div class="row d-flex mt-5">
+            <div class="col-xl-5">
+                <div class="cupponApply ">
+                    <input type="text" placeholder="Coupon Code" class="couponInput">
+                    <button class="btnMyDesign applyBtn">Apply Coupon</button>
+                </div>
+            </div>
+            <div class="col-xl-7  d-flex justify-content-end mb-5 ">
+                <div class="cartTotal">
+                    <p class="cartTotalTitle px-3 py-3">Cart total</p>
+                    <div class="cardTotalSection ">
+                        <p>Subtotal</p>
+                        <p>1750$</p>
+                    </div>
+                    <div class="cardTotalSection">
+                        <p>Shipping</p>
+                        <p>free</p>
+                    </div>
+                    <div class="cardTotalSection lastTotalSection">
+                        <p>Total</p>
+                        <p>1750$</p>
+                    </div>
+
+                    <button class="proceesBtn btnMyDesign d-block mx-auto">Procees to checkout</button>
+
+                </div>
+            </div>
+        </div>
+        <!-- Content end -->
+    </div>
+    <!-- Footer start -->
+    <footer class="footerContainer bg-dark py-5">
+    </footer>
+    <!-- Footer end -->
+    <script type="module" src="assets/js/main.js"></script>
+</body>
+
+</html>
