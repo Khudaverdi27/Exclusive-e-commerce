@@ -2,15 +2,6 @@
   margin: 180px 0 !important;
 }
 
-.arrivingPage {
-  color: #ccc;
-}
-.pageSlash {
-  margin: 0 10px;
-}
-.currentPage {
-  color: black;
-}
 .inputContainer {
   width: 837px;
   max-width: 100%;
@@ -25,7 +16,6 @@
 }
 .inputs {
   display: flex;
-
   position: relative;
 }
 .input {
@@ -93,12 +83,8 @@
   }
 }
 @media (min-width: 320px) and (max-width: 767px) {
-  .pathLinks {
-    text-align: center;
-    margin-top: 180px !important;
-  }
   .contactContainer {
-    margin: 120px 0px 80px 0 !important;
+    margin: 160px 0px 80px 0 !important;
   }
 
   .callUsAndWriteuS {

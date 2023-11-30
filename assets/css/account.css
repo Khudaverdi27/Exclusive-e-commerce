@@ -1,0 +1,124 @@
+.cartTopSection {
+  margin: 100px 0 70px 0;
+}
+.labelForControlled {
+  font-weight: 600;
+}
+.loginedUserName {
+  color: red;
+}
+.linksControlled {
+  color: #ccc;
+  &:hover {
+    color: red;
+  }
+}
+.linksForControlled {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 30px;
+}
+.inputCart {
+  padding: 15px 105px;
+  background-color: #f5f5f5;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+.passwordInput {
+  background-color: #f5f5f5;
+  padding: 15px 40px !important;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.labelForInput {
+  width: 100%;
+  margin-top: 5px;
+}
+.labelForInput::placeholder {
+  color: rgb(65, 64, 64);
+  font-size: 14px;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+}
+.cancelBtn {
+  padding: 10px 25px;
+  background-color: #fff;
+  outline: none;
+  border: none;
+  margin-right: 10px;
+}
+.savechangesBtn {
+  background-color: #db4444;
+  color: #fff;
+  padding: 10px 25px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  &:hover {
+    color: black;
+    background-color: #fff;
+    border: 1px solid #db4444;
+  }
+}
+@media (min-width: 981px) and (max-width: 1200px) {
+  .inputCart {
+    padding: 10px 120px !important;
+  }
+}
+@media (min-width: 767px) and (max-width: 1024px) {
+  .controlledSectionCart {
+    display: flex !important;
+    text-align: center;
+    gap: 50px;
+  }
+  .labelForControlled {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .myOrders {
+    position: relative;
+    top: -22px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .cartTopSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px auto;
+  }
+  .controlledSectionCart {
+    margin-bottom: 50px;
+    text-align: center;
+    gap: 50px;
+  }
+  .linksForControlled {
+    margin-bottom: 30px;
+  }
+  .labelForControlled {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .myOrders {
+    margin: 0 auto !important;
+  }
+  .labelForInput {
+    padding: 10px 15px;
+  }
+  .labelForInput::placeholder {
+    font-size: 10px;
+  }
+  .editingInput {
+    display: flex;
+    flex-direction: column;
+  }
+}
