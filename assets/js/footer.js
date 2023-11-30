@@ -1,9 +1,9 @@
 const footerContainer = document.querySelector(".footerContainer");
 
 const footer = () => {
-    const div = document.createElement("div");
+  const div = document.createElement("div");
 
-    div.innerHTML = `
+  div.innerHTML = `
      <div class="container">
         <div class="footerSection row footerRes ">
             <div class=" mb-3 col-sm-6 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
@@ -63,18 +63,18 @@ const footer = () => {
                     </div>
                 </div>
                 <div class="socialMedia d-flex gap-4 mt-2">
-                    <a href=""><img src="assets/images/svg/Icon-Facebook.svg" alt=""></a>
-                    <a href=""><img src="assets/images/svg/Icon-Linkedin.svg" alt=""></a>
-                    <a href=""><img src="assets/images/svg/Group (1).svg" alt=""></a>
-                    <a href=""><img src="assets/images/svg/Group (2).svg" alt=""></a>
+                    <a href="#"><img src="assets/images/svg/Icon-Facebook.svg" alt=""></a>
+                    <a href="#"><img src="assets/images/svg/Icon-Linkedin.svg" alt=""></a>
+                    <a href="#"><img src="assets/images/svg/Group (1).svg" alt=""></a>
+                    <a href="#"><img src="assets/images/svg/Group (2).svg" alt=""></a>
                 </div>
             </div>
             <hr class="borderHr d-none d-md-block col-lg-none d-xl-none">
             </div>
             </div>
             <p class="text-white text-center mt-5"> © Copyright Exclusive 2023. All right reserved</p>`;
-    footerContainer.appendChild(div);
+  footerContainer.appendChild(div);
 };
 footer();
 
-export default footer
+export default footer;
