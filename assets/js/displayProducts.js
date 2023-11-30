@@ -248,7 +248,7 @@ const map = (products) => {
                    <a href='singUp.html'><img src=${item.imgHeart} alt="img"></a> 
                 </span>
                 <span class="icon-bg-rounded bg-white rounded-circle d-flex-container">
-                <a href='singUp.html'><img src=${item.imgEye} alt="img"></a> 
+                <a href='productDetails.html'><img src=${item.imgEye} alt="img"></a>
                 </span>
             </div>
         </div>

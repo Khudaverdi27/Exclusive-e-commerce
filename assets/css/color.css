@@ -6,6 +6,7 @@
     --color-red: #f20000;
     --color-solid-secondary: #F5F5F5;
     --color-black: #000;
+    --color-light-blue: #A0BCE0;
 }
 
 /* ==Colors=== */
@@ -19,6 +20,10 @@
 
 .bg-light-green {
     background-color: var(--color-light-green);
+}
+
+.bg-light-blue {
+    background-color: var(--color-light-blue);
 }
 
 .bg-dark-green {

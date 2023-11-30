@@ -7,7 +7,7 @@ const navbar = () => {
     <div class="d-flex justify-content-around header-top-content  ">
         <p class="nav text-white fs-14 align-items-center d-inline mt-2">
             Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
-            <span><a href="#" class=" fw-bold text-white">ShopNow</a></span>
+            <span><a href="singUp.html" class=" fw-bold text-white">ShopNow</a></span>
         </p>
         <ul class="nav nav-tabs border-0">
             <li class="nav-item dropdown fs-14">
@@ -44,13 +44,13 @@ const navbar = () => {
             <div class="input-section">
                 <form class="d-flex" role="search">
                     <div class="position-relative">
-                        <input class="form-control me-2 p-1 bg-solid-secondary position-relative"
+                        <input class="srch-input form-control me-2 p-1 bg-solid-secondary position-relative"
                             placeholder="What are you looking for?" type="search" aria-label="Search">
                         <img src="assets/images/svg/searcg-icon.svg" class="position-absolute search-icon crusor-p"
                             alt="">
                     </div>
                     <div class="input-svg d-flex">
-                        <img src="assets/images/svg/Wishlist.svg" class="ms-2 crusor-p" alt="">
+                    <a href='wishlist.html'><img src="assets/images/svg/Wishlist.svg" class="ms-2 crusor-p" alt=""></a>
                         <img src="assets/images/svg/Cart1.svg" class="ms-1 crusor-p" alt="">
                         <button class=" navbar-toggler border-0 fs-16 p-0 shadow-none" type="button"
                             data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
@@ -63,8 +63,10 @@ const navbar = () => {
         </div>
     </nav>
     `;
+    if (navbarContainer) {
+        navbarContainer.appendChild(div);
+    }
 
-    navbarContainer.appendChild(div);
 };
 
 navbar();
