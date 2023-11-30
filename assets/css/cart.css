@@ -12,6 +12,7 @@
   border: 1px solid black;
   border-radius: 5px;
   background-color: #fff;
+  transition: 0.5s;
   &:hover {
     background-color: black;
     color: #fff;
@@ -36,6 +37,7 @@
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
+  transition: 0.5s;
   &:hover {
     background-color: #fff;
     color: black;
@@ -51,6 +53,19 @@
   font-size: 18px;
   font-weight: 600;
 }
+.cartColSectionTitle {
+  font-weight: 600;
+  font-size: 18px;
+}
+.cartColSection {
+  padding: 20px;
+  box-shadow: 0px 1px 13px 0px rgba(0, 0, 0, 0.05);
+}
+.quatityInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
 .cardTotalSection {
   display: flex;
   justify-content: space-between;
@@ -63,4 +78,47 @@
 }
 .proceesBtn {
   padding: 15px 30px;
+}
+@media (min-width: 767px) and (max-width: 992px) {
+  .cartColSection {
+    padding: 10px;
+    box-shadow: 0px 1px 13px 0px rgba(0, 0, 0, 0.05);
+    display: block !important;
+    text-align: center;
+  }
+  .quatityInputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .cupponApply {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+  }
+  .cartTotal {
+    margin: 0 auto;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .productSection {
+    display: flex !important;
+    align-items: center !important;
+  }
+  .cupponApply {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+  }
+  .cartTotal {
+    margin: 30px auto;
+  }
+  .productSection {
+    text-align: center;
+  }
 }
