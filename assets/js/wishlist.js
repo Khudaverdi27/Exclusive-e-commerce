@@ -148,4 +148,4 @@ if (recommendProducts) {
 
 }
 
-export default wishlistMap
+

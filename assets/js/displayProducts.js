@@ -309,7 +309,6 @@ if (exploreProductsSec) {
 
 
 
-export default map
 
 // category boxex info
 const categories = [

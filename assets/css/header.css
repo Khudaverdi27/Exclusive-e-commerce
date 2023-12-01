@@ -81,7 +81,7 @@ a {
 
 .search-icon {
     top: 15%;
-    right: 0%;
+    right: 3%;
     width: 24px;
     height: 24px;
 }
@@ -93,6 +93,11 @@ a {
 
 .navbar-toggler {
     display: none;
+}
+
+.card-dropdown {
+    top: 36px;
+    right: 5px;
 }
 
 /* main */
@@ -200,7 +205,14 @@ a {
         width: 100%;
     }
 
+    .card-dropdown {
+        right: -4px;
+    }
 
+    .loader-card {
+        width: 13%;
+
+    }
 }
 
 @media (max-width: 420px) {

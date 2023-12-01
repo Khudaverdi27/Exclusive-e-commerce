@@ -27,6 +27,6 @@ if (ui.plusBtn) {
 }
 
 
-export default updateCount;
+
 
 
