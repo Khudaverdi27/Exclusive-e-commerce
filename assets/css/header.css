@@ -81,7 +81,7 @@ a {
 
 .search-icon {
     top: 15%;
-    right: 0%;
+    right: 3%;
     width: 24px;
     height: 24px;
 }
@@ -93,6 +93,11 @@ a {
 
 .navbar-toggler {
     display: none;
+}
+
+.card-dropdown {
+    top: 36px;
+    right: 5px;
 }
 
 /* main */

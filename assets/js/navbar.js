@@ -1,6 +1,14 @@
 const navbarContainer = document.querySelector('.header-top');
+const query = window.location.search.substring(1)
 
+const loginIcon = () => {
+
+    return `<a class="${query.startsWith('true') ? "d-block" : "d-none"}" href='#'><img src="assets/images/svg/user.svg" class="userIcon  crusor-p" alt=""></a>`
+}
+
+export default loginIcon
 const navbar = () => {
+
     const div = document.createElement('div');
     div.innerHTML = `
     <!-- top header -->
@@ -49,10 +57,44 @@ const navbar = () => {
                         <img src="assets/images/svg/searcg-icon.svg" class="position-absolute search-icon crusor-p"
                             alt="">
                     </div>
-                    <div class="input-svg d-flex">
-                    <a href='wishlist.html'><img src="assets/images/svg/Wishlist.svg" class="ms-2 crusor-p" alt=""></a>
-                        <img src="assets/images/svg/Cart1.svg" class="ms-1 crusor-p" alt="">
-                        <button class=" navbar-toggler border-0 fs-16 p-0 shadow-none" type="button"
+                    <div class="input-svg d-flex justify-content-between position-relative">
+                    <a href='wishlist.html'><img src="assets/images/svg/Wishlist.svg" class="ms-1 crusor-p" alt=""></a>
+                        <img src="assets/images/svg/Cart1.svg" class="mx-2  crusor-p" alt="">
+                        ${loginIcon()}
+                        <div id="profile-dropdown" class="card border-0 card-dropdown position-absolute d-none" style="width: 15rem;">
+                        <div class="card-body rounded bg-linear p-3">
+                            <a href="#">
+                                <div class="d-flex ">
+                                    <figure><img src="./assets/images/svg/user-dropdown.svg" alt=""></figure>
+                                    <span class="fs-14 ms-2 ps-2">Manage My Account</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="d-flex">
+                                    <figure class="me-4"><img src="./assets/images/svg/Group-order.svg" alt=""></figure>
+                                    <span class="fs-14 ps-1">My Order</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="d-flex">
+                                    <figure class="me-4"><img src="./assets/images/svg/icon-cancel.svg" alt=""></figure>
+                                    <span class="fs-14 ">My Cancellations</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="d-flex">
+                                    <figure class="me-4"><img src="./assets/images/svg/Icon-Reviews.svg" alt=""></figure>
+                                    <span class="fs-14 ">My Reviews</span>
+                                </div>
+                                <a href="#">
+                                    <div class="d-flex">
+                                        <figure class="me-4"><img src="./assets/images/svg/Icon-logout.svg" alt=""></figure>
+                                        <span class="fs-14 ">Logout</span>
+                                    </div>
+                                </a>
+                        </div>
+                    </div>
+                        <button class="ms-2 navbar-toggler border-0 fs-3 p-0 shadow-none" type="button"
                             data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -66,9 +108,19 @@ const navbar = () => {
     if (navbarContainer) {
         navbarContainer.appendChild(div);
     }
+    // profile dropdown
+    document.querySelector('.userIcon').addEventListener('click', () => {
+        const dropdown = document.getElementById('profile-dropdown');
+        if (dropdown.classList.contains('d-none')) {
+
+            dropdown.classList.remove('d-none');
+        } else {
+            dropdown.classList.add('d-none');
+        }
+    });
 
 };
 
 navbar();
 
-export default navbar;
+

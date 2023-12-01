@@ -1,9 +1,9 @@
-import navbar from "./navbar.js";
-import count from "./counter.js";
-import product from "./displayProducts.js";
-import worker from "./workers.js";
-import objectsToUi from "./statistic.js";
-import loginPage from "./login.js";
-import wishlistMap from "./wishlist.js";
-import updateCount from "./productDetails.js";
-import footer from "./footer.js";
+import "./navbar.js";
+import "./counter.js";
+import "./displayProducts.js";
+import "./workers.js";
+import "./statistic.js";
+import "./login.js";
+import "./wishlist.js";
+import "./productDetails.js";
+import "./footer.js";
