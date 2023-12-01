@@ -205,7 +205,14 @@ a {
         width: 100%;
     }
 
+    .card-dropdown {
+        right: -4px;
+    }
 
+    .loader-card {
+        width: 13%;
+
+    }
 }
 
 @media (max-width: 420px) {

@@ -1,16 +1,16 @@
 const navbarContainer = document.querySelector('.header-top');
-const query = window.location.search.substring(1)
+let boolean = window.location.search.startsWith('?true');
+
 
 const loginIcon = () => {
 
-    return `<a class="${query.startsWith('true') ? "d-block" : "d-none"}" href='#'><img src="assets/images/svg/user.svg" class="userIcon  crusor-p" alt=""></a>`
+    return `<a class="${boolean ? "d-block" : "d-none"}" href='#'><img src="assets/images/svg/user.svg" class="userIcon  crusor-p" alt=""></a>`
 }
 
 export default loginIcon
 const navbar = () => {
-
-    const div = document.createElement('div');
-    div.innerHTML = `
+    if (navbarContainer) {
+        navbarContainer.innerHTML = `
     <!-- top header -->
     <div class="d-flex justify-content-around header-top-content  ">
         <p class="nav text-white fs-14 align-items-center d-inline mt-2">
@@ -30,27 +30,27 @@ const navbar = () => {
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg bg-white border-bottom">
         <div class=" container-fluid d-flex justify-content-around">
-            <a class="navbar-brand" href="header.html"><img src="assets/images/logo/Logo.png" alt=""></a>
+            <a class="navbar-brand" href= ${boolean ? "header.html" + "?" + "true" : "header.html"}><img src="assets/images/logo/Logo.png" alt=""></a>
  
             <div class="collapse show " id="navbarNav">
                 <ul class="navbar-nav  mt-1 mb-lg-0 nav-underline crusor-p fs-16 ">
                     <li class="nav-item">
-                        <a class="nav-link " href="header.html">Home</a>
+                        <a class="nav-link " href= ${boolean ? "header.html" + "?" + "true" : "header.html"}>Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link"  href= ${boolean ? "contact.html" + "?" + "true" : "contact.html"}>Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link"  href= ${boolean ? "about.html" + "?" + "true" : "about.html"}>About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="singUp.html">Sign up</a>
+                        <a class="nav-link"  href= ${boolean ? "singUp.html" + "?" + "true" : "singUp.html"}>Sign up</a>
                     </li>
                 </ul>
             </div>
             <!-- input field and icon in navbar -->
-            <div class="input-section">
-                <form class="d-flex" role="search">
+            <div class="input-section ">
+                <form class="d-flex justify-content-between" role="search">
                     <div class="position-relative">
                         <input class="srch-input form-control me-2 p-1 bg-solid-secondary position-relative"
                             placeholder="What are you looking for?" type="search" aria-label="Search">
@@ -87,7 +87,7 @@ const navbar = () => {
                                     <span class="fs-14 ">My Reviews</span>
                                 </div>
                                 <a href="#">
-                                    <div class="d-flex">
+                                    <div id="logoutProfile" class="d-flex">
                                         <figure class="me-4"><img src="./assets/images/svg/Icon-logout.svg" alt=""></figure>
                                         <span class="fs-14 ">Logout</span>
                                     </div>
@@ -105,9 +105,9 @@ const navbar = () => {
         </div>
     </nav>
     `;
-    if (navbarContainer) {
-        navbarContainer.appendChild(div);
     }
+
+
     // profile dropdown
     document.querySelector('.userIcon').addEventListener('click', () => {
         const dropdown = document.getElementById('profile-dropdown');
@@ -118,8 +118,22 @@ const navbar = () => {
             dropdown.classList.add('d-none');
         }
     });
+    document.getElementById('logoutProfile').addEventListener('click', () => {
+        const spinner = document.querySelector('.loader-card')
+        spinner.style.top = '4%'
+        spinner.classList.remove('d-none')
+
+        setTimeout(() => {
+            spinner.classList.add('d-none')
+            window.location.href = "singUp.html"
+            boolean = false
+            navbar()
+        }, 3000)
+
+    });
 
 };
+
 
 navbar();
 

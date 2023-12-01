@@ -6,4 +6,5 @@ import "./statistic.js";
 import "./login.js";
 import "./wishlist.js";
 import "./productDetails.js";
+import "./spinner.js";
 import "./footer.js";

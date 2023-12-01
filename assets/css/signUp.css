@@ -62,6 +62,30 @@ a {
   border: 1px solid #fff;
 }
 
+#eyeIconAccountPage,
+#eyeIconLogin {
+  right: 2%;
+}
+
+#eyeIconAccountPage {
+  top: 74%
+}
+
+#eyeIconLogin {
+  top: 42%
+}
+
+.loader-card {
+  width: 8%;
+  padding: 15px;
+  top: 41%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+
+
 /* responsive signUp */
 @media (min-width: 368px) and (max-width: 767px) {
   .haveAccount {
@@ -79,6 +103,14 @@ a {
 
   .haveAccount {
     width: 20rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .loader-card {
+    width: 30%;
+    top: 35%;
+
   }
 }
 
