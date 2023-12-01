@@ -25,9 +25,10 @@
                         class="currentPage"><span class="pageSlash">/</span>Cart</a></span>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-6 d-flex flex-column gap-3 align-items-baseline">
-                <p>Product</p>
+        <div class="cartContainer row p-3">
+            <div
+                class="cartColSection productSection col-xl-3 col-lg-3 col-md-6 d-flex flex-column gap-3 align-items-baseline">
+                <p class="cartColSectionTitle">Product</p>
                 <div class="productSecond d-flex align-items-center justify-content-around gap-4">
                     <img src="assets/images/other/cartFullImg2.jpg" alt=""><span>LCD monitor</span>
                 </div>
@@ -35,20 +36,23 @@
                     <img src="assets/images/other/cartFullImg1.png" alt=""><span>H1 gamepad</span>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 d-flex flex-column gap-3 align-items-center">
-                <p>Price</p>
+            <div class="cartColSection col-xl-3 col-lg-3 col-md-6 d-flex flex-column gap-3 align-items-center">
+                <p class="cartColSectionTitle">Price</p>
                 <p>650$</p>
                 <p>550$</p>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 d-flex flex-column gap-3 align-items-center">
-                <p>Quantity</p>
-                <input type="number" class="quantityInput" value="1">
-                <input type="number" class="quantityInput" value="2">
+            <div class="cartColSection col-xl-3 col-lg-3 col-md-6 d-flex flex-column gap-3 align-items-center">
+                <p class="cartColSectionTitle">Quantity</p>
+                <div class="quatityInputs">
+                    <input type="number" class="quantityInput" value="1">
+                    <input type="number" class="quantityInput" value="2">
+                </div>
+
 
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 d-flex flex-column gap-3 align-items-center">
+            <div class="cartColSection col-xl-3 col-lg-3 col-md-6 d-flex flex-column gap-3 align-items-center">
 
-                <p>Subtotal</p>
+                <p class="cartColSectionTitle">Subtotal</p>
                 <p>650$</p>
                 <p>1100$</p>
 
@@ -66,7 +70,7 @@
                     <button class="btnMyDesign applyBtn">Apply Coupon</button>
                 </div>
             </div>
-            <div class="col-xl-7  d-flex justify-content-end mb-5 ">
+            <div class="col-xl-7 d-flex justify-content-end mb-5 ">
                 <div class="cartTotal">
                     <p class="cartTotalTitle px-3 py-3">Cart total</p>
                     <div class="cardTotalSection ">
