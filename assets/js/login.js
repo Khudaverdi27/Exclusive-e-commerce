@@ -114,6 +114,7 @@ function selectElement(form, email, email_error, pass, pass_error, nameInput, na
                 const value = validateForm();
                 if (value) {
                     createloginUi()
+                    formContainer.innerHTML += '<span class="text-success">Your account has been successfully created, please log in.<span/>'
 
                     const log = loginPage()
                     if (log) {
