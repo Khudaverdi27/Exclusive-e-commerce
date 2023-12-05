@@ -58,12 +58,26 @@
                     </div>
                     <div class="col-xl-8 col-sm-12 inputContainer order-sm-1 order-xl-2 order-md-1 ">
                         <div class="inputs d-flex mb-3 gap-2">
-                            <input class="input" type="text" placeholder="Your Name">
-                            <input class="input" type="email" placeholder="Your Email">
-                            <input class="input" type="text" placeholder="Your Phone">
+                            <input class="input" id="inputName" type="text" placeholder="Your Name">
+
+
+                            <input class="input" id="inputEmail" type="email" placeholder="Your Email">
+                            <input class="input" id="inputPhone" type="text" placeholder="Your Phone">
                         </div>
+                        <div class="errorMessages d-flex gap-5 text-center">
+                            <p class="errorMsj errorMessageName d-none">Must be contain only letters(min. 4 - max. 14)
+                            </p>
+                            <p class="errorMsj errorMessageEmail d-none">It must be an e-mail address ending with
+                                @mail.com.
+                            </p>
+                            <p class="errorMsj errorMessagePhone d-none">Must be contain (+)Area coded and max. length
+                                15
+                                digits</p>
+                        </div>
+
+
                         <input type="text" class="msjInput" placeholder="Your Message">
-                        <button class="btn btnSend float-end mt-4">Send Message</button>
+                        <button class="btn btnSend float-end mt-4" id="contactSendBtn">Send Message</button>
                     </div>
                 </div>
             </div>
