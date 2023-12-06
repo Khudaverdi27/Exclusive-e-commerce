@@ -509,25 +509,28 @@ if (document.querySelector('.inner-poster')) {
 //navigation
 const productsSectionScroll = document.getElementById('middleSection-products');
 // scroll with keyboard navigation
-window.addEventListener('keydown', (e) => {
+if (productsSectionScroll) {
+    window.addEventListener('keydown', (e) => {
 
-    if (e.keyCode === 37) {
-        productsSectionScroll.scrollLeft -= 50;
-    } else if (e.keyCode === 39) {
-        productsSectionScroll.scrollLeft += 50;
+        if (e.keyCode === 37) {
+            productsSectionScroll.scrollLeft -= 50;
+        } else if (e.keyCode === 39) {
+            productsSectionScroll.scrollLeft += 50;
+        }
+    });
+    // scroll with mouse navigation
+    const leftBtn = document.getElementById('leftBtnArrow')
+    const rightBtn = document.getElementById('rightBtnArrow')
+
+    if (leftBtn) {
+        leftBtn.addEventListener('mousedown', () => {
+            productsSectionScroll.scrollLeft -= 50;
+        })
     }
-});
-// scroll with mouse navigation
-const leftBtn = document.getElementById('leftBtnArrow')
-const rightBtn = document.getElementById('rightBtnArrow')
+    if (rightBtn) {
+        rightBtn.addEventListener('mousedown', () => {
+            productsSectionScroll.scrollLeft += 50;
+        })
+    }
 
-if (leftBtn) {
-    leftBtn.addEventListener('mousedown', () => {
-        productsSectionScroll.scrollLeft -= 50;
-    })
-}
-if (rightBtn) {
-    rightBtn.addEventListener('mousedown', () => {
-        productsSectionScroll.scrollLeft += 50;
-    })
 }

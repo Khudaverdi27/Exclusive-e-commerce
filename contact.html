@@ -32,7 +32,7 @@
                 <div class="row m-4 d-flex justify-content-around flex-wrap mx-auto">
                     <div class="callUsAndWriteuS col-xl-3 col-md-10 col-sm-12 order-sm-2 order-xl-1 order-md-2 ">
                         <div class="callUsContainer">
-                            <div class="callUs mb-4 d-flex gap-2 align-items-center">
+                            <div class="callUs  d-flex gap-2 align-items-center">
                                 <img src="assets/images/svg/icons-phone.svg" alt="">
                                 <h4 class="mt-2">Call to us</h4>
                             </div>
@@ -56,19 +56,19 @@
 
                         </div>
                     </div>
-                    <div class="col-xl-8 col-sm-12 inputContainer order-sm-1 order-xl-2 order-md-1 ">
+                    <form name="submit-to-google-sheet"
+                        class="col-xl-8 col-sm-12 inputContainer order-sm-1 order-xl-2 order-md-1 ">
                         <div class="inputs d-flex mb-3 gap-2">
-                            <input class="input" id="inputName" type="text" placeholder="Your Name">
+                            <input name="Name" class="input" id="inputName" type="text" placeholder="Your Name">
 
 
-                            <input class="input" id="inputEmail" type="email" placeholder="Your Email">
-                            <input class="input" id="inputPhone" type="text" placeholder="Your Phone">
+                            <input name="Email" class="input" id="inputEmail" type="email" placeholder="Your Email">
+                            <input name="Phone" class="input" id="inputPhone" type="tel" placeholder="Your Phone">
                         </div>
                         <div class="errorMessages d-flex gap-5 text-center">
                             <p class="errorMsj errorMessageName d-none">Must be contain only letters(min. 4 - max. 14)
                             </p>
-                            <p class="errorMsj errorMessageEmail d-none">It must be an e-mail address ending with
-                                @mail.com.
+                            <p class="errorMsj errorMessageEmail d-none">It must be an correct e-mail address
                             </p>
                             <p class="errorMsj errorMessagePhone d-none">Must be contain (+)Area coded and max. length
                                 15
@@ -76,9 +76,13 @@
                         </div>
 
 
-                        <input type="text" class="msjInput" placeholder="Your Message">
-                        <button class="btn btnSend float-end mt-4" id="contactSendBtn">Send Message</button>
-                    </div>
+                        <textarea class="form-control border border-2 mt-2" name="Message" placeholder="Your message"
+                            id="" cols="100" rows="10"></textarea>
+                        <button type="submit" class="btn bg-light-orange btnSend float-end mt-4"
+                            id="contactSendBtn">Send
+                            Message</button>
+                    </form>
+
                 </div>
             </div>
         </div>

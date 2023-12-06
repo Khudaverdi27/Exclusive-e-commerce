@@ -25,40 +25,32 @@ const createloginUi = () => {
         </form>
     </div>`;
 }
-const helperForLoginFunc = () => {
-    createloginUi()
-    showAndHidePassword("eyeIconLogin", "inputPassLoginPage")
-    // forum validation
-    const selectors = {
-        form: document.forms['form'],
-        email: document.forms['form']['email'],
-        pass: document.forms['form']['password'],
-        pass_error: document.getElementById('pass_error'),
-        email_error: document.getElementById('email_error')
-    };
-    selectElement(selectors.form, selectors.email, selectors.email_error, selectors.pass, selectors.pass_error)
-}
+export default createloginUi
 
 const loginPage = () => {
-    if (formContainer) {
-        const login = document.getElementById('logIn')
-        const sigin = document.getElementById('createBtn')
-        if (login) {
-            login.addEventListener('click', (event) => {
-                event.preventDefault();
-                helperForLoginFunc()
+    const login = document.getElementById('logIn');
+    const createBtn = document.getElementById('createBtn');
 
-            });
-        } else {
-            sigin.addEventListener('click', (event) => {
-                event.preventDefault();
-                helperForLoginFunc()
+    if (login || createBtn) {
+        const targetButton = login || createBtn;
 
-            });
-        }
-
+        targetButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            createloginUi()
+            showAndHidePassword("eyeIconLogin", "inputPassLoginPage")
+            // forum validation
+            const selectors = {
+                form: document.forms['form'],
+                email: document.forms['form']['email'],
+                pass: document.forms['form']['password'],
+                pass_error: document.getElementById('pass_error'),
+                email_error: document.getElementById('email_error')
+            };
+            selectElement(selectors.form, selectors.email, selectors.email_error, selectors.pass, selectors.pass_error)
+        });
     }
 };
+
 
 
 function showAndHidePassword(eyeIconId, passInputId) {
@@ -102,7 +94,7 @@ function selectElement(form, email, email_error, pass, pass_error, nameInput, na
     }
     let localEmail = (localStorage.getItem('email'));
     let localPass = (localStorage.getItem('pass'));
-    console.log(localEmail, localPass);
+
     if (form) {
         const id = form.getAttribute('data-form');
         if (id == 'login') {
