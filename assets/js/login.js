@@ -1,21 +1,25 @@
 
 const formContainer = document.querySelector('.formContainer');
+const spinner = document.querySelector('.loader-card')
 
 const createloginUi = () => {
-    formContainer.innerHTML = `   
+    formContainer.innerHTML = `  
+    <div id="snackbar"> 
+    </div>
+
     <div class='me-3 w-100 my-2'>
         <h3 class="ms-2">Log in to Exclusive</h3>
         <p class="ms-3">Enter your details below</p>
         <form data-form='login' class="inputsAndBtns" name="form">
             <div class="inputs d-flex flex-column position-relative">
                 <input data-email="emailLogin" name="email" type="text" class="borderlessInput mt-3 mb-1 py-2 ps-1" placeholder="Email or Phone Number">
-                <div id="email_error" class='fs-12 text-danger bg-light-red rounded px-2 d-none'>Please fill up your e-mail or phone number</div>
+                <div id="email_error" class='fs-12 text-danger bg-light-red rounded px-2 d-none'>Wrong email or password</div>
                 <input id="inputPassLoginPage" name="password" type="password" class="borderlessInput mt-1 mb-1 w-100 py-2 ps-1" placeholder="Password">
                 <i id="eyeIconLogin" class="position-absolute fs-5 text-secondary fa-solid fa-eye-slash"></i>
-                <div id="pass_error" class='fs-12 text-danger bg-light-red rounded px-2 d-none'>Must be only numbers, lowercase and uppercase letters, and total  characters at least 8.</div>
+                <div id="pass_error" class='fs-12 text-danger bg-light-red rounded px-2 d-none'>Wrong email or password</div>
                 <div class="d-flex align-items-center justify-content-between container mt-3">
                     <button id='createBtn' type='submit' class="button createBtn my-1">Log in</button>
-                    <a class='text-light-orange ' href='#'>Forget Password?</a>
+                    <a id="forgetPass" class='text-light-orange ' href='#'>Forget Password?</a>
                 </div>
             </div>
         </form>
@@ -48,7 +52,6 @@ const loginPage = () => {
         } else {
             sigin.addEventListener('click', (event) => {
                 event.preventDefault();
-                createloginUi()
                 helperForLoginFunc()
 
             });
@@ -97,30 +100,58 @@ function selectElement(form, email, email_error, pass, pass_error, nameInput, na
     if (nameInput) {
         nameInput.addEventListener('input', name_verify);
     }
+    let localEmail = (localStorage.getItem('email'));
+    let localPass = (localStorage.getItem('pass'));
+    console.log(localEmail, localPass);
     if (form) {
         const id = form.getAttribute('data-form');
         if (id == 'login') {
             form.addEventListener('submit', (e) => {
+                // 
+
                 e.preventDefault();
-                const value = validateForm();
-                if (value) {
-                    setSpinner()
+                if (localEmail == email.value && localPass == pass.value) {
+                    const value = validateForm();
+                    if (value) {
+                        setSpinner()
+                    }
+                } else {
+                    email_error.classList.remove('d-none')
+                    pass_error.classList.remove('d-none')
                 }
 
+
+
             });
+            document.getElementById('forgetPass').addEventListener('click', () => {
+                const snackbar = document.getElementById("snackbar");
+                snackbar.className = "show";
+                snackbar.innerHTML = `
+                ${localEmail ? 'Your login: ' + localEmail : 'Please create account'} <br>
+                ${localPass ? 'Your password: ' + localPass : ''}
+              `;
+                // After 3 seconds, remove the show class from DIV
+                setTimeout(function () { snackbar.className = snackbar.className.replace("show", ""); }, 3000);
+            })
         } else {
             document.querySelector('.signBtn').addEventListener('click', (e) => {
                 e.preventDefault();
+                localStorage.setItem('email', (email.value))
+                localStorage.setItem('pass', (pass.value))
                 const value = validateForm();
-                if (value) {
-                    createloginUi()
-                    formContainer.innerHTML += '<span class="text-success">Your account has been successfully created, please log in.<span/>'
-
-                    const log = loginPage()
-                    if (log) {
-                        validateForm()
+                spinner.classList.remove('d-none')
+                setTimeout(() => {
+                    spinner.classList.add('d-none')
+                    if (value) {
+                        createloginUi()
+                        formContainer.innerHTML += '<span class="text-success">Your account has been successfully created, please log in.<span/>'
+                        const log = loginPage()
+                        if (log) {
+                            validateForm()
+                        }
                     }
-                }
+                }, 1000)
+
 
             })
 
@@ -149,8 +180,6 @@ function selectElement(form, email, email_error, pass, pass_error, nameInput, na
     function setSpinner() {
         const value = Boolean(true);
         const queryString = new URLSearchParams(value).toString()
-
-        const spinner = document.querySelector('.loader-card')
         spinner.classList.remove('d-none')
         setTimeout(() => {
             spinner.classList.add('d-none')
