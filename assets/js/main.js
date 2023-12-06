@@ -8,3 +8,4 @@ import "./wishlist.js";
 import "./productDetails.js";
 import "./spinner.js";
 import "./footer.js";
+import "./contact.js";
