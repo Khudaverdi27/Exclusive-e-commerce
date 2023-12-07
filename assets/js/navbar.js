@@ -1,3 +1,6 @@
+import { products, ourProducts, bestProducts, map } from "./displayProducts.js";
+import loading from "./spinner.js";
+
 const navbarContainer = document.querySelector('.header-top');
 let boolean = window.location.search.startsWith('?true');
 
@@ -15,7 +18,7 @@ const navbar = () => {
     <div class="d-flex justify-content-around header-top-content  ">
         <p class="nav text-white fs-14 align-items-center d-inline mt-2">
             Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
-            <span><a href="singUp.html" class=" fw-bold text-white">ShopNow</a></span>
+            <span><a href="${boolean ? "header.html" + "?" + "true" : "singUp.html"}" class=" fw-bold text-white">ShopNow</a></span>
         </p>
         <ul class="nav nav-tabs border-0">
             <li class="nav-item dropdown fs-14">
@@ -50,16 +53,19 @@ const navbar = () => {
             </div>
             <!-- input field and icon in navbar -->
             <div class="input-section ">
-                <form class="d-flex justify-content-between" role="search">
+                <div class="d-flex justify-content-between" role="search">
                     <div class="position-relative">
-                        <input class="srch-input form-control me-2 p-1 bg-solid-secondary position-relative"
+                        <input id="searchInput" class="srch-input form-control me-2 p-1 bg-solid-secondary position-relative"
                             placeholder="What are you looking for?" type="search" aria-label="Search">
-                        <img src="assets/images/svg/searcg-icon.svg" class="position-absolute search-icon crusor-p"
+                        <img id="search-icon" src="assets/images/svg/searcg-icon.svg" class="position-absolute search-icon crusor-p"
                             alt="">
                     </div>
                     <div class="input-svg d-flex justify-content-between position-relative">
-                    <a href='wishlist.html'><img src="assets/images/svg/Wishlist.svg" class="ms-1 crusor-p" alt=""></a>
+                    <a href='wishlist.html'><img src="assets/images/svg/Wishlist.svg" class="ms-1 crusor-p" alt="">
+                    </a>
+                        <a href= ${boolean ? "cart.html" + "?" + "true" : "singUp.html"}>
                         <img src="assets/images/svg/Cart1.svg" class="mx-2  crusor-p" alt="">
+                        </a>
                         ${loginIcon()}
                         <div id="profile-dropdown" class="card border-0 card-dropdown position-absolute d-none" style="width: 15rem;">
                         <div class="card-body rounded bg-linear p-3">
@@ -100,7 +106,7 @@ const navbar = () => {
                             <span class="navbar-toggler-icon"></span>
                         </button>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </nav>
@@ -136,5 +142,55 @@ const navbar = () => {
 
 
 navbar();
+function searchArrays() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const result = [];
+
+    products.forEach(item => {
+        if (item.name.toLowerCase().includes(searchInput)) {
+            result.push(item);
+        }
+    });
+
+    ourProducts.forEach(item => {
+        if (item.name.toLowerCase().includes(searchInput)) {
+            result.push(item);
+        }
+    });
+    bestProducts.forEach(item => {
+        if (item.name.toLowerCase().includes(searchInput)) {
+            result.push(item);
+        }
+    });
+    const heroSection = document.getElementById('hero-section')
+    const product = map(result);
+
+    if (heroSection) {
+
+        heroSection.classList.add('m-top-10', 'mb-5', 'd-flex-container', 'flex-wrap',)
+
+
+        heroSection.innerHTML = product ? product :
+            `    <section class=" container" >
+        <div class="d-flex ">
+            <p class="text-secondary me-1 fs-14">Home /</p>
+            <p class="text-dark me-1 fs-14">404 Error</p>
+        </div>
+        <div class="d-flex-container flex-column my-5">
+            <p class="fs-error">404 Not Found</p>
+            <p>Your visited page not found. You may go home page.</p>
+            <button class="btn bg-light-orange text-white px-5 py-2 my-2" type="button">
+            <a  href= ${boolean ? "header.html" + "?" + "true" : "header.html"}> Back to home page</a>
+           </button>
+        </div>
+
+    </section>
+
+</section>`;
+    }
+
+}
+document.getElementById('search-icon').addEventListener('click', searchArrays);
+document.getElementById('searchInput').addEventListener('keypress', (e) => e.key === 'Enter' && searchArrays());
 
 

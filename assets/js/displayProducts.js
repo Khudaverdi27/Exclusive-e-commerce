@@ -1,6 +1,6 @@
 const products = [
     {
-        id: 1,
+        id: generateUniqueId(),
         name: 'HAVIT HV-G92 Gamepad',
         discount: '-40%',
         image: 'assets/images/products/joystick.png',
@@ -10,10 +10,11 @@ const products = [
         price: 120,
         disPrice: "$160",
         imgStar: 'assets/images/svg/star-fill.svg',
-        comments: 88
+        comments: 88,
+        description: 'Reliable 3D ergonomic design with built-in motors for dual vibration'
     },
     {
-        id: 2,
+        id: generateUniqueId(),
         name: 'AK-900 Wired Keyboard',
         discount: '-35%',
         image: 'assets/images/products/keyboard.png',
@@ -24,10 +25,11 @@ const products = [
         disPrice: "$1160",
         imgStar: 'assets/images/svg/star-fill.svg',
         imgEmptyStar: 'assets/images/svg/star-empty.svg',
-        comments: 75
+        comments: 75,
+        description: 'iMICE AK-900 Luminescent Gaming Keyboard comes with USB Wired. Its cable length is 135cm. This is one kind of Luminescent Gaming Keyboard.'
     },
     {
-        id: 3,
+        id: generateUniqueId(),
         name: 'IPS LCD Gaming Monitor',
         discount: '-30%',
         image: 'assets/images/products/tv.png',
@@ -38,10 +40,11 @@ const products = [
         disPrice: "$400",
         imgStar: 'assets/images/svg/star-fill.svg',
         imgEmptyStar: 'assets/images/svg/star-half-filled.svg',
-        comments: 99
+        comments: 99,
+        description: 'Built-in Speakers: Perfectly suited to work & gaming settings, built-in speakers deliver robust & smooth audio while saving space on your desk.'
     },
     {
-        id: 4,
+        id: generateUniqueId(),
         name: 'S-Series Comfort Chair',
         discount: '-25%',
         image: 'assets/images/products/chair.png',
@@ -51,10 +54,11 @@ const products = [
         price: 375,
         disPrice: "$400",
         imgStar: 'assets/images/svg/star-fill.svg',
-        comments: 99
+        comments: 99,
+        description: 'MULTI-FUNCTIONAL CHAIR: Whether a gamer or a professional, no one likes being stuck in a rut in their profession when they can push the envelope and learn new things. '
     },
     {
-        id: 5,
+        id: generateUniqueId(),
         name: 'S-Series Comfort Chair',
         discount: '-25%',
         image: 'assets/images/products/chair.png',
@@ -64,13 +68,14 @@ const products = [
         price: 375,
         disPrice: "$400",
         imgStar: 'assets/images/svg/star-fill.svg',
-        comments: 99
+        comments: 99,
+        description: 'MULTI-FUNCTIONAL CHAIR: Whether a gamer or a professional, no one likes being stuck in a rut in their profession when they can push the envelope and learn new things. '
     }
 ];
 // best product section
 const bestProducts = [
     {
-        id: 1,
+        id: generateUniqueId(),
         name: 'Bestselling-Coat',
         image: 'assets/images/products/coat.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
@@ -80,10 +85,11 @@ const bestProducts = [
         disPrice: "$360",
         imgStar: 'assets/images/svg/star-fill.svg',
         imgEmptyStar: 'assets/images/svg/star-fill.svg',
-        comments: 66
+        comments: 66,
+        description: 'Season - Fashion sleeveless lightweight winter warm padded gilet, perfect for fall, winter and early spring. Basic and versatile puffer vest that will give you a comfy and trendy fit'
     },
     {
-        id: 2,
+        id: generateUniqueId(),
         name: 'Gucci duffle bag',
         image: 'assets/images/products/bag.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
@@ -93,10 +99,11 @@ const bestProducts = [
         disPrice: "$1160",
         imgStar: 'assets/images/svg/star-fill.svg',
         imgEmptyStar: 'assets/images/svg/star-half-filled.svg',
-        comments: 65
+        comments: 65,
+        description: "A classic combination of the House's most defining codes—the GG motif and Web stripe—the world of Ophidia continues to evolve, incorporating new shapes and silhouettes each season. "
     },
     {
-        id: 3,
+        id: generateUniqueId(),
         name: 'RGB liquid CPU Cooler',
         image: 'assets/images/products/gammaxx.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
@@ -106,10 +113,11 @@ const bestProducts = [
         disPrice: '$170',
         imgStar: 'assets/images/svg/star-fill.svg',
         imgEmptyStar: 'assets/images/svg/star-half-filled.svg',
-        comments: 65
+        comments: 65,
+        description: 'ROTATABLE BLOCKHEAD - Features a 270° rotatable water block with MSI logo in ARGB as well as Addressable RGB fans for multiple lighting effects.'
     },
     {
-        id: 4,
+        id: generateUniqueId(),
         name: 'Small BookSelf',
         image: 'assets/images/products/shelf.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
@@ -118,13 +126,14 @@ const bestProducts = [
         price: 360,
         imgStar: 'assets/images/svg/star-fill.svg',
         imgEmptyStar: 'assets/images/svg/star-fill.svg',
-        comments: 65
+        comments: 65,
+        description: 'Simple stylish design yet functional and suitable for any room.Fits in your space, fits on your budget.'
     }
 ];
 // our product section
 const ourProducts = [
     {
-        id: 1,
+        id: generateUniqueId(),
         name: 'Breed Dry Dog Food',
         image: 'assets/images/products/ourProducts1.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
@@ -133,10 +142,11 @@ const ourProducts = [
         price: 100,
         imgStar: 'assets/images/svg/star-fill.svg',
         imgEmptyStar: 'assets/images/svg/star-empty.svg',
-        comments: 35
+        comments: 35,
+        description: 'Healthy Weight Dry Dog Food: If your dog has weight issues, this dry dog food with real chicken and 17 percent less fat than our Minichunks recipe can give them the support they need to help them maintain a healthy weight'
     },
     {
-        id: 2,
+        id: generateUniqueId(),
         name: 'CANON EOS DSLR Camera',
         image: 'assets/images/products/ourProducts2.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
@@ -145,10 +155,11 @@ const ourProducts = [
         price: 360,
         imgStar: 'assets/images/svg/star-fill.svg',
         imgEmptyStar: 'assets/images/svg/star-empty.svg',
-        comments: 95
+        comments: 95,
+        description: 'Use the EOS Utility Webcam Beta Software (Mac and Windows) to turn your compatible Canon camera into a high-quality webcam. Compatible Lenses- Canon EF Lenses (including EF-S lenses, excluding EF-M lenses)'
     },
     {
-        id: 3,
+        id: generateUniqueId(),
         name: 'ASUS FHD Gaming Laptop',
         image: 'assets/images/products/ourProducts3.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
@@ -156,10 +167,11 @@ const ourProducts = [
         textLayer: 'Add To Cart',
         price: 700,
         imgStar: 'assets/images/svg/star-fill.svg',
-        comments: 325
+        comments: 325,
+        description: 'POWER UP YOUR PLAY - Draw more frames and win more games with Windows 11, a 13th Gen Intel Core i7-13650HX processor, and an NVIDIA GeForce RTX 4060 Laptop GPU at 140W Max TGP.'
     },
     {
-        id: 4,
+        id: generateUniqueId(),
         name: 'Curology Product Set',
         image: 'assets/images/products/ourProducts4.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
@@ -168,10 +180,11 @@ const ourProducts = [
         price: 500,
         imgStar: 'assets/images/svg/star-fill.svg',
         imgEmptyStar: 'assets/images/svg/star-empty.svg',
-        comments: 145
+        comments: 145,
+        description: 'DAILY HYDRATION BOOST – Skin-replenishing hyaluronic acid and glycerin work together to hydrate, smooth, refresh, soften, and support the skin barrier'
     },
     {
-        id: 5,
+        id: generateUniqueId(),
         name: 'Kids Electric Car',
         image: 'assets/images/products/ourProducts5.png',
         discount: 'New',
@@ -183,10 +196,11 @@ const ourProducts = [
         comments: 65,
         colorSelect: true,
         firstColor: 'bg-red',
-        radioBtn: 'group1'
+        radioBtn: 'group1',
+        description: 'FOR KIDS 3 YEARS & OLDER: This small yet powerful ride-on is perfect for your little racers who want to start driving like the grownups do!'
     },
     {
-        id: 6,
+        id: generateUniqueId(),
         name: 'Jr. Zoom Soccer Cleats',
         image: 'assets/images/products/ourProducts6.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
@@ -197,10 +211,11 @@ const ourProducts = [
         comments: 35,
         colorSelect: true,
         firstColor: 'bg-yellow',
-        radioBtn: 'group2'
+        radioBtn: 'group2',
+        description: 'OUTSOLE: Full-length lightweight TPU outsole delivers explosive acceleration and optimizes multi-directional grip.'
     },
     {
-        id: 7,
+        id: generateUniqueId(),
         name: 'GP11 Shooter USB Gamepad',
         image: 'assets/images/products/ourProducts7.png',
         discount: 'New',
@@ -213,10 +228,11 @@ const ourProducts = [
         comments: 55,
         colorSelect: true,
         firstColor: 'bg-dark',
-        radioBtn: 'group3'
+        radioBtn: 'group3',
+        description: 'Ergonomic shape & weight favored by esports athletes- Feel Comfortable in your hands for hours of gaming- Vibration feedback gives you a riveting gaming experience USB Wired Game Controller - Cable : 2m -Vibration'
     },
     {
-        id: 8,
+        id: generateUniqueId(),
         name: 'Quilted Satin Jacket',
         image: 'assets/images/products/ourProducts8.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
@@ -228,11 +244,14 @@ const ourProducts = [
         comments: 55,
         colorSelect: true,
         firstColor: 'bg-dark-green',
-        radioBtn: 'group4'
+        radioBtn: 'group4',
+        description: 'COMFORT AND WARMTH: Elevate comfort and style with our drive scorpion jacket. Premium leather and satin insulation ensure warmth without sacrificing fashion. Grab yours today!'
     }
 
 ];
 // prodtucs to UI
+
+let boolean = window.location.search.startsWith('?true');
 
 const map = (products) => {
 
@@ -240,19 +259,37 @@ const map = (products) => {
 
         return `        <div class="products-container "data-id="${item.id}">
     <div class="products bg-solid-secondary mx-1 my-2 d-flex-container position-relative">
-    <a href='singUp.html'><img src=${item.image} alt=""></a> 
+    <a href="${boolean ? "productDetails.html" + "?" + "true" : "singUp.html"}"><img src=${item.image} alt=""></a> 
         <div class="product-icons  position-absolute d-flex ${item.discount ? 'justify-content-between' : 'justify-content-end'} w-100">
 <span class="${item.discount ? 'discount-product text-center text-white fs-12 ms-2' : 'd-none'} ${item.disPrice ? 'bg-light-orange' : 'bg-light-green'} ">${item.discount}</span>
             <div class="me-2">
                 <span class="mb-1 icon-bg-rounded bg-white rounded-circle d-flex-container">
-                   <a href='singUp.html'><img src=${item.imgHeart} alt="img"></a> 
+                   <a href="${boolean ? "wishlist.html" + "?" + "true" : "singUp.html"}"><img src=${item.imgHeart} alt="img"></a> 
                 </span>
                 <span class="icon-bg-rounded bg-white rounded-circle d-flex-container">
-                <a href='productDetails.html'><img src=${item.imgEye} alt="img"></a>
-                </span>
+
+                <span data-bs-toggle="modal" data-bs-target="#staticBackdrop" class='showItem'><img src=${item.imgEye} alt="img"></span>
+
+                <!-- Modal -->
+<div class="modal fade mt-5" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-solid-secondary">
+        <h1 class="modal-title fs-5 " id="staticBackdropLabel ">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex-container py-5">
+      <img class="img-modal w-50 h-50" src="" alt="img">
+      </div>
+      <div class="modal-footer bg-solid-secondary" >
+      <p class="product-desc text-center  text-wrap" ></p>
+    </div>
+    </div>
+  </div>
+</div>
             </div>
         </div>
-        <div class="layer text-white"><a href='singUp.html'>${item.textLayer}</a></div>
+        <div class="layer text-white"><a href="${boolean ? "cart.html" + "?" + "true" : "singUp.html"}">${item.textLayer}</a></div>
     </div>
     <p>${item.name}</p>
     <span class="text-danger me-2">$${item.price}</span><span
@@ -271,7 +308,9 @@ const map = (products) => {
 
     <input data-id=${item.id} checked class="form-check-input bg-image btnColorSelect mt-0 ms-1 rounded-pill ${item.checked ? item.firstColor : 'bg-light-orange'}" type="radio" value=""name="${item.radioBtn}" >
     </div>
-    </div>`
+    </div>
+    
+    `
 
     }).join("")
 
@@ -290,7 +329,6 @@ if (sectionContainer) {
     sectionContainer.innerHTML = product;
 
 }
-
 
 // products to Best product section
 const bestProduct = map(bestProducts)
@@ -487,7 +525,7 @@ const posters = (products) => {
                 </div>
             </div>
             <div class=" ${item.value ? "d-none" : "btn-ONposter text-center"}">
-                <button class=" btn bg-light-green text-white py-2 px-5"><a href='singUp.html'>Buy Now</a></button>
+                <button class=" btn bg-light-green text-white py-2 px-5"><a href="${boolean ? "productDetails.html" + "?" + "true" : "singUp.html"}">Buy Now</a></button>
             </div>
         </div>
         </div>
@@ -534,3 +572,43 @@ if (productsSectionScroll) {
     }
 
 }
+
+function generateUniqueId() {
+    return '_' + Math.random().toString(36).substr(2, 9);
+}
+
+function getIndexById(element, id) {
+    return element.findIndex(i => i.id == id);
+}
+
+productsByIndex(products);
+productsByIndex(ourProducts);
+productsByIndex(bestProducts);
+
+function productsByIndex(products) {
+    document.querySelectorAll('.products-container').forEach(item => {
+        const id = item.getAttribute('data-id');
+        const index = getIndexById(products, id);
+
+        if (index > -1) {
+            const itemImage = products[index].image;
+            const itemName = products[index].name;
+            const productDesc = products[index].description;
+
+            item.querySelector('.showItem').addEventListener('click', () => {
+                document.querySelectorAll('.img-modal').forEach(img => img.src = itemImage);
+                document.querySelectorAll('.modal-title').forEach(title => title.textContent = itemName);
+                document.querySelectorAll('.product-desc').forEach(desc => desc.textContent = productDesc);
+            });
+        }
+    });
+}
+
+
+export {
+    products,
+    ourProducts,
+    bestProducts,
+    map
+}
+

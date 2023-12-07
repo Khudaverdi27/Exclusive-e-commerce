@@ -2,55 +2,71 @@
   padding: 30px 60px;
   box-shadow: 0 0 10px 0 rgba(233, 239, 233, 0.933);
 }
+
 .quantityInput {
   text-align: center;
   width: 40px;
 }
+
 .buttonsCart button {
   padding: 10px 25px;
   outline: none;
   border: 1px solid black;
   border-radius: 5px;
   background-color: #fff;
+
   &:hover {
     background-color: black;
     color: #fff;
     border: 1px solid #fff;
   }
 }
+
 .cupponSection {
   margin-top: 50px;
 }
+
 .couponInput {
   outline: none;
   padding: 10px 20px;
   border-radius: 5px;
   border: 1px solid black;
 }
+
 .couponInput::placeholder {
   font-size: 14px;
 }
+
 .btnMyDesign {
   background-color: #db4444;
   color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
+
   &:hover {
     background-color: #fff;
     color: black;
     border: 1px solid #db4444;
   }
 }
+
+.btnMyDesign:hover a {
+  background-color: #fff;
+  color: black;
+}
+
 .cartTotal {
   width: 470px;
   height: 300px;
   border: 1px solid #ccc;
 }
+
 .cartTotalTitle {
   font-size: 18px;
   font-weight: 600;
 }
+
 .cardTotalSection {
   display: flex;
   justify-content: space-between;
@@ -58,9 +74,11 @@
   padding: 0 20px;
   border-bottom: 1px solid #ccc;
 }
+
 .lastTotalSection {
   border-bottom: none;
 }
+
 .proceesBtn {
   padding: 15px 30px;
 }

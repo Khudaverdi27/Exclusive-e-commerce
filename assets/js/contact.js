@@ -10,31 +10,34 @@ const errorMessagePhone = document.querySelector(".errorMessagePhone");
 const scriptURL = 'https://script.google.com/macros/s/AKfycbzubCsK4x_HIxCgU0OxPuK20R8ToQXQQ0yZhuYeDAmLoTMFPltSz7yPKOKQShGbK9ww/exec';
 
 const form = document.forms['submit-to-google-sheet'];
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  loading()
-  let value = validate()
-  if (value) {
-    try {
-      const response = await fetch(scriptURL, { method: 'POST', body: new FormData(form) });
-      if (response.ok) {
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    loading()
+    let value = validate()
+    if (value) {
+      try {
+        const response = await fetch(scriptURL, { method: 'POST', body: new FormData(form) });
+        if (response.ok) {
 
-        contactSendBtn.textContent = "Message sent successfully!!!";
-        contactSendBtn.classList.replace('bg-light-orange', 'bg-success');
-        setTimeout(() => {
-          contactSendBtn.textContent = "Send Message";
-          contactSendBtn.classList.add('bg-light-orange', 'bg-success');
-          form.reset();
-        }, 3000);
-      } else {
-        console.error('Error! Status:', response.status);
+          contactSendBtn.textContent = "Message sent successfully!!!";
+          contactSendBtn.classList.replace('bg-light-orange', 'bg-success');
+          setTimeout(() => {
+            contactSendBtn.textContent = "Send Message";
+            contactSendBtn.classList.add('bg-light-orange', 'bg-success');
+            form.reset();
+          }, 3000);
+        } else {
+          console.error('Error! Status:', response.status);
+        }
+      } catch (error) {
+        console.error('Error!', error.message);
       }
-    } catch (error) {
-      console.error('Error!', error.message);
     }
-  }
 
-});
+  });
+}
+
 
 function validate() {
   const nameRegex = /^[a-zA-Z]{4,14}$/;
