@@ -1,3 +1,5 @@
+
+
 const products = [
     {
         id: generateUniqueId(),
@@ -263,8 +265,8 @@ const map = (products) => {
         <div class="product-icons  position-absolute d-flex ${item.discount ? 'justify-content-between' : 'justify-content-end'} w-100">
 <span class="${item.discount ? 'discount-product text-center text-white fs-12 ms-2' : 'd-none'} ${item.disPrice ? 'bg-light-orange' : 'bg-light-green'} ">${item.discount}</span>
             <div class="me-2">
-                <span class="mb-1 icon-bg-rounded bg-white rounded-circle d-flex-container">
-                   <a href="${boolean ? "wishlist.html" + "?" + "true" : "sign-Up.html"}"><img src=${item.imgHeart} alt="img"></a> 
+                <span id="addWishlist" class="mb-1 icon-bg-rounded bg-white rounded-circle d-flex-container">
+                   <span id="icon-heart"><img src=${item.imgHeart} alt="img"></span> 
                 </span>
                 <span class="icon-bg-rounded bg-white rounded-circle d-flex-container">
 
@@ -596,13 +598,36 @@ function productsByIndex(products) {
             const productDesc = products[index].description;
 
             item.querySelector('.showItem').addEventListener('click', () => {
+
                 document.querySelectorAll('.img-modal').forEach(img => img.src = itemImage);
                 document.querySelectorAll('.modal-title').forEach(title => title.textContent = itemName);
                 document.querySelectorAll('.product-desc').forEach(desc => desc.textContent = productDesc);
             });
+
+            // send to wishlist
+
+            item.querySelector('#addWishlist').addEventListener('click', () => {
+                if (boolean) {
+                    const existingData = JSON.parse(localStorage.getItem('sendToWishlist')) || [];
+                    item.querySelector('#addWishlist').classList.replace('bg-white', 'bg-danger')
+                    // add new data
+                    const newData = products[index];
+                    const mergedData = existingData.concat(newData);
+
+                    //save to localStorage merged data
+                    localStorage.setItem('sendToWishlist', JSON.stringify(mergedData));
+                } else {
+                    window.location.href = "sign-up.html";
+                }
+
+            })
+
+
         }
     });
 }
+
+
 
 
 export {

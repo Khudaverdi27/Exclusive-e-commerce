@@ -1,48 +1,12 @@
-const products = [
-    {
-        id: 1,
-        name: 'HAVIT HV-G92 Gamepad',
-        discount: '-40%',
-        image: 'assets/images/products/joystick.png',
-        iconDelete: 'assets/images/svg/icon-delete.svg',
-        textLayer: 'Add To Cart',
-        price: 120,
-        disPrice: "$160",
-        comments: 88
-    },
-    {
-        id: 2,
-        name: 'AK-900 Wired Keyboard',
-        discount: '-35%',
-        image: 'assets/images/products/keyboard.png',
-        iconDelete: 'assets/images/svg/icon-delete.svg',
-        textLayer: 'Add To Cart',
-        price: 960,
-        comments: 75
-    },
-    {
-        id: 3,
-        name: 'IPS LCD Gaming Monitor',
-        discount: '-30%',
-        image: 'assets/images/products/tv.png',
-        iconDelete: 'assets/images/svg/icon-delete.svg',
-        textLayer: 'Add To Cart',
-        price: 370,
-        comments: 99
-    },
-    {
-        id: 4,
-        name: 'S-Series Comfort Chair',
-        discount: '-25%',
-        image: 'assets/images/products/chair.png',
-        iconDelete: 'assets/images/svg/icon-delete.svg',
-        textLayer: 'Add To Cart',
-        price: 375,
-        comments: 99
-    }
+const wishListCount = document.getElementById('wishlist-title')
 
-
-]
+const wishProducts = JSON.parse(localStorage.getItem('sendToWishlist')) || [];
+wishProducts.forEach(element => {
+    element.imgEye = "assets/images/svg/icon-delete.svg"
+    element.imgEmptyStar = ""
+    element.imgStar = ""
+});
+wishListCount.textContent = `Wishlist (${wishProducts.length})`
 const recommendPrContainer = [
     {
         id: 1,
@@ -112,7 +76,7 @@ const wishlistMap = (products) => {
         </div>
         <div class="layer text-white">${item.textLayer}</div>
     </div>
-    <p>${item.name}</p>
+    <p class="mb-0">${item.name}</p>
     <span class="text-danger me-2">$${item.price}</span><span
         class="text-secondary text-decoration-line-through">${item.disPrice ? item.disPrice : ''}</span>
         <div class=${item.imgStar ? "d-block" : "d-none"}>
@@ -136,16 +100,18 @@ const recommendProducts = document.getElementById('recommendProducts');
 
 
 // products to product section
-const product = wishlistMap(products);
+const product = wishlistMap(wishProducts);
 const recommendProduct = wishlistMap(recommendPrContainer);
 
 if (wishListContainer) {
-    wishListContainer.innerHTML = product;
+    wishProducts.length > 0 ? wishListContainer.innerHTML = product : wishListContainer.innerHTML = `<h1>Wishlist is empty</h1>`
+
 
 }
 if (recommendProducts) {
     recommendProducts.innerHTML = recommendProduct;
 
 }
+
 
 

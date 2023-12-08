@@ -4,13 +4,6 @@ import loading from "./spinner.js";
 const navbarContainer = document.querySelector('.header-top');
 let boolean = window.location.search.startsWith('?true');
 
-
-const loginIcon = () => {
-
-    return `<a class="${boolean ? "d-block" : "d-none"}" href='#'><img src="assets/images/svg/user.svg" class="userIcon  crusor-p" alt=""></a>`
-}
-
-export default loginIcon
 const navbar = () => {
     if (navbarContainer) {
         navbarContainer.innerHTML = `
@@ -61,12 +54,13 @@ const navbar = () => {
                             alt="">
                     </div>
                     <div class="input-svg d-flex justify-content-between position-relative">
-                    <a href='wishlist.html'><img src="assets/images/svg/Wishlist.svg" class="ms-1 crusor-p" alt="">
+                    <a href= ${boolean ? "wishlist.html" + "?" + "true" : "sign-Up.html"}><img src="assets/images/svg/Wishlist.svg" class="ms-1 crusor-p" alt="">
                     </a>
                         <a href= ${boolean ? "cart.html" + "?" + "true" : "sign-Up.html"}>
                         <img src="assets/images/svg/Cart1.svg" class="mx-2  crusor-p" alt="">
                         </a>
-                        ${loginIcon()}
+                        <a class="${boolean ? "d-block" : "d-none"}" href='#'><img src="assets/images/svg/user.svg" class="userIcon  crusor-p" alt=""></a>
+                        
                         <div id="profile-dropdown" class="card border-0 card-dropdown position-absolute d-none" style="width: 15rem;">
                         <div class="card-body rounded bg-linear p-3">
                             <a href="#">
@@ -149,7 +143,7 @@ function searchArrays() {
     const allProducts = [...products, ...ourProducts, ...bestProducts];
 
     allProducts.forEach(item => {
-        if (item.name.toLowerCase().includes(searchInput)) {
+        if (item.name.toLowerCase().includes(searchInput) && searchInput != '') {
             result.push(item);
         }
     });
@@ -186,30 +180,33 @@ document.getElementById('search-icon').addEventListener('click', searchArrays);
 document.getElementById('searchInput').addEventListener('keypress', (e) => e.key === 'Enter' && searchArrays());
 
 const previousPageURL = document.referrer;
-const { pathname } = new URL(previousPageURL);
-const start = pathname.slice(0, 14);
-const end = pathname.slice(-5);
-const startIndex = pathname.indexOf(start) + start.length;
-const endIndex = pathname.indexOf(end);
+if (previousPageURL.endsWith('.html')) {
+    const { pathname } = new URL(previousPageURL);
+    const start = pathname.slice(0, 14);
+    const end = pathname.slice(-5);
+    const startIndex = pathname.indexOf(start) + start.length;
+    const endIndex = pathname.indexOf(end);
 
-const currentPage = document.querySelector('.currentPage');
-const arrivingPage = document.querySelector('.arrivingPage');
+    const currentPage = document.querySelector('.currentPage');
+    const arrivingPage = document.querySelector('.arrivingPage');
 
-if (arrivingPage && currentPage && startIndex !== -1 && endIndex !== -1 && startIndex < endIndex) {
-    const resultPath = pathname.substring(startIndex, endIndex);
-    let result = resultPath.charAt(0).toUpperCase() + resultPath.slice(1);
+    if (arrivingPage && currentPage && startIndex !== -1 && endIndex !== -1 && startIndex < endIndex) {
+        const resultPath = pathname.substring(startIndex, endIndex);
+        let result = resultPath.charAt(0).toUpperCase() + resultPath.slice(1);
 
-    if (result === 'Header') {
-        result = '/ Home';
-    } else if (result === 'ProductDetails') {
-        result = 'Gaming /';
+        if (result === 'Header') {
+            result = '/ Home';
+        } else if (result === 'ProductDetails') {
+            result = 'Details /';
+        }
+
+        if (currentPage.textContent.trim() !== result.trim()) {
+            arrivingPage.textContent = `${result} / `;
+        } else {
+            arrivingPage.textContent = '/';
+        }
     }
 
-    if (currentPage.textContent.trim() !== result.trim()) {
-        arrivingPage.textContent = `${result} / `;
-    } else {
-        arrivingPage.textContent = '/';
-    }
 }
 
 
