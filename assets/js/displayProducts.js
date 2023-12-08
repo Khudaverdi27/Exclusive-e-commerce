@@ -626,8 +626,7 @@ function productsByIndex(products) {
 
                     sessionStorage.setItem('count', mergedData.length);
 
-                    const count = sessionStorage.getItem('count') || 0;
-                    wishProdCount(count)
+                    wishProdCount(mergedData.length)
                     //save to sessionStorage merged data
                     sessionStorage.setItem('sendToWishlist', JSON.stringify(mergedData));
                 } else {

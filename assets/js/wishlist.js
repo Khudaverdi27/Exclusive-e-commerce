@@ -1,4 +1,4 @@
-import { wishProdCount } from './displayProducts.js'
+
 const wishListCount = document.getElementById('wishlist-title')
 
 const wishProducts = JSON.parse(sessionStorage.getItem('sendToWishlist')) || [];
@@ -10,7 +10,6 @@ wishProducts.forEach(element => {
 if (wishListCount) {
     const count = sessionStorage.getItem('count') || 0;
     wishListCount.textContent = `Wishlist (${count})`
-    wishProdCount(count)
 
 }
 

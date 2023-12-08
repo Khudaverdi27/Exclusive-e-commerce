@@ -1,5 +1,5 @@
-import { products, ourProducts, bestProducts, map } from "./displayProducts.js";
-import loading from "./spinner.js";
+import { products, ourProducts, bestProducts, map, wishProdCount } from "./displayProducts.js";
+
 
 const navbarContainer = document.querySelector('.header-top');
 let boolean = window.location.search.startsWith('?true');
@@ -212,3 +212,6 @@ if (previousPageURL.endsWith('.html')) {
 }
 
 
+const count = sessionStorage.getItem('count') || 0;
+document.querySelector('.badge-wishlist').textContent = count
+wishProdCount(count)
