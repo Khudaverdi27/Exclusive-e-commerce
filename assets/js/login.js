@@ -92,8 +92,8 @@ function selectElement(form, email, email_error, pass, pass_error, nameInput, na
     if (nameInput) {
         nameInput.addEventListener('input', name_verify);
     }
-    let localEmail = (localStorage.getItem('email'));
-    let localPass = (localStorage.getItem('pass'));
+    let localEmail = (sessionStorage.getItem('email'));
+    let localPass = (sessionStorage.getItem('pass'));
 
     if (form) {
         const id = form.getAttribute('data-form');
@@ -125,11 +125,12 @@ function selectElement(form, email, email_error, pass, pass_error, nameInput, na
                 // After 3 seconds, remove the show class from DIV
                 setTimeout(function () { snackbar.className = snackbar.className.replace("show", ""); }, 3000);
             })
+
         } else {
             document.querySelector('.signBtn').addEventListener('click', (e) => {
                 e.preventDefault();
-                localStorage.setItem('email', (email.value))
-                localStorage.setItem('pass', (pass.value))
+                sessionStorage.setItem('email', (email.value))
+                sessionStorage.setItem('pass', (pass.value))
                 const value = validateForm();
                 spinner.classList.remove('d-none')
                 setTimeout(() => {

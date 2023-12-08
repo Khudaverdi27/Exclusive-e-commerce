@@ -605,17 +605,31 @@ function productsByIndex(products) {
             });
 
             // send to wishlist
-
-            item.querySelector('#addWishlist').addEventListener('click', () => {
+            const wishlistIcon = item.querySelector('#addWishlist')
+            wishlistIcon.addEventListener('click', () => {
                 if (boolean) {
-                    const existingData = JSON.parse(localStorage.getItem('sendToWishlist')) || [];
-                    item.querySelector('#addWishlist').classList.replace('bg-white', 'bg-danger')
+                    const hasBgWhiteClass = wishlistIcon.classList.contains('bg-white');
+
+                    if (hasBgWhiteClass) {
+                        wishlistIcon.classList.remove('bg-white');
+                        wishlistIcon.classList.add('bg-danger');
+                    } else {
+                        wishlistIcon.classList.remove('bg-danger');
+                        wishlistIcon.classList.add('bg-white');
+                    }
+
+                    const existingData = JSON.parse(sessionStorage.getItem('sendToWishlist')) || [];
+
                     // add new data
                     const newData = products[index];
                     const mergedData = existingData.concat(newData);
 
-                    //save to localStorage merged data
-                    localStorage.setItem('sendToWishlist', JSON.stringify(mergedData));
+                    sessionStorage.setItem('count', mergedData.length);
+
+                    const count = sessionStorage.getItem('count') || 0;
+                    wishProdCount(count)
+                    //save to sessionStorage merged data
+                    sessionStorage.setItem('sendToWishlist', JSON.stringify(mergedData));
                 } else {
                     window.location.href = "sign-up.html";
                 }
@@ -627,6 +641,9 @@ function productsByIndex(products) {
     });
 }
 
+function wishProdCount(num) {
+    document.querySelector('.badge-wishlist').textContent = num
+}
 
 
 
@@ -634,6 +651,7 @@ export {
     products,
     ourProducts,
     bestProducts,
-    map
+    map,
+    wishProdCount
 }
 

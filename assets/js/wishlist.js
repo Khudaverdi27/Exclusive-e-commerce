@@ -1,12 +1,19 @@
+import { wishProdCount } from './displayProducts.js'
 const wishListCount = document.getElementById('wishlist-title')
 
-const wishProducts = JSON.parse(localStorage.getItem('sendToWishlist')) || [];
+const wishProducts = JSON.parse(sessionStorage.getItem('sendToWishlist')) || [];
 wishProducts.forEach(element => {
     element.imgEye = "assets/images/svg/icon-delete.svg"
     element.imgEmptyStar = ""
     element.imgStar = ""
 });
-wishListCount.textContent = `Wishlist (${wishProducts.length})`
+if (wishListCount) {
+    const count = sessionStorage.getItem('count') || 0;
+    wishListCount.textContent = `Wishlist (${count})`
+    wishProdCount(count)
+
+}
+
 const recommendPrContainer = [
     {
         id: 1,

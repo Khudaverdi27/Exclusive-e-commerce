@@ -54,7 +54,9 @@ const navbar = () => {
                             alt="">
                     </div>
                     <div class="input-svg d-flex justify-content-between position-relative">
-                    <a href= ${boolean ? "wishlist.html" + "?" + "true" : "sign-Up.html"}><img src="assets/images/svg/Wishlist.svg" class="ms-1 crusor-p" alt="">
+                    <a href= ${boolean ? "wishlist.html" + "?" + "true" : "sign-Up.html"}>
+                    <span class="position-absolute top-0 mt-1 translate-middle badge badge-wishlist rounded-pill bg-danger ${boolean ? "d-block" : "d-none"}">0</span>
+                    <img src="assets/images/svg/Wishlist.svg" class="ms-1 crusor-p" alt="">
                     </a>
                         <a href= ${boolean ? "cart.html" + "?" + "true" : "sign-Up.html"}>
                         <img src="assets/images/svg/Cart1.svg" class="mx-2  crusor-p" alt="">

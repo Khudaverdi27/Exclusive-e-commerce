@@ -142,6 +142,10 @@ input[type="search"] {
     width: 85%;
 }
 
+.badge-wishlist {
+    left: 29%;
+}
+
 /* responsive */
 
 @media (max-width: 1200px) {
@@ -241,4 +245,7 @@ input[type="search"] {
         display: block;
     }
 
+    .badge-wishlist {
+        left: 20%;
+    }
 }
