@@ -18,7 +18,7 @@ const navbar = () => {
     <div class="d-flex justify-content-around header-top-content  ">
         <p class="nav text-white fs-14 align-items-center d-inline mt-2">
             Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
-            <span><a href="${boolean ? "header.html" + "?" + "true" : "singUp.html"}" class=" fw-bold text-white">ShopNow</a></span>
+            <span><a href="${boolean ? "header.html" + "?" + "true" : "sign-Up.html"}" class=" fw-bold text-white">ShopNow</a></span>
         </p>
         <ul class="nav nav-tabs border-0">
             <li class="nav-item dropdown fs-14">
@@ -47,7 +47,7 @@ const navbar = () => {
                         <a class="nav-link"  href= ${boolean ? "about.html" + "?" + "true" : "about.html"}>About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"  href= ${boolean ? "singUp.html" + "?" + "true" : "singUp.html"}>Sign up</a>
+                        <a class="nav-link"  href= ${boolean ? "sign-Up.html" + "?" + "true" : "sign-Up.html"}>Sign up</a>
                     </li>
                 </ul>
             </div>
@@ -63,7 +63,7 @@ const navbar = () => {
                     <div class="input-svg d-flex justify-content-between position-relative">
                     <a href='wishlist.html'><img src="assets/images/svg/Wishlist.svg" class="ms-1 crusor-p" alt="">
                     </a>
-                        <a href= ${boolean ? "cart.html" + "?" + "true" : "singUp.html"}>
+                        <a href= ${boolean ? "cart.html" + "?" + "true" : "sign-Up.html"}>
                         <img src="assets/images/svg/Cart1.svg" class="mx-2  crusor-p" alt="">
                         </a>
                         ${loginIcon()}
@@ -131,7 +131,7 @@ const navbar = () => {
 
         setTimeout(() => {
             spinner.classList.add('d-none')
-            window.location.href = "singUp.html"
+            window.location.href = "sign-Up.html"
             boolean = false
             navbar()
         }, 3000)
@@ -146,22 +146,14 @@ function searchArrays() {
     const searchInput = document.getElementById('searchInput').value.toLowerCase();
     const result = [];
 
-    products.forEach(item => {
+    const allProducts = [...products, ...ourProducts, ...bestProducts];
+
+    allProducts.forEach(item => {
         if (item.name.toLowerCase().includes(searchInput)) {
             result.push(item);
         }
     });
 
-    ourProducts.forEach(item => {
-        if (item.name.toLowerCase().includes(searchInput)) {
-            result.push(item);
-        }
-    });
-    bestProducts.forEach(item => {
-        if (item.name.toLowerCase().includes(searchInput)) {
-            result.push(item);
-        }
-    });
     const heroSection = document.getElementById('hero-section')
     const product = map(result);
 
@@ -192,5 +184,32 @@ function searchArrays() {
 }
 document.getElementById('search-icon').addEventListener('click', searchArrays);
 document.getElementById('searchInput').addEventListener('keypress', (e) => e.key === 'Enter' && searchArrays());
+
+const previousPageURL = document.referrer;
+const { pathname } = new URL(previousPageURL);
+const start = pathname.slice(0, 14);
+const end = pathname.slice(-5);
+const startIndex = pathname.indexOf(start) + start.length;
+const endIndex = pathname.indexOf(end);
+
+const currentPage = document.querySelector('.currentPage');
+const arrivingPage = document.querySelector('.arrivingPage');
+
+if (arrivingPage && currentPage && startIndex !== -1 && endIndex !== -1 && startIndex < endIndex) {
+    const resultPath = pathname.substring(startIndex, endIndex);
+    let result = resultPath.charAt(0).toUpperCase() + resultPath.slice(1);
+
+    if (result === 'Header') {
+        result = '/ Home';
+    } else if (result === 'ProductDetails') {
+        result = 'Gaming /';
+    }
+
+    if (currentPage.textContent.trim() !== result.trim()) {
+        arrivingPage.textContent = `${result} / `;
+    } else {
+        arrivingPage.textContent = '/';
+    }
+}
 
 

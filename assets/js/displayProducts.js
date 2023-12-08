@@ -259,12 +259,12 @@ const map = (products) => {
 
         return `        <div class="products-container "data-id="${item.id}">
     <div class="products bg-solid-secondary mx-1 my-2 d-flex-container position-relative">
-    <a href="${boolean ? "productDetails.html" + "?" + "true" : "singUp.html"}"><img src=${item.image} alt=""></a> 
+    <a href="${boolean ? "productDetails.html" + "?" + "true" : "sign-Up.html"}"><img src=${item.image} alt=""></a> 
         <div class="product-icons  position-absolute d-flex ${item.discount ? 'justify-content-between' : 'justify-content-end'} w-100">
 <span class="${item.discount ? 'discount-product text-center text-white fs-12 ms-2' : 'd-none'} ${item.disPrice ? 'bg-light-orange' : 'bg-light-green'} ">${item.discount}</span>
             <div class="me-2">
                 <span class="mb-1 icon-bg-rounded bg-white rounded-circle d-flex-container">
-                   <a href="${boolean ? "wishlist.html" + "?" + "true" : "singUp.html"}"><img src=${item.imgHeart} alt="img"></a> 
+                   <a href="${boolean ? "wishlist.html" + "?" + "true" : "sign-Up.html"}"><img src=${item.imgHeart} alt="img"></a> 
                 </span>
                 <span class="icon-bg-rounded bg-white rounded-circle d-flex-container">
 
@@ -289,7 +289,7 @@ const map = (products) => {
 </div>
             </div>
         </div>
-        <div class="layer text-white"><a href="${boolean ? "cart.html" + "?" + "true" : "singUp.html"}">${item.textLayer}</a></div>
+        <div class="layer text-white"><a href="${boolean ? "cart.html" + "?" + "true" : "sign-Up.html"}">${item.textLayer}</a></div>
     </div>
     <p>${item.name}</p>
     <span class="text-danger me-2">$${item.price}</span><span
@@ -525,7 +525,7 @@ const posters = (products) => {
                 </div>
             </div>
             <div class=" ${item.value ? "d-none" : "btn-ONposter text-center"}">
-                <button class=" btn bg-light-green text-white py-2 px-5"><a href="${boolean ? "productDetails.html" + "?" + "true" : "singUp.html"}">Buy Now</a></button>
+                <button class=" btn bg-light-green text-white py-2 px-5"><a href="${boolean ? "productDetails.html" + "?" + "true" : "sign-Up.html"}">Buy Now</a></button>
             </div>
         </div>
         </div>
