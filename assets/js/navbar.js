@@ -1,5 +1,4 @@
 import { products, ourProducts, bestProducts, map } from "./displayProducts.js";
-import showSnackbar from './spinner.js'
 
 
 const navbarContainer = document.querySelector('.header-top');
@@ -243,7 +242,11 @@ function updateSessionStorageAndShowSnackbar(message, timeout = 3000) {
     showSnackbar(message, timeout);
 }
 
-
+function showSnackbar(message, timeout) {
+    snackbar.className = "show";
+    snackbar.innerHTML = `<h6>${message}</h6>`;
+    setTimeout(() => { snackbar.className = snackbar.className.replace("show", ""); }, timeout);
+}
 
 function updateBadge() {
     document.querySelector('.badge-wishlist').textContent = existingData.length;

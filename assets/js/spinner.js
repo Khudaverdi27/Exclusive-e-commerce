@@ -8,10 +8,6 @@ function loading() {
     }, 3000)
 }
 
-function showSnackbar(message, message2, timeout) {
-    snackbar.className = "show";
-    snackbar.innerHTML = `<h6>${message}</h6>`;
-    setTimeout(() => { snackbar.className = snackbar.className.replace("show", ""); }, timeout);
-}
 
-export { loading, showSnackbar }
+
+export default loading
