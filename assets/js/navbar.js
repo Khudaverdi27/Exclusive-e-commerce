@@ -1,4 +1,5 @@
-import { products, ourProducts, bestProducts, map, wishProdCount } from "./displayProducts.js";
+import { products, ourProducts, bestProducts, map } from "./displayProducts.js";
+import showSnackbar from './spinner.js'
 
 
 const navbarContainer = document.querySelector('.header-top');
@@ -211,7 +212,48 @@ if (previousPageURL.endsWith('.html')) {
 
 }
 
+let existingData = JSON.parse(sessionStorage.getItem('sendToWishlist')) || [];
+const snackbar = document.getElementById("snackbar");
+updateBadge();
 
-const count = sessionStorage.getItem('count') || 0;
-document.querySelector('.badge-wishlist').textContent = count
-wishProdCount(count)
+function setLocale(data, id) {
+    const isItemInWishlist = existingData.some(item => item.id === id);
+
+    if (!isItemInWishlist) {
+        addProductToWishlist(data);
+    } else {
+        removeProductFromWishlist(id);
+    }
+
+    updateBadge();
+}
+
+function addProductToWishlist(data) {
+    existingData.push(data);
+    updateSessionStorageAndShowSnackbar("Product is added to wishlist");
+}
+
+function removeProductFromWishlist(id) {
+    existingData = existingData.filter(item => item.id !== id);
+    updateSessionStorageAndShowSnackbar("Product is removed from wishlist", 4000);
+}
+
+function updateSessionStorageAndShowSnackbar(message, timeout = 3000) {
+    sessionStorage.setItem('sendToWishlist', JSON.stringify(existingData));
+    showSnackbar(message, timeout);
+}
+
+
+
+function updateBadge() {
+    document.querySelector('.badge-wishlist').textContent = existingData.length;
+}
+
+
+
+
+
+export default setLocale
+
+
+

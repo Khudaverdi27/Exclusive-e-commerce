@@ -8,8 +8,8 @@ wishProducts.forEach(element => {
     element.imgStar = ""
 });
 if (wishListCount) {
-    const count = sessionStorage.getItem('count') || 0;
-    wishListCount.textContent = `Wishlist (${count})`
+    const existingData = JSON.parse(sessionStorage.getItem('sendToWishlist')) || [];
+    wishListCount.textContent = `Wishlist (${existingData.length})`
 
 }
 

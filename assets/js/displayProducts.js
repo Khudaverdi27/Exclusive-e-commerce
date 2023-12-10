@@ -1,4 +1,4 @@
-
+import setLocale from "./navbar.js";
 
 const products = [
     {
@@ -265,7 +265,7 @@ const map = (products) => {
         <div class="product-icons  position-absolute d-flex ${item.discount ? 'justify-content-between' : 'justify-content-end'} w-100">
 <span class="${item.discount ? 'discount-product text-center text-white fs-12 ms-2' : 'd-none'} ${item.disPrice ? 'bg-light-orange' : 'bg-light-green'} ">${item.discount}</span>
             <div class="me-2">
-                <span id="addWishlist" class="mb-1 icon-bg-rounded bg-white rounded-circle d-flex-container">
+                <span  id="addWishlist" class="mb-1 icon-bg-rounded bg-white rounded-circle d-flex-container">
                    <span id="icon-heart"><img src=${item.imgHeart} alt="img"></span> 
                 </span>
                 <span class="icon-bg-rounded bg-white rounded-circle d-flex-container">
@@ -593,56 +593,47 @@ function productsByIndex(products) {
         const index = getIndexById(products, id);
 
         if (index > -1) {
-            const itemImage = products[index].image;
-            const itemName = products[index].name;
-            const productDesc = products[index].description;
+            const {
+                image: itemImage,
+                name: itemName,
+                description: productDesc } = products[index];
 
+            // Event listener for 'Show Item' button
             item.querySelector('.showItem').addEventListener('click', () => {
-
-                document.querySelectorAll('.img-modal').forEach(img => img.src = itemImage);
-                document.querySelectorAll('.modal-title').forEach(title => title.textContent = itemName);
-                document.querySelectorAll('.product-desc').forEach(desc => desc.textContent = productDesc);
+                updateModalContent(itemImage, itemName, productDesc);
             });
 
-            // send to wishlist
-            const wishlistIcon = item.querySelector('#addWishlist')
+            // Event listener for 'Add to Wishlist' button
+            const wishlistIcon = item.querySelector('#addWishlist');
             wishlistIcon.addEventListener('click', () => {
-                if (boolean) {
-                    const hasBgWhiteClass = wishlistIcon.classList.contains('bg-white');
-
-                    if (hasBgWhiteClass) {
-                        wishlistIcon.classList.remove('bg-white');
-                        wishlistIcon.classList.add('bg-danger');
-                    } else {
-                        wishlistIcon.classList.remove('bg-danger');
-                        wishlistIcon.classList.add('bg-white');
-                    }
-
-                    const existingData = JSON.parse(sessionStorage.getItem('sendToWishlist')) || [];
-
-                    // add new data
-                    const newData = products[index];
-                    const mergedData = existingData.concat(newData);
-
-                    sessionStorage.setItem('count', mergedData.length);
-
-                    wishProdCount(mergedData.length)
-                    //save to sessionStorage merged data
-                    sessionStorage.setItem('sendToWishlist', JSON.stringify(mergedData));
-                } else {
-                    window.location.href = "sign-up.html";
-                }
-
-            })
-
-
+                handleWishlistClick(wishlistIcon, products[index], id);
+            });
         }
     });
 }
 
-function wishProdCount(num) {
-    document.querySelector('.badge-wishlist').textContent = num
+function updateModalContent(image, name, desc) {
+    document.querySelectorAll('.img-modal').forEach(img => img.src = image);
+    document.querySelectorAll('.modal-title').forEach(title => title.textContent = name);
+    document.querySelectorAll('.product-desc').forEach(descElem => descElem.textContent = desc);
 }
+
+function handleWishlistClick(wishlistIcon, product, id) {
+    if (boolean) {
+        const hasBgWhiteClass = wishlistIcon.classList.contains('bg-white');
+
+        // Toggle background color class
+        wishlistIcon.classList.remove(hasBgWhiteClass ? 'bg-white' : 'bg-danger');
+        wishlistIcon.classList.add(hasBgWhiteClass ? 'bg-danger' : 'bg-white');
+
+        // Save to session storage
+        setLocale(product, id);
+    } else {
+        window.location.href = "sign-up.html";
+    }
+}
+
+
 
 
 
@@ -650,7 +641,6 @@ export {
     products,
     ourProducts,
     bestProducts,
-    map,
-    wishProdCount
+    map
 }
 
