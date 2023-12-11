@@ -32,7 +32,7 @@ const renderProducts = () => {
   productContainer.innerHTML = products
     .map(
       (item) => `
-    <div class="card-body d-flex justify-content-between align-items-center">
+    <div class="productsContain card-body d-flex justify-content-between align-items-center">
       <div class="productName col-2">
       <div class="imgAndBtn">
       <div class="cancelBtn">x</div>
@@ -74,25 +74,30 @@ updateBtn.addEventListener("click", () => {
   });
 });
 
-const cancel = document.querySelectorAll(".cancelBtn");
-cancel.forEach((cancelProducts) => {
-  cancelProducts.addEventListener("click", () => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire({
-          title: "Deleted!",
-          text: "Your file has been deleted.",
-          icon: "success",
-        });
-      }
-    });
+const cancelButtons = document.querySelectorAll(".cancelBtn");
+
+cancelButtons.forEach((cancelBtn) => {
+  cancelBtn.addEventListener("click", (event) => {
+    const productContain = event.target.closest(".productsContain");
+    if (productContain) {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          productContain.classList.add("d-none");
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success",
+          });
+        }
+      });
+    }
   });
 });
