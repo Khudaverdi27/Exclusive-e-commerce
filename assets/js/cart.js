@@ -34,8 +34,10 @@ const renderProducts = () => {
       (item) => `
     <div class="card-body d-flex justify-content-between align-items-center">
       <div class="productName col-2">
-        <img src="assets/images/svg/icon-cancel.svg" alt="" class="cancelBtn">
-        <img class="imgBox" src="${item.imgSrc}" alt="">
+      <div class="imgAndBtn">
+      <div class="cancelBtn">x</div>
+      <img class="imgBox" src="${item.imgSrc}" alt="">
+      </div>
         <span>${item.productName}</span>
       </div>
       <div class="col-8 d-flex justify-content-around px-4">
@@ -72,25 +74,25 @@ updateBtn.addEventListener("click", () => {
   });
 });
 
-// const cancel = document.querySelectorAll(".cancelBtn");
-// cancel.forEach((cancelProducts) => {
-//   cancelProducts.addEventListener("click", () => {
-//     Swal.fire({
-//       title: "Are you sure?",
-//       text: "You won't be able to revert this!",
-//       icon: "warning",
-//       showCancelButton: true,
-//       confirmButtonColor: "#3085d6",
-//       cancelButtonColor: "#d33",
-//       confirmButtonText: "Yes, delete it!",
-//     }).then((result) => {
-//       if (result.isConfirmed) {
-//         Swal.fire({
-//           title: "Deleted!",
-//           text: "Your file has been deleted.",
-//           icon: "success",
-//         });
-//       }
-//     });
-//   });
-// });
+const cancel = document.querySelectorAll(".cancelBtn");
+cancel.forEach((cancelProducts) => {
+  cancelProducts.addEventListener("click", () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success",
+        });
+      }
+    });
+  });
+});

@@ -70,11 +70,21 @@
 .productName {
   cursor: pointer;
 }
+.imgAndBtn {
+  position: relative;
+}
 .cancelBtn {
   display: block;
   position: absolute;
-  top: 0px;
-  left: -15px;
+  background-color: #db4444 !important;
+  color: #fff;
+  border-radius: 50%;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -15px;
+  left: -25px;
   background-color: transparent;
 }
 
@@ -96,6 +106,12 @@
   }
   .productName img {
     width: 40px;
+  }
+  .cancelBtn {
+    position: absolute;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #db4444;
   }
 }
 @media (min-width: 320px) and (max-width: 767px) {
