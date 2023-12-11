@@ -212,40 +212,72 @@ if (previousPageURL.endsWith('.html')) {
 }
 
 let existingData = JSON.parse(sessionStorage.getItem('sendToWishlist')) || [];
+let cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
 const snackbar = document.getElementById("snackbar");
 updateBadge();
 
-function setLocale(data, id) {
-    const isItemInWishlist = existingData.some(item => item.id === id);
+function setLocale(data, id, attr) {
 
-    if (!isItemInWishlist) {
-        addProductToWishlist(data);
+    const isItemInWishlist = existingData.some(item => item.id === id);
+    const isItemCart = cartItems.some(item => item.id === id);
+
+    if (!attr) {
+        console.log("wish", data);
+        if (!isItemInWishlist) {
+            addProductToWishlist(data);
+        } else {
+            removeProductFromWishlist(id);
+        }
+
+        updateBadge();
     } else {
-        removeProductFromWishlist(id);
+        console.log("cart", data);
+        if (!isItemCart) {
+            addProductToWishlist(data, attr);
+        } else {
+            removeProductFromWishlist(id, attr);
+        }
     }
 
-    updateBadge();
 }
 
-function addProductToWishlist(data) {
-    existingData.push(data);
-    updateSessionStorageAndShowSnackbar("Product is added to wishlist");
+function addProductToWishlist(data, attr) {
+    if (!attr) {
+        existingData.push(data);
+        updateStorage("Product is added to wishlist");
+    } else {
+        cartItems.push(data);
+        updateStorage("Product is added to cart", attr);
+    }
+
 }
 
-function removeProductFromWishlist(id) {
-    existingData = existingData.filter(item => item.id !== id);
-    updateSessionStorageAndShowSnackbar("Product is removed from wishlist", 4000);
+function removeProductFromWishlist(id, attr) {
+    if (!attr) {
+        existingData = existingData.filter(item => item.id !== id);
+        updateStorage("Product is removed from wishlist");
+    } else {
+        cartItems = cartItems.filter(item => item.id !== id);
+        updateStorage("Product is removed from cart", attr);
+    }
+
 }
 
-function updateSessionStorageAndShowSnackbar(message, timeout = 3000) {
-    sessionStorage.setItem('sendToWishlist', JSON.stringify(existingData));
-    showSnackbar(message, timeout);
+function updateStorage(message, attr) {
+    if (!attr) {
+        sessionStorage.setItem('sendToWishlist', JSON.stringify(existingData));
+        showSnackbar(message);
+    } else {
+        sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+        showSnackbar(message);
+    }
+
 }
 
-function showSnackbar(message, timeout) {
+function showSnackbar(message) {
     snackbar.className = "show";
     snackbar.innerHTML = `<h6>${message}</h6>`;
-    setTimeout(() => { snackbar.className = snackbar.className.replace("show", ""); }, timeout);
+    setTimeout(() => { snackbar.className = snackbar.className.replace("show", ""); }, 3000);
 }
 
 function updateBadge() {

@@ -1,4 +1,4 @@
-
+import { bestProducts, productsByIndex } from "./displayProducts.js";
 const wishListCount = document.getElementById('wishlist-title')
 
 const wishProducts = JSON.parse(sessionStorage.getItem('sendToWishlist')) || [];
@@ -13,57 +13,7 @@ if (wishListCount) {
 
 }
 
-const recommendPrContainer = [
-    {
-        id: 1,
-        name: 'Bestselling-Coat',
-        image: 'assets/images/products/coat.png',
-        imgEye: 'assets/images/svg/eye.svg',
-        textLayer: 'Add To Cart',
-        price: 260,
-        discount: '-25%',
-        disPrice: "$360",
-        imgStar: 'assets/images/svg/star-fill.svg',
-        imgEmptyStar: 'assets/images/svg/star-fill.svg',
-        comments: 66
-    },
-    {
-        id: 2,
-        name: 'Gucci duffle bag',
-        image: 'assets/images/products/bag.png',
-        imgEye: 'assets/images/svg/eye.svg',
-        textLayer: 'Add To Cart',
-        price: 960,
-        disPrice: "$1160",
-        imgStar: 'assets/images/svg/star-fill.svg',
-        imgEmptyStar: 'assets/images/svg/star-half-filled.svg',
-        comments: 65
-    },
-    {
-        id: 3,
-        name: 'RGB liquid CPU Cooler',
-        image: 'assets/images/products/gammaxx.png',
-        imgEye: 'assets/images/svg/eye.svg',
-        textLayer: 'Add To Cart',
-        price: 160,
-        disPrice: '$170',
-        discount: '-25%',
-        imgStar: 'assets/images/svg/star-fill.svg',
-        imgEmptyStar: 'assets/images/svg/star-half-filled.svg',
-        comments: 65
-    },
-    {
-        id: 4,
-        name: 'Small BookSelf',
-        image: 'assets/images/products/shelf.png',
-        imgEye: 'assets/images/svg/eye.svg',
-        textLayer: 'Add To Cart',
-        price: 360,
-        imgStar: 'assets/images/svg/star-fill.svg',
-        imgEmptyStar: 'assets/images/svg/star-fill.svg',
-        comments: 65
-    }
-];
+
 
 const wishlistMap = (products) => {
 
@@ -75,9 +25,27 @@ const wishlistMap = (products) => {
         <div class="product-icons  position-absolute d-flex ${item.discount ? 'justify-content-between' : 'justify-content-end'} w-100">
 <span class="${item.discount ? 'discount-product text-center text-white fs-12 ms-2' : 'd-none'} ${item.disPrice ? 'bg-light-orange' : ''} ">${item.discount}</span>
             <div class="me-2">
-                <span class="mb-1 icon-bg-rounded bg-white rounded-circle d-flex-container">
+                <span id="actionDelete" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="mb-1 icon-bg-rounded bg-white rounded-circle d-flex-container showItem">
                  <img src=${item.iconDelete ? item.iconDelete : item.imgEye} alt="img">
                 </span>
+
+                <!-- Modal -->
+                <div class="modal fade mt-5" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-solid-secondary">
+        <h1 class="modal-title fs-5 " id="staticBackdropLabel ">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex-container py-5">
+      <img class="img-modal w-50 h-50" src="" alt="img">
+      </div>
+      <div class="modal-footer bg-solid-secondary" >
+      <p class="product-desc text-center  text-wrap" ></p>
+    </div>
+    </div>
+  </div>
+</div>
             </div>
         </div>
         <div class="layer text-white">${item.textLayer}</div>
@@ -107,7 +75,7 @@ const recommendProducts = document.getElementById('recommendProducts');
 
 // products to product section
 const product = wishlistMap(wishProducts);
-const recommendProduct = wishlistMap(recommendPrContainer);
+const recommendProduct = wishlistMap(bestProducts);
 
 if (wishListContainer) {
     wishProducts.length > 0 ? wishListContainer.innerHTML = product : wishListContainer.innerHTML = `<h1>Wishlist is empty</h1>`
@@ -119,5 +87,5 @@ if (recommendProducts) {
 
 }
 
-
+productsByIndex(bestProducts)
 

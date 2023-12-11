@@ -291,7 +291,7 @@ const map = (products) => {
 </div>
             </div>
         </div>
-        <div class="layer text-white"><a href="${boolean ? "cart.html" + "?" + "true" : "sign-Up.html"}">${item.textLayer}</a></div>
+        <div data-cart="addCart" id="addCart" class="layer text-white addCart">${item.textLayer}</div>
     </div>
     <p>${item.name}</p>
     <span class="text-danger me-2">$${item.price}</span><span
@@ -347,9 +347,6 @@ if (exploreProductsSec) {
 
 
 
-
-
-
 // category boxex info
 const categories = [
     {
@@ -357,7 +354,7 @@ const categories = [
         name: 'Phones',
         image: `
         <g id="Category-CellPhone" clip-path="url(#clip0_1039_868)">
-        <path id="Vector" d="M38.9375 6.125H17.0625C15.5523 6.125 14.3281 7.34922 14.3281 8.85938V47.1406C14.3281 48.6508 15.5523 49.875 17.0625 49.875H38.9375C40.4477 49.875 41.6719 48.6508 41.6719 47.1406V8.85938C41.6719 7.34922 40.4477 6.125 38.9375 6.125Z" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path id="Vector" yt="M38.9375 6.125H17.0625C15.5523 6.125 14.3281 7.34922 14.3281 8.85938V47.1406C14.3281 48.6508 15.5523 49.875 17.0625 49.875H38.9375C40.4477 49.875 41.6719 48.6508 41.6719 47.1406V8.85938C41.6719 7.34922 40.4477 6.125 38.9375 6.125Z" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path id="Vector_2" d="M25.6667 7H31.1354" stroke="" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
         <path id="Vector_3" d="M28 44.0052V44.0305" stroke="" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         <line id="Line 8" x1="15.1667" y1="39.8334" x2="40.8333" y2="39.8334" stroke="" stroke-width="2"/>
@@ -601,13 +598,24 @@ function productsByIndex(products) {
             // Event listener for 'Show Item' button
             item.querySelector('.showItem').addEventListener('click', () => {
                 updateModalContent(itemImage, itemName, productDesc);
+
             });
 
             // Event listener for 'Add to Wishlist' button
             const wishlistIcon = item.querySelector('#addWishlist');
-            wishlistIcon.addEventListener('click', () => {
-                handleWishlistClick(wishlistIcon, products[index], id);
-            });
+            if (wishlistIcon) {
+                wishlistIcon.addEventListener('click', () => {
+                    handleWishlistClick(wishlistIcon, products[index], id);
+                });
+            }
+            const addCart = item.querySelector('#addCart');
+            if (addCart) {
+                addCart.addEventListener('click', () => {
+                    handleWishlistClick(addCart, products[index], id);
+                });
+            }
+
+
         }
     });
 }
@@ -620,14 +628,20 @@ function updateModalContent(image, name, desc) {
 
 function handleWishlistClick(wishlistIcon, product, id) {
     if (boolean) {
-        const hasBgWhiteClass = wishlistIcon.classList.contains('bg-white');
+        const attr = wishlistIcon.getAttribute('data-cart')
+        if (!attr) {
+            const hasBgWhiteClass = wishlistIcon.classList.contains('bg-white');
 
-        // Toggle background color class
-        wishlistIcon.classList.remove(hasBgWhiteClass ? 'bg-white' : 'bg-danger');
-        wishlistIcon.classList.add(hasBgWhiteClass ? 'bg-danger' : 'bg-white');
+            // Toggle background color class
+            wishlistIcon.classList.remove(hasBgWhiteClass ? 'bg-white' : 'bg-danger');
+            wishlistIcon.classList.add(hasBgWhiteClass ? 'bg-danger' : 'bg-white');
 
-        // Save to session storage
-        setLocale(product, id);
+            // Save to session storage
+            setLocale(product, id);
+        } else {
+            setLocale(product, id, attr);
+        };
+
     } else {
         window.location.href = "sign-up.html";
     }
@@ -637,10 +651,12 @@ function handleWishlistClick(wishlistIcon, product, id) {
 
 
 
+
 export {
     products,
     ourProducts,
     bestProducts,
-    map
+    map,
+    productsByIndex
 }
 
