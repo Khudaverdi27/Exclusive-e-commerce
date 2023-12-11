@@ -71,15 +71,11 @@
   cursor: pointer;
 }
 .cancelBtn {
-  display: none;
+  display: block;
   position: absolute;
   top: 0px;
   left: -15px;
   background-color: transparent;
-}
-
-.productName:hover .cancelBtn {
-  display: inline-block;
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
