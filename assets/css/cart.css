@@ -1,12 +1,3 @@
-.row .col-3 {
-  padding: 30px 60px;
-  box-shadow: 0 0 10px 0 rgba(233, 239, 233, 0.933);
-}
-
-.quantityInput {
-  text-align: center;
-  width: 40px;
-}
 
 .buttonsCart button {
   padding: 10px 25px;
@@ -60,16 +51,10 @@
   border: 1px solid #ccc;
 }
 
-.cartTotalTitle {
-  font-size: 18px;
-  font-weight: 600;
 }
 .cardTotalSection {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
   border-bottom: 1px solid #ccc;
+  margin: 0 15px;
 }
 
 .lastTotalSection {
@@ -78,4 +63,3 @@
 
 .proceesBtn {
   padding: 15px 30px;
-
