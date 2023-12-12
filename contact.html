@@ -28,21 +28,66 @@
                 <a href="./header.html" class="arrivingPage text-secondary">Home</a><span><a href="./contact.html"
                         class="currentPage text-dark">Contact</a></span>
             </div>
+            <div class="contentContainer  d-flex">
+                <div class="row m-4 d-flex justify-content-around flex-wrap mx-auto">
+                    <div class="callUsAndWriteuS col-xl-3 col-md-10 col-sm-12 order-sm-2 order-xl-1 order-md-2 ">
+                        <div class="callUsContainer">
+                            <div class="callUs  d-flex gap-2 align-items-center">
+                                <img src="assets/images/svg/icons-phone.svg" alt="">
+                                <h4 class="mt-2">Call to us</h4>
+                            </div>
+                            <div class="callUsDescription">
+                                <p>We are available 24/7, 7 days a week.</p>
+                                <p>Phone: +8801611112222</p>
+                            </div>
+
+                            <hr class="divider mt-4">
+                        </div>
+                        <div class="writeUsContainer">
+                            <div class="writeUs d-flex align-items-center my-4 gap-2">
+                                <img src="assets/images/svg/icons-mail.svg" alt="">
+                                <h4>Write To Us</h4>
+                            </div>
+                            <div class="writeUsDescription">
+                                <p>Fill out our form and we will contact you within 24 hours.</p>
+                                <p>Emails: customer@exclusive.com</p>
+                                <p>Emails: support@exclusive.com</p>
+                            </div>
 
                         </div>
-                        <div class="callUsDescription">
-                            <p>We are available 24/7, 7 days a week.</p>
-                            <p>Phone: +8801611112222</p>
-                        </div>
-
-                        <hr class="divider mt-4">
                     </div>
+                    <form name="submit-to-google-sheet"
+                        class="col-xl-8 col-sm-12 inputContainer order-sm-1 order-xl-2 order-md-1 ">
+                        <div class="inputs d-flex mb-3 gap-2">
+                            <input name="Name" class="input" id="inputName" type="text" placeholder="Your Name">
+
+
+                            <input name="Email" class="input" id="inputEmail" type="email" placeholder="Your Email">
+                            <input name="Phone" class="input" id="inputPhone" type="tel" placeholder="Your Phone">
+                        </div>
+                        <div class="errorMessages d-flex gap-5 text-center">
+                            <p class="errorMsj errorMessageName d-none">Must be contain only letters(min. 4 - max. 14)
+                            </p>
+                            <p class="errorMsj errorMessageEmail d-none">It must be an correct e-mail address
+                            </p>
+                            <p class="errorMsj errorMessagePhone d-none">Must be contain (+)Area coded and max. length
+                                15
+                                digits</p>
+                        </div>
+
+
+                        <textarea class="form-control border border-2 mt-2" name="Message" placeholder="Your message"
+                            id="" cols="100" rows="10"></textarea>
+                        <button type="submit" class="btn bg-light-orange btnSend float-end mt-4"
+                            id="contactSendBtn">Send
+                            Message</button>
+                    </form>
 
                 </div>
             </div>
         </div>
     </div>
-
+    <div class="card position-absolute loader-card rounded d-none">
 
     </div>
     </div>
