@@ -25,72 +25,53 @@
                         class="currentPage"><span class="pageSlash">/</span>Cart</a></span>
             </div>
         </div>
-        <div class="cartContainer row p-3">
-            <div
-                class="cartColSection productSection col-xl-3 col-lg-3 col-md-6 d-flex flex-column gap-3 align-items-baseline">
-                <p class="cartColSectionTitle">Product</p>
-                <div class="productSecond d-flex align-items-center justify-content-around gap-4">
-                    <img src="assets/images/other/cartFullImg2.jpg" alt=""><span>LCD monitor</span>
-                </div>
-                <div class="productImgAndTitle d-flex align-items-center justify-content-around gap-4 ">
-                    <img src="assets/images/other/cartFullImg1.png" alt=""><span>H1 gamepad</span>
-                </div>
-            </div>
-            <div class="cartColSection col-xl-3 col-lg-3 col-md-6 d-flex flex-column gap-3 align-items-center">
-                <p class="cartColSectionTitle">Price</p>
-                <p>650$</p>
-                <p>550$</p>
-            </div>
-            <div class="cartColSection col-xl-3 col-lg-3 col-md-6 d-flex flex-column gap-3 align-items-center">
-                <p class="cartColSectionTitle">Quantity</p>
-                <div class="quatityInputs">
-                    <input type="number" class="quantityInput" value="1">
-                    <input type="number" class="quantityInput" value="2">
-                </div>
-
-
-            </div>
-            <div class="cartColSection col-xl-3 col-lg-3 col-md-6 d-flex flex-column gap-3 align-items-center">
-
-                <p class="cartColSectionTitle">Subtotal</p>
-                <p>650$</p>
-                <p>1100$</p>
-
-            </div>
-        </div>
-        <div class="buttonsCart d-flex justify-content-between mt-5">
-            <button class="buttonCart">Return to Shop</button>
-            <button class="buttonCart">Update cart</button>
-        </div>
-
-        <div class="row d-flex mt-5">
-            <div class="col-xl-5">
-                <div class="cupponApply ">
-                    <input type="text" placeholder="Coupon Code" class="couponInput">
-                    <button class="btnMyDesign applyBtn">Apply Coupon</button>
-                </div>
-            </div>
-            <div class="col-xl-7 d-flex justify-content-end mb-5 ">
-                <div class="cartTotal">
-                    <p class="cartTotalTitle px-3 py-3">Cart total</p>
-                    <div class="cardTotalSection ">
-                        <p>Subtotal</p>
-                        <p>1750$</p>
+        <div class="container cartContainer">
+            <div class="d-flex flex-column gap-3">
+                <div class="card mt-1 cardShadowContainer border-0  ">
+                    <div class="cardTitles card-body d-flex justify-content-between align-items-center">
+                        <span class="fw-bold">Products</span>
+                        <span class="fw-bold">Prices</span>
+                        <span class="fw-bold">Quantity</span>
+                        <span class="fw-bold">Subtotal</span>
                     </div>
-                    <div class="cardTotalSection">
-                        <p>Shipping</p>
-                        <p>free</p>
+                </div>
+                <div class="card mt-1 cardShadowContainer product-container border-0">
+                </div>
+            </div>
+            <div class="buttonsCart d-flex justify-content-between mt-5">
+                <a href="./header.html"> <button>Return to Shop</button></a>
+                <button class="updateBtn">Update cart</button>
+            </div>
+            <div class="row d-flex mt-5">
+                <div class="col-xl-5 mx-auto">
+                    <div class="cupponApply ">
+                        <input type="text" placeholder="Coupon Code" class="couponInput">
+                        <button class="btnMyDesign applyBtn">Apply Coupon</button>
                     </div>
-                    <div class="cardTotalSection lastTotalSection">
-                        <p>Total</p>
-                        <p>1750$</p>
+                </div>
+                <div class="col-xl-7 d-flex justify-content-end mb-5 mx-auto ">
+                    <div class="cartTotal">
+                        <p class="cartTotalTitle fw-bolder px-4 py-4 my-2">Cart total</p>
+                        <div class="cardTotalSection d-flex justify-content-between align-items-center px-3 ">
+                            <p>Subtotal</p>
+                            <p class="subtotalResult">0$</p>
+                        </div>
+                        <div class="cardTotalSection d-flex justify-content-between align-items-center px-3">
+                            <p>Shipping</p>
+                            <p>Free</p>
+                        </div>
+                        <div
+                            class="cardTotalSection d-flex justify-content-between align-items-center px-3 lastTotalSection">
+                            <p>Total</p>
+                            <p class="subtotalResult">0$</p>
+                        </div>
+                        <button class="proceesBtn btnMyDesign d-block mx-auto">Procees to checkout</button>
                     </div>
-
-                    <button class="proceesBtn btnMyDesign d-block mx-auto">Procees to checkout</button>
-
                 </div>
             </div>
         </div>
+
+
         <!-- Content end -->
         <div class="card position-absolute loader-card rounded d-none">
 
@@ -101,6 +82,8 @@
     </footer>
     <!-- Footer end -->
     <script type="module" src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>
