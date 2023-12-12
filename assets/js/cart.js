@@ -29,9 +29,10 @@ const updateSubtotal = () => {
 
 const renderProducts = () => {
   const productContainer = document.querySelector(".product-container");
-  productContainer.innerHTML = products
-    .map(
-      (item) => `
+  if (productContainer) {
+    productContainer.innerHTML = products
+      .map(
+        (item) => `
     <div class="productsContain card-body d-flex justify-content-between align-items-center">
       <div class="productName col-2">
       <div class="imgAndBtn">
@@ -49,8 +50,10 @@ const renderProducts = () => {
       </div>
     </div>
   `
-    )
-    .join("");
+      )
+      .join("");
+  }
+
 };
 
 renderProducts();
@@ -61,18 +64,21 @@ document.querySelectorAll(".quantityInput").forEach((element) => {
 
 const updateBtn = document.querySelector(".updateBtn");
 const subtotalResult = document.querySelectorAll(".subtotalResult");
-updateBtn.addEventListener("click", () => {
-  updateSubtotal();
+if (updateBtn) {
+  updateBtn.addEventListener("click", () => {
+    updateSubtotal();
 
-  let total = 0;
-  document.querySelectorAll(".subtotalPrice").forEach((subtotal) => {
-    total += parseFloat(subtotal.textContent.replace("$", ""));
-  });
+    let total = 0;
+    document.querySelectorAll(".subtotalPrice").forEach((subtotal) => {
+      total += parseFloat(subtotal.textContent.replace("$", ""));
+    });
 
-  subtotalResult.forEach((items) => {
-    items.textContent = `$${total.toFixed(2)}`;
+    subtotalResult.forEach((items) => {
+      items.textContent = `$${total.toFixed(2)}`;
+    });
   });
-});
+}
+
 
 const cancelButtons = document.querySelectorAll(".cancelBtn");
 
