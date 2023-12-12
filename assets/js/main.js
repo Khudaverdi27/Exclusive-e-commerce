@@ -7,6 +7,7 @@ import "./login.js";
 import "./wishlist.js";
 import "./productDetails.js";
 import "./spinner.js";
+import "./cart.js";
 import "./footer.js";
 import "./contact.js";
 
