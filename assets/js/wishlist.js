@@ -30,7 +30,7 @@ const wishlistMap = (products) => {
                 </span>
 
                 <!-- Modal -->
-                <div class="modal fade mt-5" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade mt-5 " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header bg-solid-secondary">
@@ -78,7 +78,13 @@ const product = wishlistMap(wishProducts);
 const recommendProduct = wishlistMap(bestProducts);
 
 if (wishListContainer) {
-    wishProducts.length > 0 ? wishListContainer.innerHTML = product : wishListContainer.innerHTML = `<h1>Wishlist is empty</h1>`
+    if (wishProducts.length > 0) {
+
+        wishListContainer.innerHTML = 'helo'
+    } else {
+        wishListContainer.innerHTML = "<h1>Wishlist is empty</h1>"
+    }
+
 
 
 }
