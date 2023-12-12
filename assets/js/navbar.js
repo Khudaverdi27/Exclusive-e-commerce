@@ -1,13 +1,9 @@
+import { products, ourProducts, bestProducts, map } from "./displayProducts.js";
+
+
 const navbarContainer = document.querySelector('.header-top');
 let boolean = window.location.search.startsWith('?true');
 
-
-const loginIcon = () => {
-
-    return `<a class="${boolean ? "d-block" : "d-none"}" href='#'><img src="assets/images/svg/user.svg" class="userIcon  crusor-p" alt=""></a>`
-}
-
-export default loginIcon
 const navbar = () => {
     if (navbarContainer) {
         navbarContainer.innerHTML = `
@@ -15,7 +11,7 @@ const navbar = () => {
     <div class="d-flex justify-content-around header-top-content  ">
         <p class="nav text-white fs-14 align-items-center d-inline mt-2">
             Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
-            <span><a href="singUp.html" class=" fw-bold text-white">ShopNow</a></span>
+            <span><a href="${boolean ? "header.html" + "?" + "true" : "sign-Up.html"}" class=" fw-bold text-white">ShopNow</a></span>
         </p>
         <ul class="nav nav-tabs border-0">
             <li class="nav-item dropdown fs-14">
@@ -44,23 +40,29 @@ const navbar = () => {
                         <a class="nav-link"  href= ${boolean ? "about.html" + "?" + "true" : "about.html"}>About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"  href= ${boolean ? "singUp.html" + "?" + "true" : "singUp.html"}>Sign up</a>
+                        <a class="nav-link"  href= ${boolean ? "sign-Up.html" + "?" + "true" : "sign-Up.html"}>Sign up</a>
                     </li>
                 </ul>
             </div>
             <!-- input field and icon in navbar -->
             <div class="input-section ">
-                <form class="d-flex justify-content-between" role="search">
+                <div class="d-flex justify-content-between" role="search">
                     <div class="position-relative">
-                        <input class="srch-input form-control me-2 p-1 bg-solid-secondary position-relative"
+                        <input id="searchInput" class="srch-input form-control me-2 p-1 bg-solid-secondary position-relative"
                             placeholder="What are you looking for?" type="search" aria-label="Search">
-                        <img src="assets/images/svg/searcg-icon.svg" class="position-absolute search-icon crusor-p"
+                        <img id="search-icon" src="assets/images/svg/searcg-icon.svg" class="position-absolute search-icon crusor-p"
                             alt="">
                     </div>
                     <div class="input-svg d-flex justify-content-between position-relative">
-                    <a href='wishlist.html'><img src="assets/images/svg/Wishlist.svg" class="ms-1 crusor-p" alt=""></a>
+                    <a href= ${boolean ? "wishlist.html" + "?" + "true" : "sign-Up.html"}>
+                    <span class="position-absolute top-0 mt-1 translate-middle badge badge-wishlist rounded-pill bg-danger ${boolean ? "d-block" : "d-none"}">0</span>
+                    <img src="assets/images/svg/Wishlist.svg" class="ms-1 crusor-p" alt="">
+                    </a>
+                        <a href= ${boolean ? "cart.html" + "?" + "true" : "sign-Up.html"}>
                         <img src="assets/images/svg/Cart1.svg" class="mx-2  crusor-p" alt="">
-                        ${loginIcon()}
+                        </a>
+                        <a class="${boolean ? "d-block" : "d-none"}" href='#'><img src="assets/images/svg/user.svg" class="userIcon  crusor-p" alt=""></a>
+                        
                         <div id="profile-dropdown" class="card border-0 card-dropdown position-absolute d-none" style="width: 15rem;">
                         <div class="card-body rounded bg-linear p-3">
                             <a href="#">
@@ -100,7 +102,7 @@ const navbar = () => {
                             <span class="navbar-toggler-icon"></span>
                         </button>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </nav>
@@ -125,7 +127,7 @@ const navbar = () => {
 
         setTimeout(() => {
             spinner.classList.add('d-none')
-            window.location.href = "singUp.html"
+            window.location.href = "sign-Up.html"
             boolean = false
             navbar()
         }, 3000)
@@ -136,5 +138,157 @@ const navbar = () => {
 
 
 navbar();
+function searchArrays() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const result = [];
+
+    const allProducts = [...products, ...ourProducts, ...bestProducts];
+
+    allProducts.forEach(item => {
+        if (item.name.toLowerCase().includes(searchInput) && searchInput != '') {
+            result.push(item);
+        }
+    });
+
+    const heroSection = document.getElementById('hero-section')
+    const product = map(result);
+
+    if (heroSection) {
+
+        heroSection.classList.add('m-top-10', 'mb-5', 'd-flex-container', 'flex-wrap',)
+
+
+        heroSection.innerHTML = product ? product :
+            `    <section class=" container" >
+        <div class="d-flex ">
+            <p class="text-secondary me-1 fs-14">Home /</p>
+            <p class="text-dark me-1 fs-14">404 Error</p>
+        </div>
+        <div class="d-flex-container flex-column my-5">
+            <p class="fs-error">404 Not Found</p>
+            <p>Your visited page not found. You may go home page.</p>
+            <button class="btn bg-light-orange text-white px-5 py-2 my-2" type="button">
+            <a  href= ${boolean ? "header.html" + "?" + "true" : "header.html"}> Back to home page</a>
+           </button>
+        </div>
+
+    </section>
+
+</section>`;
+    }
+
+}
+document.getElementById('search-icon').addEventListener('click', searchArrays);
+document.getElementById('searchInput').addEventListener('keypress', (e) => e.key === 'Enter' && searchArrays());
+
+const previousPageURL = document.referrer;
+if (previousPageURL.endsWith('.html')) {
+    const { pathname } = new URL(previousPageURL);
+    const start = pathname.slice(0, 14);
+    const end = pathname.slice(-5);
+    const startIndex = pathname.indexOf(start) + start.length;
+    const endIndex = pathname.indexOf(end);
+
+    const currentPage = document.querySelector('.currentPage');
+    const arrivingPage = document.querySelector('.arrivingPage');
+
+    if (arrivingPage && currentPage && startIndex !== -1 && endIndex !== -1 && startIndex < endIndex) {
+        const resultPath = pathname.substring(startIndex, endIndex);
+        let result = resultPath.charAt(0).toUpperCase() + resultPath.slice(1);
+
+        if (result === 'Header') {
+            result = '/ Home';
+        } else if (result === 'ProductDetails') {
+            result = 'Details /';
+        }
+
+        if (currentPage.textContent.trim() !== result.trim()) {
+            arrivingPage.textContent = `${result} / `;
+        } else {
+            arrivingPage.textContent = '/';
+        }
+    }
+
+}
+
+let existingData = JSON.parse(sessionStorage.getItem('sendToWishlist')) || [];
+let cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
+const snackbar = document.getElementById("snackbar");
+updateBadge();
+
+function setLocale(data, id, attr) {
+
+    const isItemInWishlist = existingData.some(item => item.id === id);
+    const isItemCart = cartItems.some(item => item.id === id);
+
+    if (!attr) {
+        console.log("wish", data);
+        if (!isItemInWishlist) {
+            addProductToWishlist(data);
+        } else {
+            removeProductFromWishlist(id);
+        }
+
+        updateBadge();
+    } else {
+        console.log("cart", data);
+        if (!isItemCart) {
+            addProductToWishlist(data, attr);
+        } else {
+            removeProductFromWishlist(id, attr);
+        }
+    }
+
+}
+
+function addProductToWishlist(data, attr) {
+    if (!attr) {
+        existingData.push(data);
+        updateStorage("Product is added to wishlist");
+    } else {
+        cartItems.push(data);
+        updateStorage("Product is added to cart", attr);
+    }
+
+}
+
+function removeProductFromWishlist(id, attr) {
+    if (!attr) {
+        existingData = existingData.filter(item => item.id !== id);
+        updateStorage("Product is removed from wishlist");
+    } else {
+        cartItems = cartItems.filter(item => item.id !== id);
+        updateStorage("Product is removed from cart", attr);
+    }
+
+}
+
+function updateStorage(message, attr) {
+    if (!attr) {
+        sessionStorage.setItem('sendToWishlist', JSON.stringify(existingData));
+        showSnackbar(message);
+    } else {
+        sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+        showSnackbar(message);
+    }
+
+}
+
+function showSnackbar(message) {
+    snackbar.className = "show";
+    snackbar.innerHTML = `<h6>${message}</h6>`;
+    setTimeout(() => { snackbar.className = snackbar.className.replace("show", ""); }, 3000);
+}
+
+function updateBadge() {
+    document.querySelector('.badge-wishlist').textContent = existingData.length;
+}
+
+
+
+
+
+export default setLocale
+
 
 

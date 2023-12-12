@@ -24,7 +24,7 @@
 
     </header>
     <!-- Content start -->
-    <section class="position-relative">
+    <section id="hero-section" class="position-relative">
         <div class="content d-flex align-items-center flex-wrap row">
             <div class="imgContainer col-sm-12 col-md-5 col-xl-6 col-lg-5">
                 <img class="img-fluid shoppingImg" src="assets/images/other/imageShopping.jpg" alt="">
@@ -33,18 +33,28 @@
                 class="formContainer col-sm-12 ms-2 d-xl-flex align-items-xl-center flex-xl-column justify-content-center col-md-5 col-xl-5 col-lg-5">
                 <h1 class="text-center">Create account</h1>
                 <p class="text-center">Enter your details below</p>
-                <form class="inputsAndBtns mx-2">
+                <form data-form="signIn" id="form-sign" class="inputsAndBtns mx-2">
                     <div class="inputs d-flex flex-column position-relative">
-                        <input type="text" class="borderlessInput my-3" placeholder="Name">
-                        <input type="text" class="borderlessInput my-3" placeholder="Email or Phone Number">
-                        <input id="passInputAccountPage" type="password" class="borderlessInput my-3 "
+                        <input id="input-name-sign" type="text" class="borderlessInput mt-3 py-2 px-2"
+                            placeholder="Name">
+                        <div id="signName_error" class=' fs-12 text-danger bg-light-red rounded px-2  d-none mt-1'>
+                            Please fill up your Name</div>
+                        <input id="input-email-sign" type="text" class="borderlessInput mt-3 py-2 px-2"
+                            placeholder="Email or Phone Number">
+                        <div id="signEmail_error" class='fs-12 text-danger bg-light-red rounded px-2  d-none mt-1'>
+                            Please
+                            Please fill up your e-mail or phone number</div>
+                        <input id="input-pass-sign" type="password" class="borderlessInput mt-3 py-2 px-2 mb-1"
                             placeholder="Password">
+                        <div id="signPass_error" class='fs-12 text-danger bg-light-red rounded px-2  d-none'>Must
+                            be
+                            numbers,lowercase and uppercase letters, and total characters at least 8.</div>
                         <i id="eyeIconAccountPage"
                             class="crusor-p position-absolute fs-5 text-secondary fa-solid fa-eye-slash"></i>
 
                     </div>
-                    <div class="btns d-flex flex-column container">
-                        <button class="button createBtn my-1">Create account</button>
+                    <div class="btns d-flex flex-column container my-2">
+                        <button type="submit" class="button createBtn my-1 signBtn">Create account</button>
                         <button class="button googleBtn my-1">
                             <span><img src="assets/images/icon/googleIcon.png" alt="" style="width: 20px;"></span>
                             Sign up with Google
@@ -53,10 +63,13 @@
                     <div class="haveAccount d-flex">
                         <p>Already have an account?</p>
                         <a id="logIn" href="#" class="text-dark text-decoration-underline">Log in</a>
+
                     </div>
                 </form>
             </div>
+
         </div>
+
         <div class="card position-absolute loader-card rounded d-none">
 
         </div>
