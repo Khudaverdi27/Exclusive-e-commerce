@@ -14,7 +14,6 @@
   border: 1px solid black;
   border-radius: 5px;
   background-color: #fff;
-
   &:hover {
     background-color: black;
     color: #fff;
@@ -43,7 +42,6 @@
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-
   &:hover {
     background-color: #fff;
     color: black;
@@ -66,7 +64,6 @@
   font-size: 18px;
   font-weight: 600;
 }
-
 .cardTotalSection {
   display: flex;
   justify-content: space-between;
@@ -81,4 +78,4 @@
 
 .proceesBtn {
   padding: 15px 30px;
-}
+
