@@ -76,11 +76,13 @@ const recommendProducts = document.getElementById('recommendProducts');
 // products to product section
 const product = wishlistMap(wishProducts);
 const recommendProduct = wishlistMap(bestProducts);
+document.addEventListener("DOMContentLoaded", () => {
 
+})
 if (wishListContainer) {
     if (wishProducts.length > 0) {
 
-        wishListContainer.innerHTML = 'helo'
+        wishListContainer.innerHTML = product
     } else {
         wishListContainer.innerHTML = "<h1>Wishlist is empty</h1>"
     }
