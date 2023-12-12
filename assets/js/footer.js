@@ -1,9 +1,9 @@
 const footerContainer = document.querySelector(".footerContainer");
 
 const footer = () => {
-  const div = document.createElement("div");
+    const div = document.createElement("div");
 
-  div.innerHTML = `
+    div.innerHTML = `
      <div class="container">
         <div class="footerSection row footerRes ">
             <div class=" mb-3 col-sm-6 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
@@ -73,8 +73,8 @@ const footer = () => {
             </div>
             </div>
             <p class="text-white text-center mt-5"> © Copyright Exclusive 2023. All right reserved</p>`;
-  footerContainer.appendChild(div);
+    footerContainer.appendChild(div);
 };
 footer();
 
-export default footer;
+

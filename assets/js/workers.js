@@ -49,4 +49,4 @@ if (workersCards) {
   workersCards.innerHTML = worker;
 }
 
-export default worker;
+

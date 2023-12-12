@@ -7,27 +7,33 @@ a {
   outline: none;
   border-bottom: 1px solid #ccc;
 }
+
 .borderlessInput::placeholder {
   font-size: 20px;
 }
+
 .button {
   padding: 10px 30px;
   border: none;
   border-radius: 5px;
 }
+
 .createBtn {
   background-color: #db4444;
   color: #fff;
 }
+
 .googleBtn {
   background-color: transparent;
   border: 1px solid #ccc;
 }
+
 .haveAccount {
   display: flex;
   justify-content: center;
   width: 30rem;
 }
+
 .content {
   margin-top: 100px;
 }
@@ -36,21 +42,49 @@ a {
   font-size: 12px;
   color: #ccc;
 }
+
 .inputEmail {
   padding: 12px;
   border: 1px solid #fff;
   outline: none;
 }
+
 .inputEmail::placeholder {
   font-size: 14px;
 }
+
 .iconSend {
   top: 0;
   right: 4%;
 }
+
 .borderHr {
   border: 1px solid #fff;
 }
+
+#eyeIconAccountPage,
+#eyeIconLogin {
+  right: 2%;
+}
+
+#eyeIconAccountPage {
+  top: 74%
+}
+
+#eyeIconLogin {
+  top: 42%
+}
+
+.loader-card {
+  width: 8%;
+  padding: 15px;
+  top: 41%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+
 
 /* responsive signUp */
 @media (min-width: 368px) and (max-width: 767px) {
@@ -58,6 +92,7 @@ a {
     width: 22rem;
   }
 }
+
 @media (min-width: 768px) and (max-width: 992px) {
   .shoppingImg {
     margin-top: -12px;
@@ -65,13 +100,20 @@ a {
     height: 420px !important;
     object-fit: cover;
   }
-  .formContainer {
-    margin-left: 80px !important;
-  }
+
   .haveAccount {
     width: 20rem !important;
   }
 }
+
+@media (max-width: 768px) {
+  .loader-card {
+    width: 30%;
+    top: 35%;
+
+  }
+}
+
 @media (max-width: 1600px) {
   .footerRes {
     margin-left: 17px;

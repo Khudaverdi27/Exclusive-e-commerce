@@ -1,0 +1,66 @@
+:root {
+    --color-light-green: #0F6;
+    --color-light-orange: #DB4444;
+    --color-dark-green: #184c4b;
+    --color-yellow: #eafb54;
+    --color-red: #f20000;
+    --color-light-red: rgba(255, 0, 0, 0.1);
+    --color-solid-secondary: #F5F5F5;
+    --color-black: #000;
+    --color-light-blue: #A0BCE0;
+}
+
+/* ==Colors=== */
+.bg-linear {
+    background: rgb(151, 109, 157);
+    background: linear-gradient(27deg, rgba(151, 109, 157, 1) 0%, rgba(100, 93, 101, 1) 53%);
+}
+
+.color-light-green {
+    color: var(--color-light-green);
+}
+
+.text-light-orange {
+    color: var(--color-light-orange) !important;
+}
+
+.bg-light-green {
+    background-color: var(--color-light-green);
+}
+
+.bg-light-blue {
+    background-color: var(--color-light-blue);
+}
+
+.bg-dark-green {
+    background-color: var(--color-dark-green) !important;
+}
+
+.bg-yellow {
+    background-color: var(--color-yellow) !important;
+}
+
+
+.bg-red {
+    background-color: var(--color-red) !important;
+}
+
+.bg-light-red {
+    background-color: var(--color-light-red);
+}
+
+.bg-solid-secondary {
+    background-color: var(--color-solid-secondary);
+}
+
+.bgBlack {
+    background-color: var(--color-black) !important;
+
+}
+
+.bg-light-orange {
+    background-color: var(--color-light-orange) !important;
+}
+
+
+/* ======== */

@@ -49,4 +49,3 @@ function count() {
 
 count();
 
-export default count

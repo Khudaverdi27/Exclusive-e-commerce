@@ -38,22 +38,20 @@ const services = [
   {
     imgSrc: "assets/images/other/Services (1).png",
     title: "MONEY BACK GUARANTEE",
-    description: "We reurn money within 30 days",
+    description: "We return money within 30 days",
   },
 ];
 
 const objectsToUi = (statistc) => {
   return statistc
     .map((item) => {
-      return `<div class="  ${
-        item.value ? "border " : "col-xl-4"
-      } statitcsCard col-12 col-sm-12 col-md-5 col-lg-6 col-xl-2 px-3 mx-auto ">
+      return `<div class="  ${item.value ? "border " : "col-xl-4"
+        } statitcsCard col-12 col-sm-12 col-md-5 col-lg-6 col-xl-2 px-3 mx-auto ">
 <img class="mt-3" src="${item.imgSrc} " alt="">
 <h4 class="staticsCount mt-3">${item.title}</h4>
 <p class="mb-3">${item.description}</p>
 </div>`;
-    })
-    .join("");
+    }).join("");
 };
 const result = objectsToUi(statistics);
 const service = objectsToUi(services);
@@ -67,4 +65,4 @@ if (statisticsContainer) {
   statisticsContainer.innerHTML = result;
 }
 
-export default objectsToUi;
+

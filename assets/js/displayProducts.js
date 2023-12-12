@@ -182,7 +182,8 @@ const ourProducts = [
         imgStar: 'assets/images/svg/star-fill.svg',
         comments: 65,
         colorSelect: true,
-        firstColor: 'bg-danger'
+        firstColor: 'bg-red',
+        radioBtn: 'group1'
     },
     {
         id: 6,
@@ -195,7 +196,8 @@ const ourProducts = [
         imgStar: 'assets/images/svg/star-fill.svg',
         comments: 35,
         colorSelect: true,
-        firstColor: 'bg-yellow'
+        firstColor: 'bg-yellow',
+        radioBtn: 'group2'
     },
     {
         id: 7,
@@ -210,12 +212,13 @@ const ourProducts = [
         imgEmptyStar: 'assets/images/svg/star-half-filled.svg',
         comments: 55,
         colorSelect: true,
-        firstColor: 'bg-dark'
+        firstColor: 'bg-dark',
+        radioBtn: 'group3'
     },
     {
         id: 8,
         name: 'Quilted Satin Jacket',
-        image: 'assets/images/products/ourProducts4.png',
+        image: 'assets/images/products/ourProducts8.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
         textLayer: 'Add To Cart',
@@ -224,29 +227,32 @@ const ourProducts = [
         imgEmptyStar: 'assets/images/svg/star-half-filled.svg',
         comments: 55,
         colorSelect: true,
-        firstColor: 'bg-dark-green'
+        firstColor: 'bg-dark-green',
+        radioBtn: 'group4'
     }
 
 ];
 // prodtucs to UI
+
 const map = (products) => {
 
     return products.map((item) => {
+
         return `        <div class="products-container "data-id="${item.id}">
     <div class="products bg-solid-secondary mx-1 my-2 d-flex-container position-relative">
-        <img src=${item.image} alt="">
+    <a href='singUp.html'><img src=${item.image} alt=""></a> 
         <div class="product-icons  position-absolute d-flex ${item.discount ? 'justify-content-between' : 'justify-content-end'} w-100">
 <span class="${item.discount ? 'discount-product text-center text-white fs-12 ms-2' : 'd-none'} ${item.disPrice ? 'bg-light-orange' : 'bg-light-green'} ">${item.discount}</span>
             <div class="me-2">
                 <span class="mb-1 icon-bg-rounded bg-white rounded-circle d-flex-container">
-                    <img src=${item.imgHeart} alt="">
+                   <a href='singUp.html'><img src=${item.imgHeart} alt="img"></a> 
                 </span>
                 <span class="icon-bg-rounded bg-white rounded-circle d-flex-container">
-                    <img src=${item.imgEye} alt="">
+                <a href='productDetails.html'><img src=${item.imgEye} alt="img"></a>
                 </span>
             </div>
         </div>
-        <div class="layer text-white">${item.textLayer}</div>
+        <div class="layer text-white"><a href='singUp.html'>${item.textLayer}</a></div>
     </div>
     <p>${item.name}</p>
     <span class="text-danger me-2">$${item.price}</span><span
@@ -259,24 +265,33 @@ const map = (products) => {
         <span><img src=${item.imgEmptyStar ? item.imgEmptyStar : item.imgStar} alt=""></span>
         <span class="fs-14">(${item.comments})</span>
     </div>
-    <div class="${item.colorSelect ? "d-block" : "d-none"}">
-    <button class="btnColorSelect border-0 ${item.firstColor ? item.firstColor : ''} rounded-circle" type="button"></button>
-    <button class="btnColorSelect bg-light-orange border-0 rounded-circle" type="button"></button>
+    <div class="${item.radioBtn ? "d-block" : "d-none"} input-group">
+  
+    <input checked data-id=${item.id}  class="${item.checked ? '' : item.firstColor} form-check-input bg-image btnColorSelect mt-0 rounded-pill" type="radio" value=""name="${item.radioBtn}" >
+
+    <input data-id=${item.id} checked class="form-check-input bg-image btnColorSelect mt-0 ms-1 rounded-pill ${item.checked ? item.firstColor : 'bg-light-orange'}" type="radio" value=""name="${item.radioBtn}" >
     </div>
-</button>
     </div>`
+
     }).join("")
 
+
 }
+
+
 const sectionContainer = document.getElementById('middleSection-products');
 const bestProductContainer = document.getElementById('bestProducts');
 const exploreProductsSec = document.getElementById('exploreProductsSec');
 
 // products to product section
-const product = map(products)
+const product = map(products);
+
 if (sectionContainer) {
-    sectionContainer.innerHTML = product
+    sectionContainer.innerHTML = product;
+
 }
+
+
 // products to Best product section
 const bestProduct = map(bestProducts)
 if (bestProductContainer) {
@@ -294,7 +309,6 @@ if (exploreProductsSec) {
 
 
 
-export default map
 
 // category boxex info
 const categories = [
@@ -473,7 +487,7 @@ const posters = (products) => {
                 </div>
             </div>
             <div class=" ${item.value ? "d-none" : "btn-ONposter text-center"}">
-                <button class=" btn bg-light-green text-white py-2 px-5">Buy Now</button>
+                <button class=" btn bg-light-green text-white py-2 px-5"><a href='singUp.html'>Buy Now</a></button>
             </div>
         </div>
         </div>

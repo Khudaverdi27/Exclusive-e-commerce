@@ -21,12 +21,10 @@ const pathsLinks = [
 
 const paths = pathsLinks
   .map((item) => {
-    return `<a href="${item.pathFromHref}" class="arrivingPage">${
-      item.pageFromName
-    }</a><span><a href="${item[item.pageToName.toLowerCase() + "PathHref"]}"
-  class="currentPage"><span class="pageSlash">/</span>${
-    item.pageToName
-  }</a></span>`;
+    return `<a href="${item.pathFromHref}" class="arrivingPage">${item.pageFromName
+      }</a><span><a href="${item[item.pageToName.toLowerCase() + "PathHref"]}"
+  class="currentPage"><span class="pageSlash">/</span>${item.pageToName
+      }</a></span>`;
   })
   .join("");
 document.addEventListener("DOMContentLoaded", function () {
@@ -36,4 +34,4 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-export default paths;
+
