@@ -11,7 +11,7 @@ const navbar = () => {
     <div class="d-flex justify-content-around header-top-content  ">
         <p class="nav text-white fs-14 align-items-center d-inline mt-2">
             Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
-            <span><a href="${boolean ? "header.html" + "?" + "true" : "sign-Up.html"}" class=" fw-bold text-white">ShopNow</a></span>
+            <span><a href="${boolean ? "index.html" + "?" + "true" : "sign-Up.html"}" class=" fw-bold text-white">ShopNow</a></span>
         </p>
         <ul class="nav nav-tabs border-0">
             <li class="nav-item dropdown fs-14">
@@ -26,12 +26,12 @@ const navbar = () => {
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg bg-white border-bottom">
         <div class=" container-fluid d-flex justify-content-around">
-            <a class="navbar-brand" href= ${boolean ? "header.html" + "?" + "true" : "header.html"}><img src="assets/images/logo/Logo.png" alt=""></a>
+            <a class="navbar-brand" href= ${boolean ? "index.html" + "?" + "true" : "index.html"}><img src="assets/images/logo/Logo.png" alt=""></a>
  
             <div class="collapse show " id="navbarNav">
                 <ul class="navbar-nav  mt-1 mb-lg-0 nav-underline crusor-p fs-16 ">
                     <li class="nav-item">
-                        <a class="nav-link " href= ${boolean ? "header.html" + "?" + "true" : "header.html"}>Home</a>
+                        <a class="nav-link " href= ${boolean ? "index.html" + "?" + "true" : "index.html"}>Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"  href= ${boolean ? "contact.html" + "?" + "true" : "contact.html"}>Contact</a>
@@ -168,7 +168,7 @@ function searchArrays() {
             <p class="fs-error">404 Not Found</p>
             <p>Your visited page not found. You may go home page.</p>
             <button class="btn bg-light-orange text-white px-5 py-2 my-2" type="button">
-            <a  href= ${boolean ? "header.html" + "?" + "true" : "header.html"}> Back to home page</a>
+            <a  href= ${boolean ? "index.html" + "?" + "true" : "index.html"}> Back to home page</a>
            </button>
         </div>
 

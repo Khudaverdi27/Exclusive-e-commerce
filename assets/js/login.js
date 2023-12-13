@@ -176,7 +176,7 @@ function selectElement(form, email, email_error, pass, pass_error, nameInput, na
         spinner.classList.remove('d-none')
         setTimeout(() => {
             spinner.classList.add('d-none')
-            window.location.href = "header.html?" + queryString;
+            window.location.href = "index.html?" + queryString;
         }, 3000)
     }
 
