@@ -100,7 +100,7 @@ a {
   position: fixed;
   z-index: 1;
   left: 50%;
-  top: 120px;
+  top: 30%;
 }
 
 /* Show the snackbar when clicking on a button (class added with JavaScript) */
@@ -183,7 +183,7 @@ a {
 @media (max-width: 768px) {
   .loader-card {
     width: 30%;
-    top: 35%;
+    top: 45%;
 
   }
 }
