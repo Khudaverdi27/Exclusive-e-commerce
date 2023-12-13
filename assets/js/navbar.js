@@ -49,7 +49,7 @@ const navbar = () => {
                 <div class="d-flex justify-content-between" role="search">
                     <div class="position-relative">
                         <input id="searchInput" class="srch-input form-control me-2 p-1 bg-solid-secondary position-relative"
-                            placeholder="What are you looking for?" type="search" aria-label="Search">
+                            placeholder="What are you looking?" type="search" aria-label="Search">
                         <img id="search-icon" src="assets/images/svg/searcg-icon.svg" class="position-absolute search-icon crusor-p"
                             alt="">
                     </div>
