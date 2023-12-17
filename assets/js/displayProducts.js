@@ -644,7 +644,7 @@ function handleWishlistClick(wishlistIcon, product, id) {
         };
 
     } else {
-        window.location.href = "sign-up.html";
+        window.location.href = "sign-Up.html";
     }
 }
 
