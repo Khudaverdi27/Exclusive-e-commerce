@@ -581,11 +581,12 @@ function getIndexById(element, id) {
     return element.findIndex(i => i.id == id);
 }
 
-productsByIndex(products);
-productsByIndex(ourProducts);
-productsByIndex(bestProducts);
+productsByIndex(products, true);
+productsByIndex(ourProducts, true);
+productsByIndex(bestProducts, true);
 
-function productsByIndex(products) {
+function productsByIndex(products, eventListener = false) {
+
     document.querySelectorAll('.products-container').forEach(item => {
         const id = item.getAttribute('data-id');
         const index = getIndexById(products, id);
@@ -604,8 +605,10 @@ function productsByIndex(products) {
 
             // Event listener for 'Add to Wishlist' button
             const wishlistIcon = item.querySelector('#addWishlist');
-            if (wishlistIcon) {
+            if (wishlistIcon && eventListener) {
                 wishlistIcon.addEventListener('click', () => {
+
+
                     handleWishlistClick(wishlistIcon, products[index], id);
                 });
             }
@@ -628,9 +631,12 @@ function updateModalContent(image, name, desc) {
 }
 
 function handleWishlistClick(wishlistIcon, product, id) {
+
     if (boolean) {
+
         const attr = wishlistIcon.getAttribute('data-cart')
         if (!attr) {
+
             const hasBgWhiteClass = wishlistIcon.classList.contains('bg-white');
 
             // Toggle background color class
@@ -640,6 +646,7 @@ function handleWishlistClick(wishlistIcon, product, id) {
             // Save to session storage
             setLocale(product, id);
         } else {
+
             setLocale(product, id, attr);
         };
 

@@ -1,15 +1,15 @@
 import { bestProducts, productsByIndex } from "./displayProducts.js";
+import { removeProductFromWishlist } from './navbar.js'
 const wishListCount = document.getElementById('wishlist-title')
 
-const wishProducts = JSON.parse(sessionStorage.getItem('sendToWishlist')) || [];
+let wishProducts = JSON.parse(sessionStorage.getItem('sendToWishlist')) || [];
 wishProducts.forEach(element => {
     element.imgEye = "assets/images/svg/icon-delete.svg"
     element.imgEmptyStar = ""
     element.imgStar = ""
 });
 if (wishListCount) {
-    const existingData = JSON.parse(sessionStorage.getItem('sendToWishlist')) || [];
-    wishListCount.textContent = `Wishlist (${existingData.length})`
+    wishListCount.textContent = `Wishlist (${wishProducts.length})`
 
 }
 
@@ -19,13 +19,13 @@ const wishlistMap = (products) => {
 
     return products.map((item) => {
 
-        return `        <div class="products-container "data-id="${item.id}">
-    <div class="products bg-solid-secondary mx-1 my-2 d-flex-container position-relative">
+        return `        <div class="products-container ${item.imgStar ? "" : "actionDelete"}"data-id="${item.id}">
+    <div class="products  bg-solid-secondary mx-1 my-2 d-flex-container position-relative">
    <img src=${item.image} alt="">
         <div class="product-icons  position-absolute d-flex ${item.discount ? 'justify-content-between' : 'justify-content-end'} w-100">
 <span class="${item.discount ? 'discount-product text-center text-white fs-12 ms-2' : 'd-none'} ${item.disPrice ? 'bg-light-orange' : ''} ">${item.discount}</span>
             <div class="me-2">
-                <span id="actionDelete" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="mb-1 icon-bg-rounded bg-white rounded-circle d-flex-container showItem">
+                <span data-bs-toggle=${item.imgStar ? "modal" : "false"} data-bs-target="#staticBackdrop" class="mb-1 icon-bg-rounded bg-white rounded-circle d-flex-container showItem ">
                  <img src=${item.iconDelete ? item.iconDelete : item.imgEye} alt="img">
                 </span>
 
@@ -95,5 +95,22 @@ if (recommendProducts) {
 
 }
 
-productsByIndex(bestProducts)
+
+
+const deleteProduct = () => {
+    document.querySelectorAll('.actionDelete').forEach((el) => {
+        el.addEventListener('click', () => {
+            const deletedId = el.getAttribute('data-id');
+
+            removeProductFromWishlist(deletedId);
+            location.reload();
+        });
+    });
+};
+
+deleteProduct();
+
+
+
+productsByIndex(bestProducts, false)
 
