@@ -30,30 +30,40 @@
                 <img class="img-fluid shoppingImg" src="assets/images/other/imageShopping.jpg" alt="">
             </div>
             <div
-                class="formContainer col-sm-12 ms-2 d-xl-flex align-items-xl-center flex-xl-column justify-content-center col-md-5 col-xl-5 col-lg-5">
+                class="formContainer col-sm-12 ms-2 d-xl-flex  flex-xl-column justify-content-center col-md-5 col-xl-5 col-lg-5">
                 <h1 class="text-center">Create account</h1>
                 <p class="text-center">Enter your details below</p>
                 <form data-form="signIn" id="form-sign" class="inputsAndBtns mx-2">
-                    <div class="inputs d-flex flex-column position-relative">
-                        <input id="input-name-sign" type="text" class="borderlessInput mt-3 py-2 px-2"
-                            placeholder="Name">
-                        <div id="signName_error" class=' fs-12 text-danger bg-light-red rounded px-2  d-none mt-1'>
+                    <div class="inputs d-flex flex-column">
+                        <div class="mb-1">
+                            <input id="input-name-sign" type="text" class="form-control py-2 px-2 borderlessInput"
+                                id="exampleFormControlInput1" placeholder="Name">
+                        </div>
+
+                        <div id="signName_error" class=' fs-12 text-danger bg-light-red rounded px-2  d-none my-1'>
                             Please fill up your Name</div>
-                        <input id="input-email-sign" type="text" class="borderlessInput mt-3 py-2 px-2"
-                            placeholder="Email or Phone Number">
-                        <div id="signEmail_error" class='fs-12 text-danger bg-light-red rounded px-2  d-none mt-1'>
+                        <div class="my-3">
+                            <input id="input-email-sign" type="text" class="borderlessInput form-control py-2 px-2"
+                                id="exampleFormControlInput1" placeholder="Email or Phone Number">
+                        </div>
+                        <div id="signEmail_error" class='fs-12 text-danger bg-light-red rounded px-2  d-none my-1'>
                             Please
                             Please fill up your e-mail or phone number</div>
-                        <input id="input-pass-sign" type="password" class="borderlessInput mt-3 py-2 px-2 mb-1"
-                            placeholder="Password">
-                        <div id="signPass_error" class='fs-12 text-danger bg-light-red rounded px-2  d-none'>Must
+                        <div class="input-group mb-1">
+                            <input id="input-pass-sign" type="password"
+                                class="form-control  py-2 px-2 borderlessInput  border border-end-0"
+                                placeholder="Password" aria-label="Recipient's Password"
+                                aria-describedby="basic-addon2">
+                            <span class="input-group-text bg-white" id="basic-addon2"> <i id="eyeIconAccountPage"
+                                    class="crusor-p fs-5 p-0 text-secondary fa-solid fa-eye-slash"></i></span>
+                        </div>
+
+                        <div id="signPass_error" class='fs-12 text-danger bg-light-red rounded px-2 my-1  d-none'>Must
                             be
                             numbers,lowercase and uppercase letters, and total characters at least 8.</div>
-                        <i id="eyeIconAccountPage"
-                            class="crusor-p position-absolute fs-5 text-secondary fa-solid fa-eye-slash"></i>
 
                     </div>
-                    <div class="btns d-flex flex-column container my-2">
+                    <div class="btns d-flex flex-column  my-2">
                         <button type="submit" class="button createBtn my-1 signBtn">Create account</button>
                         <button class="button googleBtn my-1">
                             <span><img src="assets/images/icon/googleIcon.png" alt="" style="width: 20px;"></span>

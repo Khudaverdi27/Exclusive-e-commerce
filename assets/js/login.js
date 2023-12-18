@@ -7,23 +7,34 @@ const createloginUi = () => {
     <div id="snackbar"> 
     </div>
 
-    <div class='me-3 w-100 my-2'>
-        <h3 class="ms-2">Log in to Exclusive</h3>
-        <p class="ms-3">Enter your details below</p>
-        <form data-form='login' class="inputsAndBtns" name="form">
-            <div class="inputs d-flex flex-column position-relative">
-                <input data-email="emailLogin" name="email" type="text" class="borderlessInput mt-3 mb-1 py-2 ps-1" placeholder="Email or Phone Number">
-                <div id="email_error" class='fs-12 text-danger bg-light-red rounded px-2 d-none'>Wrong email or password</div>
-                <input id="inputPassLoginPage" name="password" type="password" class="borderlessInput mt-1 mb-1 w-100 py-2 ps-1" placeholder="Password">
-                <i id="eyeIconLogin" class="position-absolute fs-5 text-secondary fa-solid fa-eye-slash"></i>
-                <div id="pass_error" class='fs-12 text-danger bg-light-red rounded px-2 d-none'>Wrong email or password</div>
-                <div class="d-flex align-items-center justify-content-between container mt-3">
-                    <button id='createBtn' type='submit' class="button createBtn my-1">Log in</button>
-                    <a id="forgetPass" class='text-light-orange ' href='#'>Forget Password?</a>
-                </div>
+    <div class='me-3  my-2'>
+    <h3 class="ms-2">Log in to Exclusive</h3>
+    <p class="ms-3">Enter your details below</p>
+    <form data-form='login' class="inputsAndBtns" name="form">
+        <div class="inputs d-flex flex-column ">
+            <div class="my-3">
+                <input data-email="emailLogin" name="email" type="text"
+                    class="borderlessInput form-control mt-3 mb-1 py-2 ps-1" id="exampleFormControlInput1"
+                    placeholder="Email or Phone Number">
             </div>
-        </form>
-    </div>`;
+            <div id="email_error" class='fs-12 text-danger bg-light-red rounded px-2 d-none'>Wrong email or password
+            </div>
+            <div class="input-group mb-1">
+                <input id="inputPassLoginPage" type="password" name="password"
+                    class="form-control  borderlessInput  border border-end-0  py-2 ps-1" placeholder="Password"
+                    aria-label="Recipient's Password" aria-describedby="basic-addon2">
+                <span class="input-group-text bg-white" id="basic-addon2"> <i id="eyeIconLogin"
+                        class="crusor-p fs-5 p-0 text-secondary fa-solid fa-eye-slash"></i></span>
+            </div>
+            <div id="pass_error" class='fs-12 text-danger bg-light-red rounded px-2 d-none'>Wrong email or password
+            </div>
+            <div class="d-flex align-items-center justify-content-between container mt-3">
+                <button id='createBtn' type='submit' class="button createBtn my-1">Log in</button>
+                <a id="forgetPass" class='text-light-orange ' href='#'>Forget Password?</a>
+            </div>
+        </div>
+    </form>
+</div>`;
 }
 export default createloginUi
 

@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+
 }
 
 /* common classes */
@@ -72,6 +73,9 @@ a {
     color: var(--color-solid-secondary);
 }
 
+.form-control:focus {
+    box-shadow: none;
+}
 
 /* header  */
 .header-top-content {
@@ -96,12 +100,7 @@ input[type="search"] {
     padding: 7px 12px 7px 5px;
 }
 
-.search-icon {
-    top: 15%;
-    right: 3%;
-    width: 24px;
-    height: 24px;
-}
+
 
 .dropdown-menu {
     min-width: 5rem;

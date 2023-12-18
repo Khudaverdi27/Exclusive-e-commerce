@@ -624,7 +624,7 @@ function productsByIndex(products, eventListener = false) {
     });
 }
 
-function updateModalContent(image, name, desc) {
+export const updateModalContent = (image, name, desc) => {
     document.querySelectorAll('.img-modal').forEach(img => img.src = image);
     document.querySelectorAll('.modal-title').forEach(title => title.textContent = name);
     document.querySelectorAll('.product-desc').forEach(descElem => descElem.textContent = desc);

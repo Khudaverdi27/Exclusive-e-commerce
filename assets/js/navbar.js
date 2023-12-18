@@ -46,13 +46,12 @@ const navbar = () => {
             </div>
             <!-- input field and icon in navbar -->
             <div class="input-section ">
-                <div class="d-flex justify-content-between" role="search">
-                    <div class="position-relative">
-                        <input id="searchInput" class="srch-input form-control me-2 p-1 bg-solid-secondary position-relative"
-                            placeholder="What are you looking?" type="search" aria-label="Search">
-                        <img id="search-icon" src="assets/images/svg/searcg-icon.svg" class="position-absolute search-icon crusor-p"
-                            alt="">
-                    </div>
+                <div class="d-flex justify-content-between align-items-center" role="search">
+                <div class="input-group">
+                <input id="searchInput" type="search" class="form-control srch-input bg-solid-secondary border border-end-0" placeholder="What are you looking for?" aria-label="Search" aria-describedby="basic-addon2">
+                <span class="input-group-text bg-solid-secondary " id="basic-addon2"><img id="search-icon" src="assets/images/svg/searcg-icon.svg" class="search-icon crusor-p"</span>
+                </div>
+                            
                     <div class="input-svg d-flex justify-content-between position-relative">
                     <a href= ${boolean ? "wishlist.html" + "?" + "true" : "sign-Up.html"}>
                     <span class="position-absolute top-0 mt-1 translate-middle badge badge-wishlist rounded-pill bg-danger ${boolean ? "d-block" : "d-none"}">0</span>
