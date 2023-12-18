@@ -222,7 +222,7 @@ function setLocale(data, id, attr) {
     const isItemCart = cartItems.some(item => item.id === id);
 
     if (!attr) {
-        console.log("wish", data);
+
         if (!isItemInWishlist) {
             addProductToWishlist(data);
         } else {
@@ -231,7 +231,7 @@ function setLocale(data, id, attr) {
 
         updateBadge();
     } else {
-        console.log("cart", data);
+
         if (!isItemCart) {
             addProductToWishlist(data, attr);
         } else {
@@ -246,24 +246,30 @@ function addProductToWishlist(data, attr) {
         existingData.push(data);
         updateStorage("Product is added to wishlist");
     } else {
+
         cartItems.push(data);
         updateStorage("Product is added to cart", attr);
+
     }
 
 }
 
-function removeProductFromWishlist(id, attr) {
+export const removeProductFromWishlist = (id, attr) => {
+
     if (!attr) {
         existingData = existingData.filter(item => item.id !== id);
         updateStorage("Product is removed from wishlist");
     } else {
+
         cartItems = cartItems.filter(item => item.id !== id);
         updateStorage("Product is removed from cart", attr);
+
+
     }
 
 }
 
-function updateStorage(message, attr) {
+export const updateStorage = (message, attr) => {
     if (!attr) {
         sessionStorage.setItem('sendToWishlist', JSON.stringify(existingData));
         showSnackbar(message);
@@ -275,9 +281,12 @@ function updateStorage(message, attr) {
 }
 
 function showSnackbar(message) {
-    snackbar.className = "show";
-    snackbar.innerHTML = `<h6>${message}</h6>`;
-    setTimeout(() => { snackbar.className = snackbar.className.replace("show", ""); }, 3000);
+    if (snackbar) {
+        snackbar.className = "show";
+        snackbar.innerHTML = `<h6>${message}</h6>`;
+        setTimeout(() => { snackbar.className = snackbar.className.replace("show", ""); }, 3000);
+    }
+
 }
 
 function updateBadge() {
