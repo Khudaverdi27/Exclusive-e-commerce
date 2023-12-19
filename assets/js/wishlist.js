@@ -19,13 +19,13 @@ const wishlistMap = (products) => {
 
     return products.map((item) => {
 
-        return `        <div class="products-container ${item.imgStar ? "" : "actionDelete"}"data-id="${item.id}">
+        return `        <div class="products-container "data-id="${item.id}">
     <div class="products  bg-solid-secondary mx-1 my-2 d-flex-container position-relative">
    <img src=${item.image} alt="">
         <div class="product-icons  position-absolute d-flex ${item.discount ? 'justify-content-between' : 'justify-content-end'} w-100">
 <span class="${item.discount ? 'discount-product text-center text-white fs-12 ms-2' : 'd-none'} ${item.disPrice ? 'bg-light-orange' : ''} ">${item.discount}</span>
             <div class="me-2">
-                <span data-bs-toggle=${item.imgStar ? "modal" : "false"} data-bs-target="#staticBackdrop" class="mb-1 icon-bg-rounded bg-white rounded-circle d-flex-container showItem ">
+                <span data-bs-toggle=${item.imgStar ? "modal" : "false"} data-bs-target="#staticBackdrop" class="mb-1 icon-bg-rounded bg-white rounded-circle d-flex-container  ${item.imgStar ? "showItem" : "actionDelete"}">
                  <img src=${item.iconDelete ? item.iconDelete : item.imgEye} alt="img">
                 </span>
 
@@ -98,15 +98,15 @@ if (recommendProducts) {
 
 
 const deleteProduct = () => {
-    document.querySelectorAll('.actionDelete').forEach((el) => {
-        el.addEventListener('click', () => {
-            const deletedId = el.getAttribute('data-id');
-
+    document.querySelectorAll('.products-container .actionDelete').forEach((deletIcon) => {
+        deletIcon.addEventListener('click', () => {
+            const deletedId = deletIcon.closest('.products-container').getAttribute('data-id');
             removeProductFromWishlist(deletedId);
             location.reload();
         });
     });
 };
+
 
 deleteProduct();
 

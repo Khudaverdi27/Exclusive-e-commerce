@@ -2,11 +2,7 @@ a {
   text-decoration: none;
 }
 
-.borderlessInput {
-  border: none;
-  outline: none;
-  border-bottom: 1px solid #ccc;
-}
+
 
 .borderlessInput::placeholder {
   font-size: 20px;
@@ -62,18 +58,7 @@ a {
   border: 1px solid #fff;
 }
 
-#eyeIconAccountPage,
-#eyeIconLogin {
-  right: 2%;
-}
 
-#eyeIconAccountPage {
-  top: 77%
-}
-
-#eyeIconLogin {
-  top: 42%
-}
 
 
 
