@@ -59,30 +59,30 @@
                     </div>
                     <form name="submit-to-google-sheet"
                         class="col-xl-8 col-sm-12 inputContainer order-sm-1 order-xl-2 order-md-1 ">
-                        <div class="inputs  f-column mb-3 gap-2">
+                        <div class="d-flex f-column mb-3 gap-2">
                             <div class="w-100">
-                                <input name="Name" class="input w-100" id="inputName" type="text"
-                                    placeholder="Your Name">
+                                <input name="Name" class="p-2 rounded bg-solid-secondary border-0 w-100" id="inputName"
+                                    type="text" placeholder="Your Name">
                                 <p class="errorMsj errorMessageName d-none">Must be contain only letters(min. 4 -max.
                                     14)
                                 </p>
                             </div>
                             <div class="w-100">
-                                <input name="Email" class="input w-100" id="inputEmail" type="email"
-                                    placeholder="Your Email">
+                                <input name="Email" class="p-2 rounded bg-solid-secondary border-0 w-100"
+                                    id="inputEmail" type="email" placeholder="Your Email">
                                 <p class="errorMsj errorMessageEmail d-none">It must be an correct e-mail address
                                 </p>
                             </div>
                             <div class="w-100">
-                                <input name="Phone" class="input w-100" id="inputPhone" type="tel"
-                                    placeholder="Your Phone">
+                                <input name="Phone" class="p-2 rounded bg-solid-secondary border-0 w-100"
+                                    id="inputPhone" type="tel" placeholder="Your Phone">
                                 <p class="errorMsj errorMessagePhone d-none">Must be contain (+)Area coded and
                                     max.length 15 digits</p>
                             </div>
                         </div>
 
-                        <textarea class="form-control border border-2 mt-2" name="Message" placeholder="Your message"
-                            id="" cols="100" rows="10"></textarea>
+                        <textarea class="form-control rounded bg-solid-secondary border-1 mt-2" name="Message"
+                            placeholder="Your message" id="" cols="100" rows="10"></textarea>
                         <button type="submit" class="btn bg-light-orange btnSend float-end mt-4"
                             id="contactSendBtn">Send
                             Message</button>

@@ -215,7 +215,7 @@ let cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
 const snackbar = document.getElementById("snackbar");
 updateBadge();
 
-function setLocale(data, id, attr) {
+export const setLocale = (data, id, attr) => {
 
     const isItemInWishlist = existingData.some(item => item.id === id);
     const isItemCart = cartItems.some(item => item.id === id);
@@ -276,7 +276,7 @@ export const updateStorage = (message, attr) => {
 
 }
 
-function showSnackbar(message) {
+export const showSnackbar = (message) => {
     if (snackbar) {
         snackbar.className = "show";
         snackbar.innerHTML = `<h6>${message}</h6>`;
@@ -289,11 +289,6 @@ function updateBadge() {
     document.querySelector('.badge-wishlist').textContent = existingData.length;
 }
 
-
-
-
-
-export default setLocale
 
 
 

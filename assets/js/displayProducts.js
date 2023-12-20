@@ -1,4 +1,4 @@
-import setLocale from "./navbar.js";
+import { setLocale } from "./navbar.js";
 
 const products = [
     {
@@ -598,7 +598,7 @@ function productsByIndex(products, eventListener = false) {
                 description: productDesc } = products[index];
 
             // Event listener for 'Show Item' button
-            item.querySelector('.showItem').addEventListener('click', () => {
+            item.querySelector('.showItem')?.addEventListener('click', () => {
                 updateModalContent(itemImage, itemName, productDesc);
 
             });
