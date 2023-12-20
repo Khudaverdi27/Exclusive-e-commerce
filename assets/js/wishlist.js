@@ -48,7 +48,7 @@ const wishlistMap = (products) => {
 </div>
             </div>
         </div>
-        <div class="layer text-white">${item.textLayer}</div>
+        <div data-cart="addCart" id="addCart" class="layer text-white addCart">${item.textLayer}</div>
     </div>
     <p class="mb-0">${item.name}</p>
     <span class="text-danger me-2">$${item.price}</span><span
@@ -107,10 +107,8 @@ const deleteProduct = () => {
     });
 };
 
-
 deleteProduct();
 
-
-
+productsByIndex(wishProducts, false)
 productsByIndex(bestProducts, false)
 
