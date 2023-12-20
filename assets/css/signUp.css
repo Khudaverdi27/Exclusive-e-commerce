@@ -42,7 +42,6 @@ a {
 .inputEmail {
   padding: 12px;
   border: 1px solid #fff;
-  outline: none;
 }
 
 .inputEmail::placeholder {

@@ -7,6 +7,10 @@
 
 }
 
+input {
+    outline: none;
+}
+
 /* common classes */
 .fs-12 {
     font-size: 12px;
