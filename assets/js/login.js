@@ -21,9 +21,9 @@ const createloginUi = () => {
             </div>
             <div class="input-group mb-1">
                 <input id="inputPassLoginPage" type="password" name="password"
-                    class="form-control  borderlessInput  border border-end-0  py-2 ps-1" placeholder="Password"
+                    class="form-control  borderlessInput py-2 ps-1" placeholder="Password"
                     aria-label="Recipient's Password" aria-describedby="basic-addon2">
-                <span class="input-group-text bg-white" id="basic-addon2"> <i id="eyeIconLogin"
+                <span class="input-group-text" id="basic-addon2"> <i id="eyeIconLogin"
                         class="crusor-p fs-5 p-0 text-secondary fa-solid fa-eye-slash"></i></span>
             </div>
             <div id="pass_error" class='fs-12 text-danger bg-light-red rounded px-2 d-none'>Wrong email or password
