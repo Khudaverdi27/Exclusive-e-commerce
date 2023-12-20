@@ -259,11 +259,8 @@ export const removeProductFromWishlist = (id, attr) => {
         existingData = existingData.filter(item => item.id !== id);
         updateStorage("Product is removed from wishlist");
     } else {
-
         cartItems = cartItems.filter(item => item.id !== id);
         updateStorage("Product is removed from cart", attr);
-
-
     }
 
 }

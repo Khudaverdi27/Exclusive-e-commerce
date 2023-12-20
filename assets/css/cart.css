@@ -65,6 +65,12 @@
 .quantityInput {
   width: 50px;
   height: 35px;
+  outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  margin-top: 2px;
 }
 
 .cardTotalSection {
@@ -82,6 +88,9 @@
 
 .imgBox {
   cursor: pointer;
+  width: 50px;
+  height: 39px;
+  flex-shrink: 0;
 }
 
 .productName {
@@ -93,18 +102,9 @@
 }
 
 .cancelBtn {
-  display: block;
-  position: absolute;
-  background-color: #db4444 !important;
-  color: #fff;
-  border-radius: 50%;
-  padding: 3px 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: -15px;
-  left: -25px;
-  background-color: transparent;
+  padding: 0px 6px;
+  top: -4px;
+  left: -9px;
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
