@@ -4,9 +4,9 @@ const footer = () => {
     const div = document.createElement("div");
 
     div.innerHTML = `
-     <div class="container">
+     <div class="container fs-14">
         <div class="footerSection row footerRes ">
-            <div class=" mb-3 col-sm-6 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
+            <div class="my-4 col-sm-6 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
 
                 <a href="#">
                     <h5 class="text-white mb-4">Exclusive</h5>
@@ -19,16 +19,16 @@ const footer = () => {
                 </span>
             </div>
             <hr class="borderHr d-block d-sm-none d-md-none d-xl-none d-xxl-none ">
-            <div class=" col-sm-6 col-md-6 col-lg-6 col-xl-2 col-xxl-2">
+            <div class="my-4 col-sm-6 col-md-6 col-lg-6 col-xl-2 col-xxl-2">
 
                 <h5 class="text-white mb-4">Support</h5>
-                <p class="text-white">111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</p>
+                <p class="text-white">111 H.Aliyev Avenue, Baku, AZ 1515, Azerbaijan.</p>
                 <p class="text-white">exclusive@gmail.com</p>
-                <p class="text-white">+88015-88888-9999</p>
+                <p class="text-white">+994-88-888-99-99</p>
 
             </div>
             <hr class="borderHr d-block d-md-block d-sm-block d-xl-none d-xxl-none">
-            <div class=" col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2">
+            <div class="my-4 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2">
 
                 <h5 class="text-white mb-4">Account</h5>
                 <p><a class="text-white" href="">My Account</a></p>
@@ -39,7 +39,7 @@ const footer = () => {
 
             </div>
             <hr class="borderHr d-block d-sm-block d-md-none d-lg-none d-xl-none d-xxl-none ">
-            <div class=" col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2">
+            <div class="my-4 col-sm-6 col-md-4 col-lg-4 col-xl-2 col-xxl-2">
 
                 <h5 class="text-white mb-4">Quick Link</h5>
                 <p><a class="text-white" href="">Privacy Policy</a></p>
@@ -49,7 +49,7 @@ const footer = () => {
 
             </div>
             <hr class="borderHr d-block d-sm-block d-md-none d-lg-none d-xl-none d-xxl-none ">
-            <div class=" col-sm-12 col-md-4 col-xl-3 col-lg-4 col-xl-3 col-xxl-3 ">
+            <div class="my-4 col-sm-12 col-md-4 col-xl-3 col-lg-4 col-xl-3 col-xxl-3 ">
 
                 <h5 class="text-white mb-4">Download App</h5>
                 <p class="text-light saveApp">Save $3 with App New User Only</p>
