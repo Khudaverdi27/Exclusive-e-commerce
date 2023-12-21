@@ -1,6 +1,5 @@
 import { products, ourProducts, bestProducts, map } from "./displayProducts.js";
 
-
 const navbarContainer = document.querySelector('.header-top');
 let boolean = window.location.search.startsWith('?true');
 
@@ -210,6 +209,11 @@ if (previousPageURL.endsWith('.html')) {
 
 }
 
+export const updateBadge = () => {
+    document.querySelector('.badge-wishlist').textContent = existingData.length;
+}
+
+
 let existingData = JSON.parse(sessionStorage.getItem('sendToWishlist')) || [];
 let cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
 const snackbar = document.getElementById("snackbar");
@@ -240,7 +244,7 @@ export const setLocale = (data, id, attr) => {
 
 }
 
-function addProductToWishlist(data, attr) {
+export const addProductToWishlist = (data, attr) => {
     if (!attr) {
         existingData.push(data);
         updateStorage("Product is added to wishlist");
@@ -256,6 +260,7 @@ function addProductToWishlist(data, attr) {
 export const removeProductFromWishlist = (id, attr) => {
 
     if (!attr) {
+
         existingData = existingData.filter(item => item.id !== id);
         updateStorage("Product is removed from wishlist");
     } else {
@@ -285,9 +290,7 @@ export const showSnackbar = (message) => {
 
 }
 
-function updateBadge() {
-    document.querySelector('.badge-wishlist').textContent = existingData.length;
-}
+
 
 
 

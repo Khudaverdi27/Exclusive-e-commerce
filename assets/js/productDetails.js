@@ -1,4 +1,5 @@
 import { getStorage } from "./login.js";
+import { setLocale, updateBadge } from "./navbar.js";
 
 const ui = {
     minusBtn: document.getElementById('minus-btn'),
@@ -59,6 +60,21 @@ if (sizeContainer) {
     sizeContainer.innerHTML = sizeHTML;
 }
 
+let boolean = window.location.search.startsWith('?true');
 
+const addWish = document.getElementById("addDetailWishlist")
+
+addWish?.addEventListener("click", () => {
+    const hasBgWhiteClass = addWish.classList.contains('bg-white');
+
+    // Toggle background color class
+    addWish.classList.remove(hasBgWhiteClass ? 'bg-white' : 'bg-danger');
+    addWish.classList.add(hasBgWhiteClass ? 'bg-danger' : 'bg-white');
+
+    setLocale(detailFromStorage, detailFromStorage.id)
+    updateBadge()
+})
+
+document.getElementById("buyFromDetail")?.setAttribute("href", `${boolean ? "checkOut.html" + "?" + "true" : "sign-Up.html"}`)
 
 

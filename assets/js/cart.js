@@ -67,6 +67,13 @@ if (updateBtn) {
   });
 }
 
+let boolean = window.location.search.startsWith('?true')
+
+document.getElementById("checkoutFromCart")?.setAttribute("href", `${boolean ? "checkOut.html" + "?" + "true" : "sign-Up.html"}`)
+document.getElementById("returnShopBtn")?.setAttribute("href", `${boolean ? "index.html" + "?" + "true" : "sign-Up.html"}`)
+
+
+
 
 const cancelButtons = document.querySelectorAll(".cancelBtn");
 
