@@ -63,7 +63,7 @@ const navbar = () => {
                         
                         <div id="profile-dropdown" class="card border-0 card-dropdown position-absolute d-none" style="width: 15rem;">
                         <div class="card-body rounded bg-linear p-3">
-                            <a href="#">
+                            <a href=${boolean ? "account.html" + "?" + "true" : "sign-Up.html"}>
                                 <div class="d-flex ">
                                     <figure><img src="./assets/images/svg/user-dropdown.svg" alt=""></figure>
                                     <span class="fs-14 ms-2 ps-2">Manage My Account</span>
