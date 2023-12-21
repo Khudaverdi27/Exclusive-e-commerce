@@ -68,6 +68,11 @@ input {
     height: 40px;
 }
 
+.box-product {
+    width: 107px;
+    height: 180px;
+}
+
 .crusor-p {
     cursor: pointer;
 }

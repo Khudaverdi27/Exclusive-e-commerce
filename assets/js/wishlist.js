@@ -13,7 +13,7 @@ if (wishListCount) {
 
 }
 
-
+let boolean = window.location.search.startsWith('?true');
 
 const wishlistMap = (products) => {
 
@@ -21,7 +21,7 @@ const wishlistMap = (products) => {
 
         return `        <div class="products-container "data-id="${item.id}">
     <div class="products  bg-solid-secondary mx-1 my-2 d-flex-container position-relative">
-   <img src=${item.image} alt="">
+    <a href="${boolean ? "productDetails.html" + "?" + "true" : "sign-Up.html"}"><img src=${item.image} alt=""></a> 
         <div class="product-icons  position-absolute d-flex ${item.discount ? 'justify-content-between' : 'justify-content-end'} w-100">
 <span class="${item.discount ? 'discount-product text-center text-white fs-12 ms-2' : 'd-none'} ${item.disPrice ? 'bg-light-orange' : ''} ">${item.discount}</span>
             <div class="me-2">
