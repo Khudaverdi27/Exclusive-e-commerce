@@ -75,6 +75,6 @@ addWish?.addEventListener("click", () => {
     updateBadge()
 })
 
-document.getElementById("buyFromDetail")?.setAttribute("href", `${boolean ? "checkOut.html" + "?" + "true" : "sign-Up.html"}`)
+document.getElementById("buyFromDetail")?.setAttribute("href", `${boolean ? "check-out.html" + "?" + "true" : "sign-Up.html"}`)
 
 

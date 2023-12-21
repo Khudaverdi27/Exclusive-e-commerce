@@ -179,35 +179,27 @@ function searchArrays() {
 document.getElementById('search-icon').addEventListener('click', searchArrays);
 document.getElementById('searchInput').addEventListener('keypress', (e) => e.key === 'Enter' && searchArrays());
 
-const previousPageURL = document.referrer;
-if (previousPageURL.endsWith('.html')) {
-    const { pathname } = new URL(previousPageURL);
-    const start = pathname.slice(0, 14);
-    const end = pathname.slice(-5);
-    const startIndex = pathname.indexOf(start) + start.length;
-    const endIndex = pathname.indexOf(end);
 
+export const changePath = () => {
     const currentPage = document.querySelector('.currentPage');
     const arrivingPage = document.querySelector('.arrivingPage');
+    const previousPageURL = document.referrer;
 
-    if (arrivingPage && currentPage && startIndex !== -1 && endIndex !== -1 && startIndex < endIndex) {
-        const resultPath = pathname.substring(startIndex, endIndex);
-        let result = resultPath.charAt(0).toUpperCase() + resultPath.slice(1);
+    if (previousPageURL.endsWith('.html') || previousPageURL.endsWith('.html?true')) {
+        const { pathname } = new URL(previousPageURL);
+        const match = pathname.match(/\/([^\/]+)\.html/);
 
-        if (result === 'Header') {
-            result = '/ Home';
-        } else if (result === 'ProductDetails') {
-            result = 'Details /';
-        }
-
-        if (currentPage.textContent.trim() !== result.trim()) {
-            arrivingPage.textContent = `${result} / `;
-        } else {
-            arrivingPage.textContent = '/';
+        if (arrivingPage && currentPage && match) {
+            let result = match[1].replace(/^./, match[1][0].toUpperCase());
+            result = result === "Index" ? "Home" : result === "ProductDetails" ? "Details" : result;
+            arrivingPage.textContent = currentPage.textContent.trim() !== result.trim() ? `${result} / ` : '/';
         }
     }
-
 }
+
+changePath();
+
+
 
 export const updateBadge = () => {
     document.querySelector('.badge-wishlist').textContent = existingData.length;
@@ -215,7 +207,7 @@ export const updateBadge = () => {
 
 
 let existingData = JSON.parse(sessionStorage.getItem('sendToWishlist')) || [];
-let cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
+export let cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
 const snackbar = document.getElementById("snackbar");
 updateBadge();
 

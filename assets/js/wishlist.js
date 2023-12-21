@@ -1,5 +1,5 @@
 import { bestProducts, productsByIndex } from "./displayProducts.js";
-import { removeProductFromWishlist } from './navbar.js'
+import { addProductToWishlist, removeProductFromWishlist } from './navbar.js'
 const wishListCount = document.getElementById('wishlist-title')
 
 let wishProducts = JSON.parse(sessionStorage.getItem('sendToWishlist')) || [];
@@ -112,3 +112,8 @@ deleteProduct();
 productsByIndex(wishProducts, false)
 productsByIndex(bestProducts, false)
 
+document.getElementById("cartFromWish")?.addEventListener("click", () => {
+    wishProducts.forEach(wish => {
+        addProductToWishlist(wish, true)
+    })
+})

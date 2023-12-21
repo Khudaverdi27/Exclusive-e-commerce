@@ -1,27 +1,27 @@
 import { removeProductFromWishlist } from "./navbar.js";
 
-const products = JSON.parse(sessionStorage.getItem('cartItems')) || [];
+export const products = JSON.parse(sessionStorage.getItem('cartItems')) || [];
 
 const renderProducts = () => {
   const productContainer = document.querySelector(".product-container");
   if (productContainer) {
     productContainer.innerHTML = products.map((item) =>
       `
-    <div data-cartId="${item.id}" class="productsContain card-body d-flex justify-content-between align-items-center">
+    <div data-cartId="${item?.id}" class="productsContain card-body d-flex justify-content-between align-items-center">
       <div class="productName col-2">
       <div class="imgAndBtn">
       <div class="cancelBtn d-flex-container fs-12 fw-bold bg-light-orange text-white rounded-circle position-absolute">x</div>
-      <img class="imgBox imgFluid" src="${item.image}" alt="">
-        <span class="fs-14 text-nowrap">${item.name.split(' ').pop()}</span>
+      <img class="imgBox imgFluid rounded p-1" src="${item?.image}" alt="">
+        <span class="fs-14 text-nowrap">${item?.name?.split(' ').pop()}</span>
       </div>
       
       </div>
       <div class="col-8 d-flex justify-content-around px-4">
-        <span data-id="productPrice${item.id}" class="productPrice">$${item.price}</span>
-        <input data-id="quantityInput${item.id}" class="quantityInput rounded border border-2 dynamic-input text-center" type="number" name="" value="0" min="0">
+        <span data-id="productPrice${item?.id}" class="productPrice">$${item?.price}</span>
+        <input data-id="quantityInput${item?.id}" class="quantityInput rounded border border-2 dynamic-input text-center" type="number" name="" value="0" min="0">
       </div>
       <div class="col-2 d-flex justify-content-end">
-        <p data-id="subtotalPrice${item.id}" class="subtotalPrice">$0.00</p>
+        <p data-id="subtotalPrice${item?.id}" class="subtotalPrice">$0.00</p>
       </div>
     </div>
   `
@@ -69,7 +69,7 @@ if (updateBtn) {
 
 let boolean = window.location.search.startsWith('?true')
 
-document.getElementById("checkoutFromCart")?.setAttribute("href", `${boolean ? "checkOut.html" + "?" + "true" : "sign-Up.html"}`)
+document.getElementById("checkoutFromCart")?.setAttribute("href", `${boolean ? "check-out.html" + "?" + "true" : "sign-Up.html"}`)
 document.getElementById("returnShopBtn")?.setAttribute("href", `${boolean ? "index.html" + "?" + "true" : "sign-Up.html"}`)
 
 
