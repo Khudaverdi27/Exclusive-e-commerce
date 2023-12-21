@@ -1,10 +1,13 @@
+import { setStorage } from "./login.js";
 import { setLocale } from "./navbar.js";
 
 const products = [
     {
         id: generateUniqueId(),
+        size: false,
         name: 'HAVIT HV-G92 Gamepad',
         discount: '-40%',
+        category: 'Gaming',
         image: 'assets/images/products/joystick.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
@@ -17,8 +20,10 @@ const products = [
     },
     {
         id: generateUniqueId(),
+        size: false,
         name: 'AK-900 Wired Keyboard',
         discount: '-35%',
+        category: 'Technology',
         image: 'assets/images/products/keyboard.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
@@ -32,7 +37,9 @@ const products = [
     },
     {
         id: generateUniqueId(),
+        size: false,
         name: 'IPS LCD Gaming Monitor',
+        category: 'Gaming',
         discount: '-30%',
         image: 'assets/images/products/tv.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
@@ -47,8 +54,10 @@ const products = [
     },
     {
         id: generateUniqueId(),
+        size: false,
         name: 'S-Series Comfort Chair',
         discount: '-25%',
+        category: 'Home Accessories',
         image: 'assets/images/products/chair.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
@@ -61,9 +70,11 @@ const products = [
     },
     {
         id: generateUniqueId(),
-        name: 'S-Series Comfort Chair',
+        size: false,
+        name: 'PlayStation 5 JoyStick',
         discount: '-25%',
-        image: 'assets/images/products/chair.png',
+        category: 'Gaming',
+        image: 'assets/images/products/ps-5-jstcik-front.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
         textLayer: 'Add To Cart',
@@ -71,14 +82,16 @@ const products = [
         disPrice: "$400",
         imgStar: 'assets/images/svg/star-fill.svg',
         comments: 99,
-        description: 'MULTI-FUNCTIONAL CHAIR: Whether a gamer or a professional, no one likes being stuck in a rut in their profession when they can push the envelope and learn new things. '
+        description: 'PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.'
     }
 ];
 // best product section
 const bestProducts = [
     {
         id: generateUniqueId(),
+        size: true,
         name: 'Bestselling-Coat',
+        category: 'Clothes',
         image: 'assets/images/products/coat.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
@@ -92,7 +105,9 @@ const bestProducts = [
     },
     {
         id: generateUniqueId(),
+        size: false,
         name: 'Gucci duffle bag',
+        category: 'Accessories',
         image: 'assets/images/products/bag.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
@@ -106,8 +121,10 @@ const bestProducts = [
     },
     {
         id: generateUniqueId(),
+        size: false,
         name: 'RGB liquid CPU Cooler',
         image: 'assets/images/products/gammaxx.png',
+        category: 'Technology',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
         textLayer: 'Add To Cart',
@@ -120,7 +137,9 @@ const bestProducts = [
     },
     {
         id: generateUniqueId(),
+        size: false,
         name: 'Small BookSelf',
+        category: 'Home Accessories',
         image: 'assets/images/products/shelf.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
@@ -136,7 +155,9 @@ const bestProducts = [
 const ourProducts = [
     {
         id: generateUniqueId(),
+        size: false,
         name: 'Breed Dry Dog Food',
+        category: 'Animal Foods',
         image: 'assets/images/products/ourProducts1.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
@@ -149,7 +170,9 @@ const ourProducts = [
     },
     {
         id: generateUniqueId(),
+        size: false,
         name: 'CANON EOS DSLR Camera',
+        category: 'Technology',
         image: 'assets/images/products/ourProducts2.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
@@ -162,7 +185,9 @@ const ourProducts = [
     },
     {
         id: generateUniqueId(),
+        size: false,
         name: 'ASUS FHD Gaming Laptop',
+        category: 'Gaming',
         image: 'assets/images/products/ourProducts3.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
@@ -174,7 +199,9 @@ const ourProducts = [
     },
     {
         id: generateUniqueId(),
+        size: false,
         name: 'Curology Product Set',
+        category: 'Beauty',
         image: 'assets/images/products/ourProducts4.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
@@ -187,7 +214,9 @@ const ourProducts = [
     },
     {
         id: generateUniqueId(),
+        size: false,
         name: 'Kids Electric Car',
+        category: 'Toys',
         image: 'assets/images/products/ourProducts5.png',
         discount: 'New',
         imgHeart: 'assets/images/svg/heart-small.svg',
@@ -203,7 +232,9 @@ const ourProducts = [
     },
     {
         id: generateUniqueId(),
+        size: true,
         name: 'Jr. Zoom Soccer Cleats',
+        category: 'Sport',
         image: 'assets/images/products/ourProducts6.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
@@ -218,7 +249,9 @@ const ourProducts = [
     },
     {
         id: generateUniqueId(),
+        size: false,
         name: 'GP11 Shooter USB Gamepad',
+        category: 'Gaming',
         image: 'assets/images/products/ourProducts7.png',
         discount: 'New',
         imgHeart: 'assets/images/svg/heart-small.svg',
@@ -235,7 +268,9 @@ const ourProducts = [
     },
     {
         id: generateUniqueId(),
+        size: true,
         name: 'Quilted Satin Jacket',
+        category: 'Clothes',
         image: 'assets/images/products/ourProducts8.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
@@ -261,7 +296,7 @@ const map = (products) => {
 
         return `        <div class="products-container "data-id="${item.id}">
     <div class="products bg-solid-secondary mx-1 my-2 d-flex-container position-relative">
-    <a href="${boolean ? "productDetails.html" + "?" + "true" : "sign-Up.html"}"><img src=${item.image} alt=""></a> 
+    <a class="showDetails" href="${boolean ? "productDetails.html" + "?" + "true" : "sign-Up.html"}"><img class="img-fluid w-100 h-100 object-fit-cover" src=${item.image} alt=""></a> 
         <div class="product-icons  position-absolute d-flex ${item.discount ? 'justify-content-between' : 'justify-content-end'} w-100">
 <span class="${item.discount ? 'discount-product text-center text-white fs-12 ms-2' : 'd-none'} ${item.disPrice ? 'bg-light-orange' : 'bg-light-green'} ">${item.discount}</span>
             <div class="me-2">
@@ -618,7 +653,13 @@ function productsByIndex(products, eventListener = false) {
                     handleWishlistClick(addCart, products[index], id);
                 });
             }
-
+            const showDetails = item.querySelector(".showDetails")
+            if (showDetails) {
+                showDetails.addEventListener("click", () => {
+                    setStorage("details", JSON.stringify(products[index]))
+                    console.log(products[index]);
+                })
+            }
 
         }
     });

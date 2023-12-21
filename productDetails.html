@@ -18,12 +18,14 @@
     <header class="header-top  bg-dark fixed-top">
         <!-- content forom navbar.js -->
     </header>
+    <div id="snackbar">
+    </div>
     <section id="hero-section" class="position-relative">
         <section class="bestProductsSection container m-top-10">
             <div class="d-flex">
                 <p class="text-secondary me-1 fs-14">Account /</p>
-                <p class="text-secondary me-1 fs-14 arrivingPage">Gaming /</p>
-                <p class=" me-1 fs-14">Havic HV G-92 Gamepad</p>
+                <p id="detail-category" class="text-secondary me-1 fs-14 arrivingPage"></p>
+                <p id="detail--name" class=" me-1 fs-14"></p>
             </div>
             <div class="productDetail row">
                 <div class="col-xl-8  col-md-12">
@@ -36,23 +38,22 @@
                                 <div class="bg-solid-secondary text-center mt-3 ">
                                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
                                         class="active" aria-current="true" aria-label="Slide 1"><img
-                                            class="d-block w-100 slide-img img-fluid "
-                                            src="./assets/images/products/ps-5-jstcik-tnail-1.png"></button>
+                                            class="d-block w-100 slide-img img-fluid " src="" alt="img"></button>
                                 </div>
                                 <div class="bg-solid-secondary mt-3  text-center">
                                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                                        aria-label="Slide 2"><img class="d-block w-100 slide-img img-fluid"
-                                            src="./assets/images/products/ps-5-jstcik-tnail-2.png"></button>
+                                        aria-label="Slide 2"><img class="d-block w-100 slide-img img-fluid" src=""
+                                            alt="img"></button>
                                 </div>
                                 <div class="bg-solid-secondary mt-3  text-center ">
                                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                                        aria-label="Slide 3"><img class="d-block w-100 slide-img img-fluid"
-                                            src="./assets/images/products/ps-5-jstcik-tnail-3.png"></button>
+                                        aria-label="Slide 3"><img class="d-block w-100 slide-img img-fluid" src=""
+                                            alt="img"></button>
                                 </div>
                                 <div class="bg-solid-secondary mt-3  text-center">
                                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
-                                        aria-label="Slide 4"><img class="d-block w-100 slide-img img-fluid"
-                                            src="./assets/images/products/ps-5-jstcik-tnail-4.png"></button>
+                                        aria-label="Slide 4"><img class="d-block w-100 slide-img img-fluid" src=""
+                                            alt="img"></button>
                                 </div>
                             </div>
                         </div>
@@ -60,22 +61,18 @@
                         <div class="col-8 bg-solid-secondary py-5 slide-content">
                             <div class="carousel-inner p-5 text-center">
                                 <div class="carousel-item active box-div">
-                                    <img class="img-fluid img-w" src="./assets/images/products/ps-5-jstcik-front2.png"
-                                        alt="">
+                                    <img class="img-fluid img-w" src="" alt="img">
                                 </div>
                                 <div class="carousel-item box-div">
-                                    <img class="img-fluid img-w" src="./assets/images/products/ps-5-jstcik-front.png"
-                                        alt="">
+                                    <img class="img-fluid img-w" src="" alt="img">
                                 </div>
                                 <div class="carousel-item box-div">
-                                    <img class="img-fluid img-w" src="./assets/images/products/ps-5-jstcik-front3.png"
-                                        alt="">
+                                    <img class="img-fluid img-w" src="" alt="img">
                                 </div>
 
 
                                 <div class="carousel-item box-div">
-                                    <img class="img-fluid img-w" src="./assets/images/products/ps-5-jstcik-front4.png"
-                                        alt="">
+                                    <img class="img-fluid img-w" src="" alt="img">
                                 </div>
 
                             </div>
@@ -86,29 +83,26 @@
                 </div>
                 <div class="col-xl-4  col-md-12">
                     <div>
-                        <h5>Havic HV G-92 Gamepad</h5>
+                        <h5 id="detail--title"></h5>
                         <span>
-                            <img src="./assets/images/svg/star-fill.svg" alt="">
+                            <img src="./assets/images/svg/star-fill.svg" alt="img">
                         </span>
                         <span>
-                            <img src="./assets/images/svg/star-fill.svg" alt="">
+                            <img src="./assets/images/svg/star-fill.svg" alt="img">
                         </span>
                         <span>
-                            <img src="./assets/images/svg/star-fill.svg" alt="">
+                            <img src="./assets/images/svg/star-fill.svg" alt="img">
                         </span>
                         <span>
-                            <img src="./assets/images/svg/star-fill.svg" alt="">
+                            <img src="./assets/images/svg/star-fill.svg" alt="img">
                         </span>
                         <span>
-                            <img src="./assets/images/svg/star-empty.svg" alt="">
+                            <img src="./assets/images/svg/star-empty.svg" alt="img">
                         </span>
                         <span class="text-secondary fs-14">(150 Reviews) |</span>
                         <span class="color-light-green fs-14">In Stock</span>
-                        <span class="d-block h5 mt-3">$192.00</span>
-                        <p class="fs-14">PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for
-                            easy
-                            bubble free
-                            install & mess free removal Pressure sensitive.</p>
+                        <span id="detail--price" class="d-block h5 mt-3"></span>
+                        <p id="detail--desc" class="fs-14"></p>
                     </div>
                     <hr>
                     <div>
@@ -121,13 +115,8 @@
                                     name="detail-color" id="">
                             </span>
                         </div>
-                        <div class="d-flex justify-content-xl-between me-5 mt-3">
-                            <span class="fs-4">Size:</span>
-                            <button class="btn btn-sm border border-2 box-btn fw-bold ">XS</button>
-                            <button class="btn btn-sm border border-2 box-btn fw-bold mx-1">S</button>
-                            <button class="btn btn-sm border border-2 box-btn fw-bold ">M</button>
-                            <button class="btn btn-sm border border-2 box-btn fw-bold mx-1">L</button>
-                            <button class="btn btn-sm border border-2 box-btn fw-bold">XL</button>
+                        <div id="sizeContainer" class="d-flex justify-content-xl-between me-5 mt-3">
+
                         </div>
 
                         <div class="d-flex align-items-center my-3 justify-content-between">
@@ -141,12 +130,12 @@
                                     Now</a> </button>
 
                             <span class="border border-1 btn p-1"><a href="sign-Up.html"><img
-                                        src="./assets/images/svg/Wishlist.svg" alt=""></a></span>
+                                        src="./assets/images/svg/Wishlist.svg" alt="img"></a></span>
                         </div>
                         <div class="border border-2 ">
                             <div class="border-bottom  d-flex align-items-center ms-2 py-2">
                                 <span class="d-flex-container"><img src="./assets/images/svg/icon-delivery.svg"
-                                        alt=""></span>
+                                        alt="img"></span>
                                 <span class="ms-3">
                                     <p class="m-0">Free Delivery</p>
                                     <a class="text-dark fs-12 text-decoration-underline" href="#">Enter your postal code
@@ -156,7 +145,7 @@
                                 </span>
                             </div>
                             <div class="d-flex py-2 ms-2">
-                                <span class=""><img src="./assets/images/svg/Icon-return.svg" alt=""></span>
+                                <span class=""><img src="./assets/images/svg/Icon-return.svg" alt="img"></span>
                                 <span class="ms-3">
                                     <p class="m-0">Return Delivery</p>
                                     <p class=" fs-12">Free 30 Days Delivery Returns. <a
@@ -176,7 +165,7 @@
         <div class="recommendProducts container mt-5 ">
             <div class=" d-flex justify-content-between">
                 <div class="">
-                    <img src="assets/images/svg/Rectangle 18.svg" alt="">
+                    <img src="assets/images/svg/Rectangle 18.svg" alt="img">
                     <p class="text-dark fw-bold d-inline ms-2">Related Item</p>
                 </div>
             </div>
