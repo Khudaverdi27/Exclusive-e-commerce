@@ -21,7 +21,7 @@ const wishlistMap = (products) => {
 
         return `        <div class="products-container "data-id="${item.id}">
     <div class="products  bg-solid-secondary mx-1 my-2 d-flex-container position-relative">
-    <a href="${boolean ? "productDetails.html" + "?" + "true" : "sign-Up.html"}"><img src=${item.image} alt=""></a> 
+    <a class="showDetails" href="${boolean ? "productDetails.html" + "?" + "true" : "sign-Up.html"}"><img class="img-fluid w-100 h-100 object-fit-cover" src=${item.image} alt=""></a> 
         <div class="product-icons  position-absolute d-flex ${item.discount ? 'justify-content-between' : 'justify-content-end'} w-100">
 <span class="${item.discount ? 'discount-product text-center text-white fs-12 ms-2' : 'd-none'} ${item.disPrice ? 'bg-light-orange' : ''} ">${item.discount}</span>
             <div class="me-2">

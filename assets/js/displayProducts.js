@@ -74,7 +74,7 @@ const products = [
         name: 'PlayStation 5 JoyStick',
         discount: '-25%',
         category: 'Gaming',
-        image: 'assets/images/products/ps-5-jstcik-front.png',
+        image: 'assets/images/products/ps-5-jstcik-front2.png',
         imgHeart: 'assets/images/svg/heart-small.svg',
         imgEye: 'assets/images/svg/eye.svg',
         textLayer: 'Add To Cart',
@@ -621,7 +621,6 @@ productsByIndex(ourProducts, true);
 productsByIndex(bestProducts, true);
 
 function productsByIndex(products, eventListener = false) {
-
     document.querySelectorAll('.products-container').forEach(item => {
         const id = item.getAttribute('data-id');
         const index = getIndexById(products, id);
@@ -657,7 +656,7 @@ function productsByIndex(products, eventListener = false) {
             if (showDetails) {
                 showDetails.addEventListener("click", () => {
                     setStorage("details", JSON.stringify(products[index]))
-                    console.log(products[index]);
+
                 })
             }
 
