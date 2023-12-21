@@ -294,7 +294,7 @@ const map = (products) => {
 
     return products.map((item) => {
 
-        return `        <div class="products-container "data-id="${item.id}">
+        return `        <div class="products-container crusor-p"data-id="${item.id}">
     <div class="products bg-solid-secondary mx-1 my-2 d-flex-container position-relative">
     <a class="showDetails" href="${boolean ? "productDetails.html" + "?" + "true" : "sign-Up.html"}"><img class="img-fluid w-100 h-100 object-fit-cover" src=${item.image} alt=""></a> 
         <div class="product-icons  position-absolute d-flex ${item.discount ? 'justify-content-between' : 'justify-content-end'} w-100">
@@ -305,7 +305,7 @@ const map = (products) => {
                 </span>
                 <span class="icon-bg-rounded bg-white rounded-circle d-flex-container">
 
-                <span data-bs-toggle="modal" data-bs-target="#staticBackdrop" class='showItem'><img src=${item.imgEye} alt="img"></span>
+                <span data-bs-toggle="modal" data-bs-target="#staticBackdrop" class='showItem '><img src=${item.imgEye} alt="img"></span>
 
                 <!-- Modal -->
 <div class="modal fade mt-5" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -358,6 +358,9 @@ const map = (products) => {
 const sectionContainer = document.getElementById('middleSection-products');
 const bestProductContainer = document.getElementById('bestProducts');
 const exploreProductsSec = document.getElementById('exploreProductsSec');
+
+
+
 
 // products to product section
 const product = map(products);
@@ -634,15 +637,12 @@ function productsByIndex(products, eventListener = false) {
             // Event listener for 'Show Item' button
             item.querySelector('.showItem')?.addEventListener('click', () => {
                 updateModalContent(itemImage, itemName, productDesc);
-
             });
 
             // Event listener for 'Add to Wishlist' button
             const wishlistIcon = item.querySelector('#addWishlist');
             if (wishlistIcon && eventListener) {
                 wishlistIcon.addEventListener('click', () => {
-
-
                     handleWishlistClick(wishlistIcon, products[index], id);
                 });
             }

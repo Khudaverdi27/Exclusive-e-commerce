@@ -1,4 +1,4 @@
-import { products, ourProducts, bestProducts, map } from "./displayProducts.js";
+import { products, ourProducts, bestProducts, map, productsByIndex } from "./displayProducts.js";
 
 const navbarContainer = document.querySelector('.header-top');
 let boolean = window.location.search.startsWith('?true');
@@ -173,6 +173,7 @@ function searchArrays() {
     </section>
 
 </section>`;
+        productsByIndex(result, true)
     }
 
 }
