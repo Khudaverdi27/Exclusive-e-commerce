@@ -109,8 +109,8 @@ const deleteProduct = () => {
 
 deleteProduct();
 
-productsByIndex(wishProducts, false)
-productsByIndex(bestProducts, false)
+productsByIndex(wishProducts, '.products-container', false)
+productsByIndex(bestProducts, '.products-container', false)
 
 document.getElementById("cartFromWish")?.addEventListener("click", () => {
     wishProducts.forEach(wish => {
