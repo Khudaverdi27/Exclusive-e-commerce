@@ -296,7 +296,7 @@ const map = (products) => {
 
         return `        <div class="products-container crusor-p"data-id="${item.id}">
     <div class="products bg-solid-secondary mx-1 my-2 d-flex-container position-relative">
-    <a class="showDetails" href="${boolean ? "productDetails.html" + "?" + "true" : "sign-Up.html"}"><img class="img-fluid w-100 h-100 object-fit-cover" src=${item.image} alt=""></a> 
+    <a class="showDetails" ><img class="img-fluid w-100 h-100 object-fit-cover" src=${item.image} alt=""></a> 
         <div class="product-icons  position-absolute d-flex ${item.discount ? 'justify-content-between' : 'justify-content-end'} w-100">
 <span class="${item.discount ? 'discount-product text-center text-white fs-12 ms-2' : 'd-none'} ${item.disPrice ? 'bg-light-orange' : 'bg-light-green'} ">${item.discount}</span>
             <div class="me-2">
@@ -381,7 +381,6 @@ const ourProduct = map(ourProducts)
 if (exploreProductsSec) {
     exploreProductsSec.innerHTML = ourProduct
 }
-
 
 
 
@@ -511,24 +510,67 @@ if (category) {
 
 const posterSection = [
     {
+        id: generateUniqueId(),
+        name: "JBL Speaker",
+        price: 120,
+        category: "Music",
         title1: 'Enhance Your',
         title2: 'Music Experience',
-        img: 'assets/images/products/JBL.png',
+        image: 'assets/images/products/JBL.png',
         value: true
     },
     {
+        id: generateUniqueId(),
+        name: "JBL Speaker",
+        price: 120,
+        category: "Music",
         title1: 'Last Hours',
         title2: 'On sale',
-        img: 'assets/images/products/jbl-2.png',
+        image: 'assets/images/products/jbl-2.png',
         value: false
+    }
+]
+const newArrivals = [
+    {
+        id: 569,
+        name: "PlayStation 5",
+        price: 600,
+        category: "Game",
+        image: 'assets/images/products/ps5-playstation.png',
+    },
+    {
+        id: 669,
+        name: "Amazon Speaker",
+        price: 200,
+        category: "Music",
+        image: 'assets/images/products/amazon-echo.png',
+    },
+    {
+        id: 169,
+        name: "GUCCI INTENSE OUD EDP",
+        price: 80,
+        category: "Parfume",
+        image: 'assets/images/products/parfume.png',
+    }
+]
+const slideBanner = [
+    {
+        id: 969,
+        name: "Iphone 14 Pro Max",
+        price: 1500,
+        category: "Phones",
+        image: 'assets/images/products/iphone14.png',
     }
 ]
 
 
+productsByIndex(slideBanner, '.slide-banner', false)
+productsByIndex(newArrivals, '.poster-product', false)
+
 const posters = (products) => {
 
     return products.map((item) => {
-        return `    <div class="row">
+        return `    <div data-id="${item.id}" class="row poster-container">
         <div class=" col-lg-6 col-md-12 co-sm-12 bgBlack d-flex justify-content-center flex-column">
         <div class="ms-5 posterSectionContent">
         <div class="${item.value ? "" : "text-center"}">
@@ -563,11 +605,11 @@ const posters = (products) => {
                 </div>
             </div>
             <div class=" ${item.value ? "d-none" : "btn-ONposter text-center"}">
-                <button class=" btn bg-light-green text-white py-2 px-5"><a href="${boolean ? "productDetails.html" + "?" + "true" : "sign-Up.html"}">Buy Now</a></button>
+                <a class="showDetails btn bg-light-green text-white py-2 px-5">Buy Now</a>
             </div>
         </div>
         </div>
-        <div class="col-lg-6 col-md-12 co-sm-12 poster-img d-flex-container"><img class="img-fluid" src="${item.img}" alt="">
+        <div class="col-lg-6 col-md-12 co-sm-12 poster-img d-flex-container"><img class="img-fluid" src="${item.image}" alt="">
 
         </div>
     </div>`
@@ -580,7 +622,7 @@ if (document.querySelector('.inner-poster')) {
     document.querySelector('.inner-poster').innerHTML = posterProduct
 }
 
-
+productsByIndex(posterSection, ".poster-container", false)
 
 //navigation
 const productsSectionScroll = document.getElementById('middleSection-products');
@@ -619,12 +661,13 @@ function getIndexById(element, id) {
     return element.findIndex(i => i.id == id);
 }
 
-productsByIndex(products, true);
-productsByIndex(ourProducts, true);
-productsByIndex(bestProducts, true);
+productsByIndex(products, '.products-container', true);
+productsByIndex(ourProducts, '.products-container', true);
+productsByIndex(bestProducts, '.products-container', true);
 
-function productsByIndex(products, eventListener = false) {
-    document.querySelectorAll('.products-container').forEach(item => {
+function productsByIndex(products, container, eventListener = false) {
+
+    document.querySelectorAll(container).forEach(item => {
         const id = item.getAttribute('data-id');
         const index = getIndexById(products, id);
 
@@ -653,10 +696,11 @@ function productsByIndex(products, eventListener = false) {
                 });
             }
             const showDetails = item.querySelector(".showDetails")
+
             if (showDetails) {
                 showDetails.addEventListener("click", () => {
+                    showDetails.setAttribute("href", `${boolean ? "productDetails.html" + "?" + "true" : "sign-Up.html"}`)
                     setStorage("details", JSON.stringify(products[index]))
-
                 })
             }
 

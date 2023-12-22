@@ -173,7 +173,7 @@ function searchArrays() {
     </section>
 
 </section>`;
-        productsByIndex(result, true)
+        productsByIndex(result, '.products-container', true)
     }
 
 }
