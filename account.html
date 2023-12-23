@@ -33,12 +33,13 @@
         <div class="row d-flex ">
             <div class="controlSection col-xl-4 col-md-12 col-sm-12 mx-sm-auto mx-md-auto crusor-p">
                 <div class="controlledSectionCart m-4 ">
-                    <div class="manageAccount d-flex flex-column " x-data="{ open: false }">
+                    <div class="manageAccount d-flex flex-column" x-data="{ open: false }">
                         <p class="labelForControlled" @click="open = ! open">Manage My Account</p>
-                        <div class="linksForControlled" x-show="open" @click.outside="open = false">
-                            <a href="#" class="linksControlled managedAccountLinks">My profile</a>
-                            <a href="#" class="linksControlled managedAccountLinks">Address Book</a>
-                            <a href="#" class="linksControlled managedAccountLinks">My Payment Options</a>
+                        <div class="linksForControlled justify-content-start" x-show="open"
+                            @click.outside="open = false">
+                            <a href="#" class="linksControlled ">My profile</a>
+                            <a href="#" class="linksControlled ">Address Book</a>
+                            <a href="#" class="linksControlled ">My Payment Options</a>
                         </div>
                     </div>
                     <div class="myOrders d-flex flex-column  my-4" x-data="{ open: false }">

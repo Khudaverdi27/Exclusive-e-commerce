@@ -2,12 +2,35 @@ import { removeProductFromWishlist } from "./navbar.js";
 
 export const products = JSON.parse(sessionStorage.getItem('cartItems')) || [];
 
+let counts = {}
+const findCount = (key) => {
+  return ((counts[key]))
+}
+function findAndRemoveDuplicates(array, property) {
+  const uniqueObjects = [];
+  array.forEach(obj => {
+    const key = obj[property];
+    counts[key] = (counts[key] || 0) + 1;
+    if (counts[key] === 1) {
+      uniqueObjects.push(obj);
+    }
+  });
+  console.log(counts);
+  return uniqueObjects;
+}
+
+
+const uniqueObjects = findAndRemoveDuplicates(products, 'id');
+console.log(uniqueObjects);
+
+
+
 const renderProducts = () => {
   const productContainer = document.querySelector(".product-container");
   if (productContainer) {
-    productContainer.innerHTML = products.map((item) =>
+    productContainer.innerHTML = uniqueObjects.map((item) =>
       `
-    <div data-cartId="${item?.id}" class="productsContain card-body d-flex justify-content-between align-items-center">
+    <div data-cartId="${item?.id}"${findCount(item.id)} class="productsContain card-body d-flex justify-content-between align-items-center">
       <div class="productName col-2">
       <div class="imgAndBtn">
       <div class="cancelBtn d-flex-container fs-12 fw-bold bg-light-orange text-white rounded-circle position-absolute">x</div>
@@ -27,24 +50,31 @@ const renderProducts = () => {
   `
     )
       .join("");
+
   }
 
 };
+
 const updateSubtotal = () => {
-  products.forEach((item) => {
-    const quantity = document.querySelector(
-      `.quantityInput[data-id=quantityInput${item.id}]`
-    ).value;
-    const subtotalPrice = document.querySelector(
-      `.subtotalPrice[data-id=subtotalPrice${item.id}]`
-    );
-    subtotalPrice.textContent = `$${(
-      item.price * parseInt(quantity)
-    ).toFixed(2)}`;
+  uniqueObjects.forEach((item) => {
+    let quantityInput = document.querySelector(`.quantityInput[data-id=quantityInput${item.id}]`);
+
+    if (quantityInput) {
+
+      let quantity = findCount(item.id) || 0;
+      quantityInput.value = quantity;
+      const subtotalPrice = document.querySelector(`.subtotalPrice[data-id=subtotalPrice${item.id}]`);
+      subtotalPrice.textContent = `$${(item.price * parseInt(quantity)).toFixed(2)}`;
+    }
   });
 };
 
+
+
+
 renderProducts();
+updateSubtotal();
+
 
 document.querySelectorAll(".quantityInput").forEach((element) => {
   element.addEventListener("input", updateSubtotal);
@@ -55,7 +85,6 @@ const subtotalResult = document.querySelectorAll(".subtotalResult");
 if (updateBtn) {
   updateBtn.addEventListener("click", () => {
     updateSubtotal();
-
     let total = 0;
     document.querySelectorAll(".subtotalPrice").forEach((subtotal) => {
       total += parseFloat(subtotal.textContent.replace("$", ""));
@@ -71,7 +100,6 @@ let boolean = window.location.search.startsWith('?true')
 
 document.getElementById("checkoutFromCart")?.setAttribute("href", `${boolean ? "check-out.html" + "?" + "true" : "sign-Up.html"}`)
 document.getElementById("returnShopBtn")?.setAttribute("href", `${boolean ? "index.html" + "?" + "true" : "sign-Up.html"}`)
-
 
 
 

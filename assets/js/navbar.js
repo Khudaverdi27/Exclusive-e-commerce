@@ -215,34 +215,29 @@ updateBadge();
 export const setLocale = (data, id, attr) => {
 
     const isItemInWishlist = existingData.some(item => item.id === id);
-    const isItemCart = cartItems.some(item => item.id === id);
+    // const isItemCart = cartItems.some(item => item.id === id);
 
     if (!attr) {
 
         if (!isItemInWishlist) {
-            addProductToWishlist(data);
+            addProductToList(data);
         } else {
             removeProductFromWishlist(id);
         }
 
         updateBadge();
     } else {
+        addProductToList(data, attr);
 
-        if (!isItemCart) {
-            addProductToWishlist(data, attr);
-        } else {
-            removeProductFromWishlist(id, attr);
-        }
     }
 
 }
 
-export const addProductToWishlist = (data, attr) => {
+export const addProductToList = (data, attr) => {
     if (!attr) {
         existingData.push(data);
         updateStorage("Product is added to wishlist");
     } else {
-
         cartItems.push(data);
         updateStorage("Product is added to cart", attr);
 
@@ -256,12 +251,15 @@ export const removeProductFromWishlist = (id, attr) => {
 
         existingData = existingData.filter(item => item.id !== id);
         updateStorage("Product is removed from wishlist");
-    } else {
+    }
+    else {
         cartItems = cartItems.filter(item => item.id !== id);
         updateStorage("Product is removed from cart", attr);
     }
 
 }
+
+
 
 export const updateStorage = (message, attr) => {
     if (!attr) {
