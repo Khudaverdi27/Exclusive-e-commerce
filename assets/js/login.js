@@ -142,8 +142,7 @@ function selectElement(form, email, email_error, pass, pass_error, nameInput, na
                 e.preventDefault();
                 setStorage('email', (email.value))
                 setStorage('pass', (pass.value))
-                // sessionStorage.setItem('email', (email.value))
-                // sessionStorage.setItem('pass', (pass.value))
+                setStorage("userName", nameInput.value)
                 const value = validateForm();
                 spinner.classList.remove('d-none')
                 setTimeout(() => {

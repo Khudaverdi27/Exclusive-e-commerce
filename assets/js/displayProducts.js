@@ -3,7 +3,7 @@ import { setLocale } from "./navbar.js";
 
 const products = [
     {
-        id: generateUniqueId(),
+        id: "1asd5",
         size: false,
         name: 'HAVIT HV-G92 Gamepad',
         discount: '-40%',
@@ -19,7 +19,7 @@ const products = [
         description: 'Reliable 3D ergonomic design with built-in motors for dual vibration'
     },
     {
-        id: generateUniqueId(),
+        id: "45fssf",
         size: false,
         name: 'AK-900 Wired Keyboard',
         discount: '-35%',
@@ -36,7 +36,7 @@ const products = [
         description: 'iMICE AK-900 Luminescent Gaming Keyboard comes with USB Wired. Its cable length is 135cm. This is one kind of Luminescent Gaming Keyboard.'
     },
     {
-        id: generateUniqueId(),
+        id: "s4dsw5",
         size: false,
         name: 'IPS LCD Gaming Monitor',
         category: 'Gaming',
@@ -53,7 +53,7 @@ const products = [
         description: 'Built-in Speakers: Perfectly suited to work & gaming settings, built-in speakers deliver robust & smooth audio while saving space on your desk.'
     },
     {
-        id: generateUniqueId(),
+        id: "Sld5aq5q",
         size: false,
         name: 'S-Series Comfort Chair',
         discount: '-25%',
@@ -69,7 +69,7 @@ const products = [
         description: 'MULTI-FUNCTIONAL CHAIR: Whether a gamer or a professional, no one likes being stuck in a rut in their profession when they can push the envelope and learn new things. '
     },
     {
-        id: generateUniqueId(),
+        id: "Sw4dw5q",
         size: false,
         name: 'PlayStation 5 JoyStick',
         discount: '-25%',
@@ -88,7 +88,7 @@ const products = [
 // best product section
 const bestProducts = [
     {
-        id: generateUniqueId(),
+        id: "SDw6w5q",
         size: true,
         name: 'Bestselling-Coat',
         category: 'Clothes',
@@ -104,7 +104,7 @@ const bestProducts = [
         description: 'Season - Fashion sleeveless lightweight winter warm padded gilet, perfect for fall, winter and early spring. Basic and versatile puffer vest that will give you a comfy and trendy fit'
     },
     {
-        id: generateUniqueId(),
+        id: "sw5qw0",
         size: false,
         name: 'Gucci duffle bag',
         category: 'Accessories',
@@ -120,7 +120,7 @@ const bestProducts = [
         description: "A classic combination of the House's most defining codes—the GG motif and Web stripe—the world of Ophidia continues to evolve, incorporating new shapes and silhouettes each season. "
     },
     {
-        id: generateUniqueId(),
+        id: "s5wq5dw4d",
         size: false,
         name: 'RGB liquid CPU Cooler',
         image: 'assets/images/products/gammaxx.png',
@@ -136,7 +136,7 @@ const bestProducts = [
         description: 'ROTATABLE BLOCKHEAD - Features a 270° rotatable water block with MSI logo in ARGB as well as Addressable RGB fans for multiple lighting effects.'
     },
     {
-        id: generateUniqueId(),
+        id: "S5wq5swq",
         size: false,
         name: 'Small BookSelf',
         category: 'Home Accessories',
@@ -154,7 +154,7 @@ const bestProducts = [
 // our product section
 const ourProducts = [
     {
-        id: generateUniqueId(),
+        id: "Sw56q6qd",
         size: false,
         name: 'Breed Dry Dog Food',
         category: 'Animal Foods',
@@ -169,7 +169,7 @@ const ourProducts = [
         description: 'Healthy Weight Dry Dog Food: If your dog has weight issues, this dry dog food with real chicken and 17 percent less fat than our Minichunks recipe can give them the support they need to help them maintain a healthy weight'
     },
     {
-        id: generateUniqueId(),
+        id: "s5wq622",
         size: false,
         name: 'CANON EOS DSLR Camera',
         category: 'Technology',
@@ -184,7 +184,7 @@ const ourProducts = [
         description: 'Use the EOS Utility Webcam Beta Software (Mac and Windows) to turn your compatible Canon camera into a high-quality webcam. Compatible Lenses- Canon EF Lenses (including EF-S lenses, excluding EF-M lenses)'
     },
     {
-        id: generateUniqueId(),
+        id: "2elfp",
         size: false,
         name: 'ASUS FHD Gaming Laptop',
         category: 'Gaming',
@@ -198,7 +198,7 @@ const ourProducts = [
         description: 'POWER UP YOUR PLAY - Draw more frames and win more games with Windows 11, a 13th Gen Intel Core i7-13650HX processor, and an NVIDIA GeForce RTX 4060 Laptop GPU at 140W Max TGP.'
     },
     {
-        id: generateUniqueId(),
+        id: "w52w52e",
         size: false,
         name: 'Curology Product Set',
         category: 'Beauty',
@@ -213,7 +213,7 @@ const ourProducts = [
         description: 'DAILY HYDRATION BOOST – Skin-replenishing hyaluronic acid and glycerin work together to hydrate, smooth, refresh, soften, and support the skin barrier'
     },
     {
-        id: generateUniqueId(),
+        id: "s5w535vf5",
         size: false,
         name: 'Kids Electric Car',
         category: 'Toys',
@@ -231,7 +231,7 @@ const ourProducts = [
         description: 'FOR KIDS 3 YEARS & OLDER: This small yet powerful ride-on is perfect for your little racers who want to start driving like the grownups do!'
     },
     {
-        id: generateUniqueId(),
+        id: "sw5qw52e",
         size: true,
         name: 'Jr. Zoom Soccer Cleats',
         category: 'Sport',
@@ -248,7 +248,7 @@ const ourProducts = [
         description: 'OUTSOLE: Full-length lightweight TPU outsole delivers explosive acceleration and optimizes multi-directional grip.'
     },
     {
-        id: generateUniqueId(),
+        id: "WDws4dw5",
         size: false,
         name: 'GP11 Shooter USB Gamepad',
         category: 'Gaming',
@@ -267,7 +267,7 @@ const ourProducts = [
         description: 'Ergonomic shape & weight favored by esports athletes- Feel Comfortable in your hands for hours of gaming- Vibration feedback gives you a riveting gaming experience USB Wired Game Controller - Cable : 2m -Vibration'
     },
     {
-        id: generateUniqueId(),
+        id: "S4ws5w5w",
         size: true,
         name: 'Quilted Satin Jacket',
         category: 'Clothes',
@@ -510,7 +510,7 @@ if (category) {
 
 const posterSection = [
     {
-        id: generateUniqueId(),
+        id: "DSW4dw5",
         name: "JBL Speaker",
         price: 120,
         category: "Music",
@@ -520,7 +520,7 @@ const posterSection = [
         value: true
     },
     {
-        id: generateUniqueId(),
+        id: "dswd5w5",
         name: "JBL Speaker",
         price: 120,
         category: "Music",
@@ -653,9 +653,6 @@ if (productsSectionScroll) {
 
 }
 
-function generateUniqueId() {
-    return '_' + Math.random().toString(36).substr(2, 9);
-}
 
 function getIndexById(element, id) {
     return element.findIndex(i => i.id == id);
@@ -728,9 +725,10 @@ function handleWishlistClick(wishlistIcon, product, id) {
             wishlistIcon.classList.add(hasBgWhiteClass ? 'bg-danger' : 'bg-white');
 
             // Save to session storage
+            //for wishlist
             setLocale(product, id);
         } else {
-
+            //for cart
             setLocale(product, id, attr);
         };
 

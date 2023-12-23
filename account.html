@@ -10,6 +10,7 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body>
@@ -24,25 +25,26 @@
                 <a href="./index.html" class="arrivingPage text-secondary">Home</a><span><a href="./account.html"
                         class="currentPage text-dark">My Account</a></span>
             </div>
-            <div class="loginedUser d-flex gap-1">
+            <div class="loginedUser d-flex gap-1 mt-5">
                 <p>Welcome!</p>
                 <span class="loginedUserName">Md Rimel</span>
             </div>
         </div>
         <div class="row d-flex ">
-            <div class="controlSection col-xl-4 col-md-12 col-sm-12 mx-sm-auto mx-md-auto">
+            <div class="controlSection col-xl-4 col-md-12 col-sm-12 mx-sm-auto mx-md-auto crusor-p">
                 <div class="controlledSectionCart m-4 ">
-                    <div class="manageAccount d-flex flex-column ">
-                        <p class="labelForControlled">Manage My Account</p>
-                        <div class="linksForControlled">
-                            <a href="#" class="linksControlled managedAccountLinks">My profile</a>
-                            <a href="#" class="linksControlled managedAccountLinks">Address Book</a>
-                            <a href="#" class="linksControlled managedAccountLinks">My Payment Options</a>
+                    <div class="manageAccount d-flex flex-column" x-data="{ open: false }">
+                        <p class="labelForControlled" @click="open = ! open">Manage My Account</p>
+                        <div class="linksForControlled justify-content-start" x-show="open"
+                            @click.outside="open = false">
+                            <a href="#" class="linksControlled ">My profile</a>
+                            <a href="#" class="linksControlled ">Address Book</a>
+                            <a href="#" class="linksControlled ">My Payment Options</a>
                         </div>
                     </div>
-                    <div class="myOrders d-flex flex-column  my-4">
-                        <p class="labelForControlled">My Orders</p>
-                        <div class="linksForControlled">
+                    <div class="myOrders d-flex flex-column  my-4" x-data="{ open: false }">
+                        <p class="labelForControlled" @click="open = ! open">My Orders</p>
+                        <div class="linksForControlled" x-show="open" @click.outside="open = false">
                             <a href="#" class="linksControlled myOrdersLinks">My Returns</a>
                             <a href="#" class="linksControlled myOrdersLinks">My Cancellations</a>
                         </div>
@@ -52,41 +54,41 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-8 col-md-12 col-sm-10 mx-sm-auto mt-5 mx-auto mb-5">
+            <div class="col-xl-8 col-md-12 col-sm-10 mx-sm-auto mt-4 mx-auto mb-5">
                 <div class="editingInput">
                     <div class="editingTitle">
                         <p class="text-danger">Edit your Profile</p>
                     </div>
-                    <div class="firstAndLastname d-flex  gap-5 my-4">
-                        <div class="firstNameInput d-flex flex-column">
-                            <label for="firstName">First Name</label>
-                            <input type="text" class="labelForInput inputCart" id="firstName" placeholder="First Name">
+                    <div class="firstAndLastname d-flex  gap-3">
+                        <div class="mb-3 w-75">
+                            <label for="nameArea" class="form-label">First Name</label>
+                            <input type="text" class="form-control py-2 bg-solid-secondary" id="nameArea">
                         </div>
-                        <div class="lastNameInput d-flex flex-column">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" class="labelForInput inputCart" id="lastName" placeholder="Last Name">
+                        <div class="mb-3 w-75">
+                            <label for="surnameArea" class="form-label">Last Name</label>
+                            <input type="text" class="form-control py-2 bg-solid-secondary" id="surnameArea">
                         </div>
 
                     </div>
-                    <div class="emailAndAdress d-flex  gap-5">
-                        <div class="emailInput d-flex flex-column">
-                            <label for="email">Email</label>
-                            <input type="text" class="labelForInput inputCart" id="email" placeholder="Email@gmail.com">
+                    <div class="emailAndAdress d-flex  gap-3">
+                        <div class="mb-1 w-75">
+                            <label for="mailArea" class="form-label">Email address</label>
+                            <input type="email" class="form-control py-2 bg-solid-secondary" id="mailArea"
+                                placeholder="@example.com">
                         </div>
-                        <div class="addressInput d-flex flex-column">
-                            <label for="address">Address</label>
-                            <input type="text" class="labelForInput inputCart" id="adrress"
-                                placeholder="Kingston, 5236, United State">
+                        <div class="mb-1 w-75">
+                            <label for="adressArea" class="form-label">Adress</label>
+                            <input type="text" class="form-control py-2 bg-solid-secondary" id="adressArea">
                         </div>
                     </div>
                     <div class="passwordChanges d-flex flex-column gap-3 my-3">
-                        <label for="currentPassword">Password Changes</label>
-                        <input type="password" placeholder="Current Password"
-                            class="labelForInput passwordInput currentPassword" id="currentPassword">
-                        <input type="password" placeholder="New Password"
-                            class="labelForInput passwordInput  newPassword">
-                        <input type="password" placeholder="Confirm New Password"
-                            class="labelForInput passwordInput  confirmPassword">
+                        <h6 class="mb-0">Password Changes</h6>
+                        <input type="password" class="form-control py-2 bg-solid-secondary" id="currPassArea"
+                            placeholder="current password">
+                        <input type="password" class="form-control py-2 bg-solid-secondary" id="newPassArea"
+                            placeholder="new password">
+                        <input type="password" class="form-control py-2 bg-solid-secondary" id="confrimPassArea"
+                            placeholder="confrim password">
                     </div>
                     <div class="buttonsCartEdit float-end">
                         <button class="cancelBtn">Cancel</button>

@@ -1,3 +1,5 @@
+import { getStorage } from "./login.js";
+
 const workers = [
   {
     id: 1,
@@ -48,5 +50,9 @@ const workersCards = document.querySelector(".rowContainer");
 if (workersCards) {
   workersCards.innerHTML = worker;
 }
+
+const userName = getStorage("userName");
+const loginedUser = document.querySelector(".loginedUserName");
+loginedUser ? loginedUser.textContent = userName : "User 8453272"
 
 
