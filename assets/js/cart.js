@@ -1,5 +1,6 @@
 import { removeProductFromWishlist } from "./navbar.js";
 
+
 export const products = JSON.parse(sessionStorage.getItem('cartItems')) || [];
 
 let counts = {}
@@ -15,13 +16,13 @@ function findAndRemoveDuplicates(array, property) {
       uniqueObjects.push(obj);
     }
   });
-  console.log(counts);
+
   return uniqueObjects;
 }
 
 
 const uniqueObjects = findAndRemoveDuplicates(products, 'id');
-console.log(uniqueObjects);
+
 
 
 
@@ -39,12 +40,19 @@ const renderProducts = () => {
       </div>
       
       </div>
-      <div class="col-8 d-flex justify-content-around px-4">
-        <span data-id="productPrice${item?.id}" class="productPrice">$${item?.price}</span>
-        <input data-id="quantityInput${item?.id}" class="quantityInput rounded border border-2 dynamic-input text-center" type="number" name="" value="0" min="0">
+      <div class="col-8 d-flex justify-content-around px-4 align-items-center">
+      <span data-id="productPrice${item?.id}" class="productPrice ms-4">$${item?.price}</span>
+      <div class="d-flex-container border border-1 rounded ms-4"> 
+      <span id="plus-btn" class=" crusor-p border-end d-flex-container fw-bold py-1 px-2">-</span> 
+          <input id="count-box" data-id="quantityInput${item?.id}"
+              class="quantityInput p-1 rounded border-0  dynamic-input text-center" type="number" name="" value="0"
+              min="0">
+              <span id="minus-btn" class="crusor-p fw-bold border-start d-flex-container  py-1 px-2">+</span>
+          </span>
       </div>
+  </div>
       <div class="col-2 d-flex justify-content-end">
-        <p data-id="subtotalPrice${item?.id}" class="subtotalPrice">$0.00</p>
+        <p data-id="subtotalPrice${item?.id}" class="subtotalPrice m-0">$0.00</p>
       </div>
     </div>
   `
@@ -54,6 +62,7 @@ const renderProducts = () => {
   }
 
 };
+
 
 const updateSubtotal = () => {
   uniqueObjects.forEach((item) => {

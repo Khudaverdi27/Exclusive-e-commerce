@@ -62,7 +62,6 @@
 
 .quantityInput {
   width: 50px;
-  height: 35px;
 }
 
 input[type="number"]::-webkit-inner-spin-button,

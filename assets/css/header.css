@@ -4,11 +4,24 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+}
 
+body {
+    overflow-x: hidden;
 }
 
 input {
     outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+/* Firefox  */
+input[type="number"] {
+    -moz-appearance: textfield;
 }
 
 /* common classes */

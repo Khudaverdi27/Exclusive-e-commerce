@@ -7,7 +7,7 @@ const ui = {
     count: document.getElementById('count-box')
 }
 
-function updateCount(action) {
+const updateCount = (action) => {
     let currentCount = parseInt(ui.count.textContent);
 
     if (action === 'decrease') {
