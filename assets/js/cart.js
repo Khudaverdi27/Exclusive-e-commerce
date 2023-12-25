@@ -1,11 +1,11 @@
 import { removeProductFromWishlist } from "./navbar.js";
 
+
+
 export const products = JSON.parse(sessionStorage.getItem('cartItems')) || [];
 
 let counts = {}
-const findCount = (key) => {
-  return ((counts[key]))
-}
+
 function findAndRemoveDuplicates(array, property) {
   const uniqueObjects = [];
   array.forEach(obj => {
@@ -15,13 +15,13 @@ function findAndRemoveDuplicates(array, property) {
       uniqueObjects.push(obj);
     }
   });
-  console.log(counts);
+
   return uniqueObjects;
 }
 
 
 const uniqueObjects = findAndRemoveDuplicates(products, 'id');
-console.log(uniqueObjects);
+
 
 
 
@@ -30,61 +30,84 @@ const renderProducts = () => {
   if (productContainer) {
     productContainer.innerHTML = uniqueObjects.map((item) =>
       `
-    <div data-cartId="${item?.id}"${findCount(item.id)} class="productsContain card-body d-flex justify-content-between align-items-center">
-      <div class="productName col-2">
-      <div class="imgAndBtn">
-      <div class="cancelBtn d-flex-container fs-12 fw-bold bg-light-orange text-white rounded-circle position-absolute">x</div>
-      <img class="imgBox imgFluid rounded p-1" src="${item?.image}" alt="">
-        <span class="fs-14 text-nowrap">${item?.name?.split(' ').pop()}</span>
+      <div data-cartId="${item?.id}" class="productsContain card-body d-flex justify-content-between align-items-center">
+        <div class="productName col-2">
+          <div class="imgAndBtn">
+            <div class="cancelBtn d-flex-container fs-12 fw-bold bg-light-orange text-white rounded-circle position-absolute">x</div>
+            <img class="imgBox imgFluid rounded p-1" src="${item?.image}" alt="">
+            <span class="fs-14 text-nowrap">${item?.name?.split(' ').pop()}</span>
+          </div>
+        </div>
+        <div class="col-8 d-flex justify-content-around px-4 align-items-center">
+          <span data-id="productPrice${item?.id}" class="productPrice ms-4">$${item?.price}</span>
+          <div class="d-flex-container border border-1 rounded ms-4">
+            <span class="crusor-p border-end d-flex-container fw-bold py-1 px-2 plus-btnn">-</span>
+            <input disabled data-id="${item?.id}" class="quantityInput p-1 rounded border-0 dynamic-input text-center count-boxx" type="number" name="" value="1" min="0">
+            <span class="crusor-p fw-bold border-start d-flex-container minus-btnn py-1 px-2">+</span>
+          </div>
+        </div>
+        <div class="col-2 d-flex justify-content-end">
+          <p data-id="subtotalPrice${item?.id}" class="subtotalPrice m-0">$0.00</p>
+        </div>
       </div>
-      
-      </div>
-      <div class="col-8 d-flex justify-content-around px-4">
-        <span data-id="productPrice${item?.id}" class="productPrice">$${item?.price}</span>
-        <input data-id="quantityInput${item?.id}" class="quantityInput rounded border border-2 dynamic-input text-center" type="number" name="" value="0" min="0">
-      </div>
-      <div class="col-2 d-flex justify-content-end">
-        <p data-id="subtotalPrice${item?.id}" class="subtotalPrice">$0.00</p>
-      </div>
-    </div>
-  `
-    )
-      .join("");
-
+    `
+    ).join("");
   }
 
+
 };
-
-const updateSubtotal = () => {
-  uniqueObjects.forEach((item) => {
-    let quantityInput = document.querySelector(`.quantityInput[data-id=quantityInput${item.id}]`);
-
-    if (quantityInput) {
-
-      let quantity = findCount(item.id) || 0;
-      quantityInput.value = quantity;
-      const subtotalPrice = document.querySelector(`.subtotalPrice[data-id=subtotalPrice${item.id}]`);
-      subtotalPrice.textContent = `$${(item.price * parseInt(quantity)).toFixed(2)}`;
-    }
-  });
-};
-
-
-
-
 renderProducts();
-updateSubtotal();
 
+const ui = {
+  minusBtns: document.querySelectorAll('.minus-btnn'),
+  plusBtns: document.querySelectorAll('.plus-btnn'),
+  countOfValue: document.querySelectorAll('.count-boxx')
+}
 
-document.querySelectorAll(".quantityInput").forEach((element) => {
-  element.addEventListener("input", updateSubtotal);
+ui.minusBtns.forEach((minusBtn, index) => {
+  minusBtn.addEventListener('click', function () {
+    updateCount('decrease', ui.countOfValue[index], true);
+  });
 });
+
+ui.plusBtns.forEach((plusBtn, index) => {
+  plusBtn.addEventListener('click', function () {
+    updateCount('increase', ui.countOfValue[index], true);
+  });
+});
+
+export const updateCount = (action, inputElement, checkData) => {
+  if (checkData) {
+    const productId = inputElement.getAttribute("data-id")
+    const item = uniqueObjects.find(item => item.id === productId);
+
+    if (item) {
+      let currentCount = parseInt(inputElement.value);
+
+      inputElement.value = (action === 'increase') ? (currentCount > 0 ? --currentCount : 0) : ++currentCount;
+      updateSubtotal(item, currentCount);
+    }
+  } else {
+    let currentCount = parseInt(inputElement.value);
+    inputElement.value = (action === 'decrease') ? (currentCount > 0 ? --currentCount : 0) : ++currentCount;
+  }
+};
+
+
+
+
+const updateSubtotal = (item, quantity) => {
+  const subtotalPrice = document.querySelector(`.subtotalPrice[data-id=subtotalPrice${item.id}]`);
+  subtotalPrice.textContent = `$${(item.price * quantity).toFixed(2)}`;
+};
+
+
 
 const updateBtn = document.querySelector(".updateBtn");
 const subtotalResult = document.querySelectorAll(".subtotalResult");
 if (updateBtn) {
   updateBtn.addEventListener("click", () => {
-    updateSubtotal();
+
     let total = 0;
     document.querySelectorAll(".subtotalPrice").forEach((subtotal) => {
       total += parseFloat(subtotal.textContent.replace("$", ""));

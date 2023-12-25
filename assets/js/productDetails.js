@@ -1,3 +1,5 @@
+
+import { updateCount } from "./cart.js";
 import { getStorage } from "./login.js";
 import { setLocale, updateBadge } from "./navbar.js";
 
@@ -7,27 +9,17 @@ const ui = {
     count: document.getElementById('count-box')
 }
 
-function updateCount(action) {
-    let currentCount = parseInt(ui.count.textContent);
 
-    if (action === 'decrease') {
-        ui.count.textContent = currentCount > 0 ? --currentCount : 0;
-    } else if (action === 'increase') {
-        ui.count.textContent = ++currentCount;
-    }
-}
+ui.minusBtn?.addEventListener('click', function () {
+    updateCount('decrease', ui.count);
 
-if (ui.minusBtn) {
-    ui.minusBtn.addEventListener('click', function () {
-        updateCount('decrease');
-    });
-}
+});
 
-if (ui.plusBtn) {
-    ui.plusBtn.addEventListener('click', function () {
-        updateCount('increase');
-    });
-}
+ui.plusBtn?.addEventListener('click', function () {
+    updateCount('increase', ui.count);
+
+});
+
 
 
 const detailFromStorage = JSON.parse(getStorage("details")) || [];
