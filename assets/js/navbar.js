@@ -8,60 +8,161 @@ const navbar = () => {
         navbarContainer.innerHTML = `
     <!-- top header -->
     <div class="d-flex justify-content-around header-top-content  ">
-        <p class="nav text-white fs-14 align-items-center d-inline mt-2">
-            Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
-            <span><a href="${boolean ? "index.html" + "?" + "true" : "sign-Up.html"}" class=" fw-bold text-white">ShopNow</a></span>
-        </p>
-        <ul class="nav nav-tabs border-0">
-            <li class="nav-item dropdown fs-14">
-                <a class="nav-link dropdown-toggle text-white border-0" data-bs-toggle="dropdown" href="#"
-                    role="button" aria-expanded="false">English</a>
-                <ul class="dropdown-menu fs-14 p-0">
-                    <li><a class="dropdown-item p-0" href="#">Turkish</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+    <p class="nav text-white fs-14 align-items-center d-inline mt-2">
+        Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
+        <span><a href="${boolean ? " index.html" + "?" + "true" : "sign-Up.html"}"
+                class=" fw-bold text-white">ShopNow</a></span>
+    </p>
+    <ul class="nav nav-tabs border-0">
+        <li class="nav-item dropdown fs-14">
+            <a class="nav-link dropdown-toggle text-white border-0" data-bs-toggle="dropdown" href="#"
+                role="button" aria-expanded="false">English</a>
+            <ul class="dropdown-menu fs-14 p-0">
+                <li><a class="dropdown-item p-0" href="#">Turkish</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg bg-white border-bottom">
-        <div class=" container-fluid d-flex justify-content-around">
-            <a class="navbar-brand" href= ${boolean ? "index.html" + "?" + "true" : "index.html"}><img src="assets/images/logo/Logo.png" alt=""></a>
- 
-            <div class="collapse show " id="navbarNav">
-                <ul class="navbar-nav  mt-1 mb-lg-0 nav-underline crusor-p fs-16 ">
-                    <li class="nav-item">
-                        <a class="nav-link " href= ${boolean ? "index.html" + "?" + "true" : "index.html"}>Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"  href= ${boolean ? "contact.html" + "?" + "true" : "contact.html"}>Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"  href= ${boolean ? "about.html" + "?" + "true" : "about.html"}>About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"  href= ${boolean ? "sign-Up.html" + "?" + "true" : "sign-Up.html"}>Sign up</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- input field and icon in navbar -->
-            <div class="input-section ">
-                <div class="d-flex justify-content-between align-items-center" role="search">
-                <div class="input-group">
-                <input id="searchInput" type="search" class="form-control srch-input bg-solid-secondary border border-end-0" placeholder="What are you looking for?" aria-label="Search" aria-describedby="basic-addon2">
-                <span class="input-group-text bg-solid-secondary " id="basic-addon2"><img id="search-icon" src="assets/images/svg/searcg-icon.svg" class="search-icon crusor-p"</span>
+    <div class=" container-fluid d-flex justify-content-around">
+        <a class="navbar-brand" href=${boolean ? "index.html" + "?" + "true" : "index.html"}><img
+                src="assets/images/logo/Logo.png" alt=""></a>
+
+        <div class=" " id="navbarNav">
+            <ul class="navbar-nav navbarDesktop mt-1 mb-lg-0 nav-underline crusor-p fs-16 ">
+                <li class="nav-item">
+                    <a class="nav-link " href=${boolean ? "index.html" + "?" + "true" : "index.html"}>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=${boolean ? "contact.html" + "?" + "true" : "contact.html"
+            }>Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=${boolean ? "about.html" + "?" + "true" : "about.html"}>About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=${boolean ? "sign-Up.html" + "?" + "true" : "sign-Up.html"}>Sign
+                        up</a>
+                </li>
+            </ul>
+
+            <div class="offcanvas offcanvas-start navbar-responsive bg-linear h-100" tabindex="-1"
+                id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                    <a class="navbar-brand" href=${boolean ? "index.html" + "?" + "true" : "index.html"}><img
+                            src="assets/images/logo/Logo.png" alt=""></a>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
                 </div>
-                            
-                    <div class="input-svg d-flex justify-content-between position-relative">
-                    <a href= ${boolean ? "wishlist.html" + "?" + "true" : "sign-Up.html"}>
-                    <span class="position-absolute top-0 mt-1 translate-middle badge badge-wishlist rounded-pill bg-danger ${boolean ? "d-block" : "d-none"}">0</span>
-                    <img src="assets/images/svg/Wishlist.svg" class="ms-1 crusor-p" alt="">
+                <div class="offcanvas-body">
+                    <div>
+                        <ul class="navbar-nav mt-1 mb-lg-0 nav-underline crusor-p fs-16 ">
+                            <li class="nav-item">
+                                <a class="nav-link " href=${boolean ? "index.html" + "?" + "true" : "index.html"}>Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=${boolean ? "contact.html" + "?" + "true"
+                : "contact.html"}>Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=${boolean ? "about.html" + "?" + "true" : "about.html"
+            }>About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=${boolean ? "sign-Up.html" + "?" + "true"
+                : "sign-Up.html"}>Sign
+                                    up</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div>
+                        <ul class="list-group left-navbar ">
+                            <li class="list-group-item border-0 ">
+                                <a class="d-flex justify-content-between link-underline-light text-dark"
+                                    href="#">Woman’s
+                                    Fashion
+                                    <img class="left-navbar-icons" src="assets/images/svg/arrowRight.svg"
+                                        alt="">
+                                </a>
+                            </li>
+                            <li class="list-group-item border-0 ">
+                                <a class="d-flex justify-content-between link-underline-light text-dark"
+                                    href="#">Men’s
+                                    Fashion
+                                    <img class="left-navbar-icons" src="assets/images/svg/arrowRight.svg"
+                                        alt="">
+                                </a>
+                            </li>
+                            <li class="list-group-item border-0 ">
+                                <a class="link-underline-light text-dark" href="#">Electronics
+
+                                </a>
+                            </li>
+                            <li class="list-group-item border-0 ">
+                                <a class="link-underline-light text-dark" href="#">Home & Lifestyle
+
+                                </a>
+                            </li>
+                            <li class="list-group-item border-0 ">
+                                <a class="link-underline-light text-dark" href="#">Medicine
+
+                                </a>
+                            </li>
+                            <li class="list-group-item border-0 ">
+                                <a class="link-underline-light text-dark" href="#">Sports & Outdoor
+
+                                </a>
+                            </li>
+                            <li class="list-group-item border-0 ">
+                                <a class="link-underline-light text-dark" href="#">Baby’s & Toys
+
+                                </a>
+                            </li>
+                            <li class="list-group-item border-0 ">
+                                <a class="link-underline-light text-dark" href="#">Groceries & Pets
+
+                                </a>
+                            </li>
+                            <li class="list-group-item border-0 ">
+                                <a class="link-underline-light text-dark" href="#">Health & Beauty
+
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- input field and icon in navbar -->
+        <div class="input-section ">
+            <div class="d-flex justify-content-between align-items-center" role="search">
+                <div class="input-group">
+                    <input id="searchInput" type="search"
+                        class="form-control srch-input bg-solid-secondary border border-end-0"
+                        placeholder="What are you looking for?" aria-label="Search"
+                        aria-describedby="basic-addon2">
+                    <span class="input-group-text bg-solid-secondary " id="basic-addon2"><img id="search-icon"
+                            src="assets/images/svg/searcg-icon.svg" class="search-icon crusor-p" </span>
+                </div>
+
+                <div class="input-svg d-flex justify-content-between position-relative">
+                    <a href=${boolean ? "wishlist.html" + "?" + "true" : "sign-Up.html"}>
+                        <span
+                            class="position-absolute top-0 mt-1 translate-middle badge badge-wishlist rounded-pill bg-danger ${boolean ?
+                "d-block" : "d-none"}">0</span>
+                        <img src="assets/images/svg/Wishlist.svg" class="ms-1 crusor-p" alt="">
                     </a>
-                        <a href= ${boolean ? "cart.html" + "?" + "true" : "sign-Up.html"}>
+                    <a href=${boolean ? "cart.html" + "?" + "true" : "sign-Up.html"}>
                         <img src="assets/images/svg/Cart1.svg" class="mx-2  crusor-p" alt="">
-                        </a>
-                        <a class="${boolean ? "d-block" : "d-none"}" href='#'><img src="assets/images/svg/user.svg" class="userIcon  crusor-p" alt=""></a>
-                        
-                        <div id="profile-dropdown" class="card border-0 card-dropdown position-absolute d-none" style="width: 15rem;">
+                    </a>
+                    <a class="${boolean ? "d-block" : "d-none"}" href='#'><img
+                            src="assets/images/svg/user.svg" class="userIcon  crusor-p" alt=""></a>
+
+                    <div id="profile-dropdown" class="card border-0 card-dropdown position-absolute d-none"
+                        style="width: 15rem;">
                         <div class="card-body rounded bg-linear p-3">
                             <a href=${boolean ? "account.html" + "?" + "true" : "sign-Up.html"}>
                                 <div class="d-flex ">
@@ -71,39 +172,44 @@ const navbar = () => {
                             </a>
                             <a href="#">
                                 <div class="d-flex">
-                                    <figure class="me-4"><img src="./assets/images/svg/Group-order.svg" alt=""></figure>
+                                    <figure class="me-4"><img src="./assets/images/svg/Group-order.svg" alt="">
+                                    </figure>
                                     <span class="fs-14 ps-1">My Order</span>
                                 </div>
                             </a>
                             <a href="#">
                                 <div class="d-flex">
-                                    <figure class="me-4"><img src="./assets/images/svg/icon-cancel.svg" alt=""></figure>
+                                    <figure class="me-4"><img src="./assets/images/svg/icon-cancel.svg" alt="">
+                                    </figure>
                                     <span class="fs-14 ">My Cancellations</span>
                                 </div>
                             </a>
                             <a href="#">
                                 <div class="d-flex">
-                                    <figure class="me-4"><img src="./assets/images/svg/Icon-Reviews.svg" alt=""></figure>
+                                    <figure class="me-4"><img src="./assets/images/svg/Icon-Reviews.svg" alt="">
+                                    </figure>
                                     <span class="fs-14 ">My Reviews</span>
                                 </div>
                                 <a href="#">
                                     <div id="logoutProfile" class="d-flex">
-                                        <figure class="me-4"><img src="./assets/images/svg/Icon-logout.svg" alt=""></figure>
+                                        <figure class="me-4"><img src="./assets/images/svg/Icon-logout.svg"
+                                                alt=""></figure>
                                         <span class="fs-14 ">Logout</span>
                                     </div>
                                 </a>
                         </div>
                     </div>
-                        <button class="ms-2 navbar-toggler border-0 fs-3 p-0 shadow-none" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
+                    <button class="ms-2 navbar-toggler border-0 fs-3 p-0 shadow-none" type="button"
+                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                        aria-controls="offcanvasExample">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
                 </div>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
     `;
     }
 

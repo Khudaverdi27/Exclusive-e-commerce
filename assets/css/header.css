@@ -36,6 +36,10 @@ input[type="number"] {
     font-size: 14px;
 }
 
+.fs-15 {
+    font-size: 15px;
+}
+
 .fs-16 {
     font-size: 16px;
 }
@@ -119,13 +123,19 @@ input[type="search"] {
     appearance: none;
 }
 
+.navbar-responsive {
+    display: none;
+}
+
 .srch-input::placeholder {
     font-size: 12px;
     opacity: 0.5;
     padding: 7px 12px 7px 5px;
 }
 
-
+.navbar-responsive {
+    display: none;
+}
 
 .dropdown-menu {
     min-width: 5rem;
@@ -263,16 +273,56 @@ input[type="search"] {
     }
 }
 
-@media (max-width: 420px) {
-    .m-left-2 {
-        margin-left: 1rem;
+@media (max-width: 445px) {
+    .navbarDesktop {
+        display: none;
     }
 
     .navbar-toggler {
         display: block;
     }
 
+    .navbar-responsive {
+        display: block;
+    }
+
+    .navbar-brand {
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-link {
+        font-weight: 600;
+    }
+
+    .nav-link {
+        color: var(--color-solid-secondary);
+    }
+
+    .left-navbar {
+        display: block;
+    }
+
+    .list-group-item {
+        font-size: 18px;
+        background-color: transparent;
+        line-height: 35px;
+        margin-left: 40px;
+    }
+
+    .list-group-item a:hover {
+        color: var(--color-light-orange) !important;
+    }
+
+}
+
+@media (max-width: 420px) {
+    .m-left-2 {
+        margin-left: 1rem;
+    }
+
     .badge-wishlist {
         left: 20%;
     }
+
 }
