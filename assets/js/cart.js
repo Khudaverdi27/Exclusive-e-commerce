@@ -1,4 +1,5 @@
 import { removeProductFromWishlist } from "./navbar.js";
+import loading from "./spinner.js";
 
 
 
@@ -20,7 +21,7 @@ function findAndRemoveDuplicates(array, property) {
 }
 
 
-const uniqueObjects = findAndRemoveDuplicates(products, 'id');
+export const uniqueObjects = findAndRemoveDuplicates(products, 'id');
 
 
 
@@ -86,6 +87,12 @@ export const updateCount = (action, inputElement, checkData) => {
 
       inputElement.value = (action === 'increase') ? (currentCount > 0 ? --currentCount : 0) : ++currentCount;
       updateSubtotal(item, currentCount);
+      if (currentCount === 0) {
+        const deletedItem = (inputElement.closest('.productsContain'));
+        loading()
+        deleteProduct(deletedItem)
+      }
+
     }
   } else {
     let currentCount = parseInt(inputElement.value);
@@ -112,7 +119,6 @@ if (updateBtn) {
     document.querySelectorAll(".subtotalPrice").forEach((subtotal) => {
       total += parseFloat(subtotal.textContent.replace("$", ""));
     });
-
     subtotalResult.forEach((items) => {
       items.textContent = `$${total.toFixed(2)}`;
     });
@@ -124,34 +130,38 @@ let boolean = window.location.search.startsWith('?true')
 document.getElementById("checkoutFromCart")?.setAttribute("href", `${boolean ? "check-out.html" + "?" + "true" : "sign-Up.html"}`)
 document.getElementById("returnShopBtn")?.setAttribute("href", `${boolean ? "index.html" + "?" + "true" : "sign-Up.html"}`)
 
+const deleteProduct = (deletedItemContainer) => {
+  let productContain = deletedItemContainer
+  if (productContain) {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const cartId = productContain.getAttribute("data-cartId");
+        removeProductFromWishlist(cartId, cartId)
+        productContain.classList.add("d-none");
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success",
+        });
+        setTimeout(() => {
+          location.reload()
+        }, 1500)
 
+      }
+    });
+  }
+}
 
 const cancelButtons = document.querySelectorAll(".cancelBtn");
 
 cancelButtons.forEach((cancelBtn) => {
-  cancelBtn.addEventListener("click", (event) => {
-    const productContain = event.target.closest(".productsContain");
-    if (productContain) {
-      Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          const cartId = productContain.getAttribute("data-cartId");
-          removeProductFromWishlist(cartId, cartId)
-          productContain.classList.add("d-none");
-          Swal.fire({
-            title: "Deleted!",
-            text: "Your file has been deleted.",
-            icon: "success",
-          });
-        }
-      });
-    }
-  });
+  cancelBtn.addEventListener("click", (e) => deleteProduct(e.target.closest(".productsContain")))
 });

@@ -55,17 +55,24 @@ if (sizeContainer) {
 let boolean = window.location.search.startsWith('?true');
 
 const addWish = document.getElementById("addDetailWishlist")
+if (!boolean && addWish) {
+    addWish.style.cursor = "not-allowed";
+    addWish.setAttribute("disabled", true);
+} else {
+    addWish?.addEventListener("click", () => {
+        const hasBgWhiteClass = addWish.classList.contains('bg-white');
 
-addWish?.addEventListener("click", () => {
-    const hasBgWhiteClass = addWish.classList.contains('bg-white');
+        // Toggle background color class
+        addWish.classList.remove(hasBgWhiteClass ? 'bg-white' : 'bg-danger');
+        addWish.classList.add(hasBgWhiteClass ? 'bg-danger' : 'bg-white');
 
-    // Toggle background color class
-    addWish.classList.remove(hasBgWhiteClass ? 'bg-white' : 'bg-danger');
-    addWish.classList.add(hasBgWhiteClass ? 'bg-danger' : 'bg-white');
+        setLocale(detailFromStorage, detailFromStorage.id)
+        updateBadge()
+    })
+}
 
-    setLocale(detailFromStorage, detailFromStorage.id)
-    updateBadge()
-})
+
+
 
 document.getElementById("buyFromDetail")?.setAttribute("href", `${boolean ? "check-out.html" + "?" + "true" : "sign-Up.html"}`)
 

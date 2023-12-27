@@ -65,10 +65,10 @@ a {
 .loader-card {
   width: 8%;
   padding: 15px;
-  top: 41%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+  z-index: 999;
 }
 
 /* The snackbar - position it at the bottom and in the middle of the screen */
@@ -119,8 +119,6 @@ a {
 @media (max-width: 768px) {
   .loader-card {
     width: 30%;
-    top: 45%;
-
   }
 }
 
