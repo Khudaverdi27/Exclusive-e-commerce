@@ -1,7 +1,7 @@
 
 import { updateCount } from "./cart.js";
 import { getStorage } from "./login.js";
-import { setLocale, updateBadge } from "./navbar.js";
+import { setLocale, showSnackbar, updateBadge } from "./navbar.js";
 
 const ui = {
     minusBtn: document.getElementById('minus-btn'),
@@ -60,6 +60,7 @@ const addWish = document.getElementById("addDetailWishlist")
 if (!boolean && addWish) {
     addWish.style.cursor = "not-allowed";
     addWish.setAttribute("disabled", true);
+    addEventListener("click", () => { showSnackbar("Please sign in") });
 } else {
     addWish?.addEventListener("click", () => {
         const hasBgWhiteClass = addWish.classList.contains('bg-white');
