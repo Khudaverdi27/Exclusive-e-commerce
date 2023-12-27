@@ -1,5 +1,6 @@
 import { bestProducts, productsByIndex } from "./displayProducts.js";
 import { addProductToList, removeProductFromWishlist } from './navbar.js'
+import loading from "./spinner.js";
 const wishListCount = document.getElementById('wishlist-title')
 
 let wishProducts = JSON.parse(sessionStorage.getItem('sendToWishlist')) || [];
@@ -102,7 +103,11 @@ const deleteProduct = () => {
         deletIcon.addEventListener('click', () => {
             const deletedId = deletIcon.closest('.products-container').getAttribute('data-id');
             removeProductFromWishlist(deletedId);
-            location.reload();
+            loading()
+            setTimeout(() => {
+                location.reload();
+            }, 2000)
+
         });
     });
 };
@@ -115,5 +120,9 @@ productsByIndex(bestProducts, '.products-container', false)
 document.getElementById("cartFromWish")?.addEventListener("click", () => {
     wishProducts.forEach(wish => {
         addProductToList(wish, true)
+        loading()
+        setTimeout(() => {
+            location.reload();
+        }, 1500)
     })
 })

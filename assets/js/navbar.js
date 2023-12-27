@@ -1,4 +1,6 @@
+import { uniqueObjects } from "./cart.js";
 import { products, ourProducts, bestProducts, map, productsByIndex } from "./displayProducts.js";
+import loading from "./spinner.js";
 
 const navbarContainer = document.querySelector('.header-top');
 let boolean = window.location.search.startsWith('?true');
@@ -26,7 +28,7 @@ const navbar = () => {
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg bg-white border-bottom">
     <div class=" container-fluid d-flex justify-content-around">
-        <a class="navbar-brand" href=${boolean ? "index.html" + "?" + "true" : "index.html"}><img
+        <a class="navbar-brand mb-2 ms-2" href=${boolean ? "index.html" + "?" + "true" : "index.html"}><img
                 src="assets/images/logo/Logo.png" alt=""></a>
 
         <div class=" " id="navbarNav">
@@ -50,7 +52,7 @@ const navbar = () => {
             <div class="offcanvas offcanvas-start navbar-responsive bg-linear h-100" tabindex="-1"
                 id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                 <div class="offcanvas-header">
-                    <a class="navbar-brand" href=${boolean ? "index.html" + "?" + "true" : "index.html"}><img
+                    <a class="navbar-brand ms-4" href=${boolean ? "index.html" + "?" + "true" : "index.html"}><img
                             src="assets/images/logo/Logo.png" alt=""></a>
                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
@@ -156,6 +158,9 @@ const navbar = () => {
                         <img src="assets/images/svg/Wishlist.svg" class="ms-1 crusor-p" alt="">
                     </a>
                     <a href=${boolean ? "cart.html" + "?" + "true" : "sign-Up.html"}>
+                    <span
+                    class="position-absolute top-0 mt-1 translate-middle badge badge-cart rounded-pill bg-danger ${boolean ?
+                "d-block" : "d-none"}">0</span>
                         <img src="assets/images/svg/Cart1.svg" class="mx-2  crusor-p" alt="">
                     </a>
                     <a class="${boolean ? "d-block" : "d-none"}" href='#'><img
@@ -166,7 +171,7 @@ const navbar = () => {
                         <div class="card-body rounded bg-linear p-3">
                             <a href=${boolean ? "account.html" + "?" + "true" : "sign-Up.html"}>
                                 <div class="d-flex ">
-                                    <figure><img src="./assets/images/svg/user-dropdown.svg" alt=""></figure>
+                                    <figure ><img src="./assets/images/svg/user-dropdown.svg" alt=""></figure>
                                     <span class="fs-14 ms-2 ps-2">Manage My Account</span>
                                 </div>
                             </a>
@@ -225,16 +230,10 @@ const navbar = () => {
         }
     });
     document.getElementById('logoutProfile').addEventListener('click', () => {
-        const spinner = document.querySelector('.loader-card')
-        spinner.style.top = '4%'
-        spinner.classList.remove('d-none')
-
+        loading()
         setTimeout(() => {
-            spinner.classList.add('d-none')
             window.location.href = "sign-Up.html"
-            boolean = false
-            navbar()
-        }, 3000)
+        }, 1500)
 
     });
 
@@ -310,6 +309,7 @@ changePath();
 
 export const updateBadge = () => {
     document.querySelector('.badge-wishlist').textContent = existingData.length;
+    document.querySelector('.badge-cart').textContent = uniqueObjects.length
 }
 
 

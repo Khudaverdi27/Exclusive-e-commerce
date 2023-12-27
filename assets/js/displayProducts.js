@@ -1,5 +1,6 @@
 import { setStorage } from "./login.js";
-import { setLocale } from "./navbar.js";
+import { setLocale, updateBadge } from "./navbar.js";
+import loading from "./spinner.js";
 
 const products = [
     {
@@ -690,13 +691,19 @@ function productsByIndex(products, container, eventListener = false) {
             if (addCart) {
                 addCart.addEventListener('click', () => {
                     handleWishlistClick(addCart, products[index], id);
+                    loading()
+                    updateBadge()
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1500)
+
                 });
             }
             const showDetails = item.querySelector(".showDetails")
 
             if (showDetails) {
                 showDetails.addEventListener("click", () => {
-                    showDetails.setAttribute("href", `${boolean ? "productDetails.html" + "?" + "true" : "sign-Up.html"}`)
+                    showDetails.setAttribute("href", `${boolean ? "productDetails.html" + "?" + "true" : "productDetails.html"}`)
                     setStorage("details", JSON.stringify(products[index]))
                 })
             }
