@@ -380,6 +380,7 @@ export const updateStorage = (message, attr) => {
 }
 
 export const showSnackbar = (message) => {
+
     if (snackbar) {
         snackbar.className = "show";
         snackbar.innerHTML = `<h6>${message}</h6>`;

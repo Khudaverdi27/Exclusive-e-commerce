@@ -1,3 +1,4 @@
+import { showSnackbar } from "./navbar.js";
 
 const formContainer = document.querySelector('.formContainer');
 const spinner = document.querySelector('.loader-card')
@@ -126,15 +127,12 @@ function selectElement(form, email, email_error, pass, pass_error, nameInput, na
 
 
             });
-            document.getElementById('forgetPass').addEventListener('click', () => {
-                const snackbar = document.getElementById("snackbar");
-                snackbar.className = "show";
-                snackbar.innerHTML = `
-                ${localEmail ? 'Your login: ' + localEmail : 'Please create account'} <br>
-                ${localPass ? 'Your password: ' + localPass : ''}
-              `;
-                // After 3 seconds, remove the show class from DIV
-                setTimeout(function () { snackbar.className = snackbar.className.replace("show", ""); }, 3000);
+            const snackbar = document.getElementById("snackbar");
+            document.getElementById('forgetPass')?.addEventListener('click', () => {
+                if (snackbar) {
+                    showSnackbar(`${localEmail ? `Your login: ${localEmail}` : 'Please create an account'} <br>${localPass ? `Your password: ${localPass}` : ''}`);
+                }
+
             })
 
         } else {

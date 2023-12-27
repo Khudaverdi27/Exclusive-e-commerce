@@ -1,6 +1,6 @@
 
 import { updateCount } from "./cart.js";
-import { getStorage } from "./login.js";
+import { getStorage, setStorage } from "./login.js";
 import { setLocale, showSnackbar, updateBadge } from "./navbar.js";
 
 const ui = {
@@ -123,6 +123,8 @@ if (checkContainer) {
     document.getElementById("totalPrice").textContent = "$" + total
 }
 
+const adress = getStorage("adress")
+const userName = getStorage("userName")
 
 
 const checkoutName = document.getElementById("checkoutName");
@@ -134,6 +136,14 @@ const checkoutNameErr = document.getElementById("checkoutNameErr");
 const checkoutAdressErr = document.getElementById("checkoutAdressErr");
 const checkoutCityErr = document.getElementById("checkoutCityErr");
 const checkoutNumErr = document.getElementById("checkoutNumErr");
+
+if (checkoutName && checkoutAdress) {
+    checkoutName.value = userName
+    checkoutAdress.value = adress
+}
+
+
+
 
 const btn = document.querySelector(".place-order");
 
@@ -155,6 +165,7 @@ function validate() {
     if (!isValidAdress) {
         checkoutAdressErr.classList.remove("d-none");
     } else {
+        setStorage("adress", checkoutAdress.value)
         checkoutAdressErr.classList.add("d-none");
     }
     if (!isValidCity) {
@@ -175,7 +186,7 @@ function validate() {
     if (isAllValid) {
         setTimeout(() => {
             Swal.fire({
-                title: "Good job!",
+                title: "Thank You!",
                 text: "Your order has been received",
                 icon: "success"
             });
