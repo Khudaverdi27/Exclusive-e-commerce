@@ -43,15 +43,14 @@ const services = [
 ];
 
 const objectsToUi = (statistc) => {
-  return statistc
-    .map((item) => {
-      return `<div class="  ${item.value ? "border " : "col-xl-4"
-        } statitcsCard col-12 col-sm-12 col-md-5 col-lg-6 col-xl-2 px-3 mx-auto ">
+  return statistc.map((item) => {
+    return `<div class="  ${item.value ? "border " : "col-xl-4"
+      } statitcsCard col-12 col-sm-12 col-md-5 col-lg-6 col-xl-2 px-3 mx-auto ">
 <img class="mt-3" src="${item.imgSrc} " alt="">
 <h4 class="staticsCount mt-3">${item.title}</h4>
 <p class="mb-3">${item.description}</p>
 </div>`;
-    }).join("");
+  }).join("");
 };
 const result = objectsToUi(statistics);
 const service = objectsToUi(services);

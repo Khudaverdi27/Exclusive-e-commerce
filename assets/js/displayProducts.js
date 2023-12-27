@@ -704,7 +704,7 @@ function productsByIndex(products, container, eventListener = false) {
             if (showDetails) {
                 showDetails.addEventListener("click", () => {
                     showDetails.setAttribute("href", `${boolean ? "productDetails.html" + "?" + "true" : "productDetails.html"}`)
-                    setStorage("details", JSON.stringify(products[index]))
+                    setStorage("details", JSON.stringify([products[index]]))
                 })
             }
 

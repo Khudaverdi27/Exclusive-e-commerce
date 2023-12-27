@@ -13,9 +13,9 @@ const footer = () => {
                 </a>
                 <p><a href="" class="text-white">Subscribe</a></p>
                 <p class="text-white">Get 10% off your first order</p>
-                <span class="position-relative">
-                    <input type="text" placeholder="Enter your email" class=" bg-dark inputEmail ">
-                    <span class="iconSend position-absolute"><img src="assets/images/svg/icon-send.svg" alt=""></span>
+                <span class="position-relative border border-1 py-3">
+                    <input type="text" placeholder="Enter your email" class="border-0 bg-dark inputEmail text-white">
+                    <span class="me-1 "><img src="assets/images/svg/icon-send.svg" alt=""></span>
                 </span>
             </div>
             <hr class="borderHr d-block d-sm-none d-md-none d-xl-none d-xxl-none ">
