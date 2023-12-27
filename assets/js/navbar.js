@@ -369,6 +369,7 @@ export const removeProductFromWishlist = (id, attr) => {
 
 export const updateStorage = (message, attr) => {
     if (!attr) {
+
         sessionStorage.setItem('sendToWishlist', JSON.stringify(existingData));
         showSnackbar(message);
     } else {

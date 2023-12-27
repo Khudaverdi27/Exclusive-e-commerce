@@ -4,13 +4,16 @@ import loading from "./spinner.js";
 const wishListCount = document.getElementById('wishlist-title')
 
 let wishProducts = JSON.parse(sessionStorage.getItem('sendToWishlist')) || [];
-wishProducts.forEach(element => {
+let concatWishlist = ([].concat(...wishProducts));
+
+
+concatWishlist.forEach(element => {
     element.imgEye = "assets/images/svg/icon-delete.svg"
     element.imgEmptyStar = ""
     element.imgStar = ""
 });
 if (wishListCount) {
-    wishListCount.textContent = `Wishlist (${wishProducts.length})`
+    wishListCount.textContent = `Wishlist (${concatWishlist.length})`
 
 }
 
@@ -75,13 +78,13 @@ const recommendProducts = document.getElementById('recommendProducts');
 
 
 // products to product section
-const product = wishlistMap(wishProducts);
+const product = wishlistMap(concatWishlist);
 const recommendProduct = wishlistMap(bestProducts);
 document.addEventListener("DOMContentLoaded", () => {
 
 })
 if (wishListContainer) {
-    if (wishProducts.length > 0) {
+    if (concatWishlist.length > 0) {
 
         wishListContainer.innerHTML = product
     } else {
@@ -106,7 +109,7 @@ const deleteProduct = () => {
             loading()
             setTimeout(() => {
                 location.reload();
-            }, 2000)
+            }, 1000)
 
         });
     });
@@ -114,11 +117,11 @@ const deleteProduct = () => {
 
 deleteProduct();
 
-productsByIndex(wishProducts, '.products-container', false)
+productsByIndex(concatWishlist, '.products-container', false)
 productsByIndex(bestProducts, '.products-container', false)
 
 document.getElementById("cartFromWish")?.addEventListener("click", () => {
-    wishProducts.forEach(wish => {
+    concatWishlist.forEach(wish => {
         addProductToList(wish, true)
         loading()
         setTimeout(() => {
