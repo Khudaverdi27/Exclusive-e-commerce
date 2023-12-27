@@ -138,7 +138,7 @@ const btn = document.querySelector(".place-order");
 
 function validate() {
     const nameRegex = /^[a-zA-Z]{2,25}$/;
-    const phoneRegex = /^(\+\d{1,3})?(\(\d{1,4}\))?[\d\-]+$/;
+    const phoneRegex = /^\d{6,}$/;
     const addressRegex = /^[a-zA-Z0-9\s,'.-]+$/;
 
     const isValidName = nameRegex.test(checkoutName.value);
@@ -188,16 +188,7 @@ function validate() {
 
 
 btn?.addEventListener("click", () => {
-    handleButtonClick();
-});
-
-// for mobile devices
-btn?.addEventListener("touchstart", () => {
-    handleButtonClick();
-});
-
-function handleButtonClick() {
-    const resultValidate = validate();
+    const resultValidate = validate()
     if (resultValidate) {
         btn.classList.remove("place-order--default");
         btn.classList.add("place-order--placing");
@@ -210,5 +201,5 @@ function handleButtonClick() {
             btn.classList.add("place-order--default");
         }, 6000);
     }
-}
 
+})
