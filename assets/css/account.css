@@ -2,6 +2,10 @@
   margin: 100px 0 70px 0;
 }
 
+.editingInput input::placeholder {
+  font-size: 14px;
+}
+
 .labelForControlled {
   font-weight: 600;
 }
@@ -23,6 +27,7 @@
   flex-direction: column;
   gap: 10px;
   margin-left: 30px;
+  text-align: left;
 }
 
 
@@ -86,7 +91,6 @@
   .labelForControlled {
     display: flex;
     align-items: center;
-    justify-content: center;
   }
 
   .myOrders {
