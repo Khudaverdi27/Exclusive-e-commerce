@@ -123,6 +123,6 @@ document.getElementById("cartFromWish")?.addEventListener("click", () => {
         loading()
         setTimeout(() => {
             location.reload();
-        }, 1500)
+        }, 1000)
     })
 })

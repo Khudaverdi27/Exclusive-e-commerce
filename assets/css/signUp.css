@@ -81,7 +81,7 @@ a {
   position: fixed;
   z-index: 99;
   left: 50%;
-  top: 17%;
+  top: 27%;
 }
 
 /* Show the snackbar when clicking on a button (class added with JavaScript) */

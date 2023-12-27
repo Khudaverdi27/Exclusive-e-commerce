@@ -233,7 +233,7 @@ const navbar = () => {
         loading()
         setTimeout(() => {
             window.location.href = "sign-Up.html"
-        }, 1500)
+        }, 1000)
 
     });
 

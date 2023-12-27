@@ -155,7 +155,7 @@ const deleteProduct = (deletedItemContainer, count) => {
         });
         setTimeout(() => {
           location.reload()
-        }, 1500)
+        }, 1000)
 
       } else {
         productContain.querySelector('input').value = count ? count : 1
