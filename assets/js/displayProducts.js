@@ -558,7 +558,7 @@ const slideBanner = [
     {
         id: 969,
         name: "Iphone 14 Pro Max",
-        price: 1500,
+        price: 1000,
         category: "Phones",
         image: 'assets/images/products/iphone14.png',
     }
@@ -695,7 +695,7 @@ function productsByIndex(products, container, eventListener = false) {
                     updateBadge()
                     setTimeout(() => {
                         window.location.reload();
-                    }, 1500)
+                    }, 1000)
 
                 });
             }
