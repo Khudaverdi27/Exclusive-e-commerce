@@ -1,3 +1,4 @@
+import { setStorage } from "./login.js";
 import { removeProductFromWishlist } from "./navbar.js";
 import loading from "./spinner.js";
 
@@ -69,22 +70,23 @@ ui.minusBtns.forEach((minusBtn, index) => {
   minusBtn.addEventListener('click', function () {
     updateCount('decrease', ui.countOfValue[index], true);
   });
+  updateCount('decrease', ui.countOfValue[index], true);
 });
 
 ui.plusBtns.forEach((plusBtn, index) => {
   plusBtn.addEventListener('click', function () {
     updateCount('increase', ui.countOfValue[index], true);
   });
+  updateCount('increase', ui.countOfValue[index], true);
 });
 
-export const updateCount = (action, inputElement, checkData) => {
+export function updateCount(action, inputElement, checkData) {
   if (checkData) {
     const productId = inputElement.getAttribute("data-id")
     const item = uniqueObjects.find(item => item.id === productId);
 
     if (item) {
       let currentCount = parseInt(inputElement.value);
-
       inputElement.value = (action === 'increase') ? (currentCount > 0 ? --currentCount : 0) : ++currentCount;
       updateSubtotal(item, currentCount);
       if (currentCount === 0) {
@@ -103,7 +105,7 @@ export const updateCount = (action, inputElement, checkData) => {
 
 
 
-const updateSubtotal = (item, quantity) => {
+function updateSubtotal(item, quantity) {
   const subtotalPrice = document.querySelector(`.subtotalPrice[data-id=subtotalPrice${item.id}]`);
   subtotalPrice.textContent = `$${(item.price * quantity).toFixed(2)}`;
 };
@@ -130,7 +132,7 @@ let boolean = window.location.search.startsWith('?true')
 document.getElementById("checkoutFromCart")?.setAttribute("href", `${boolean ? "check-out.html" + "?" + "true" : "sign-Up.html"}`)
 document.getElementById("returnShopBtn")?.setAttribute("href", `${boolean ? "index.html" + "?" + "true" : "sign-Up.html"}`)
 
-const deleteProduct = (deletedItemContainer) => {
+const deleteProduct = (deletedItemContainer, count) => {
   let productContain = deletedItemContainer
   if (productContain) {
     Swal.fire({
@@ -144,8 +146,8 @@ const deleteProduct = (deletedItemContainer) => {
     }).then((result) => {
       if (result.isConfirmed) {
         const cartId = productContain.getAttribute("data-cartId");
+
         removeProductFromWishlist(cartId, cartId)
-        productContain.classList.add("d-none");
         Swal.fire({
           title: "Deleted!",
           text: "Your file has been deleted.",
@@ -155,6 +157,8 @@ const deleteProduct = (deletedItemContainer) => {
           location.reload()
         }, 1500)
 
+      } else {
+        productContain.querySelector('input').value = count ? count : 1
       }
     });
   }
@@ -163,5 +167,11 @@ const deleteProduct = (deletedItemContainer) => {
 const cancelButtons = document.querySelectorAll(".cancelBtn");
 
 cancelButtons.forEach((cancelBtn) => {
-  cancelBtn.addEventListener("click", (e) => deleteProduct(e.target.closest(".productsContain")))
+  cancelBtn.addEventListener("click", (e) =>
+
+    deleteProduct(e.target.closest(".productsContain"), e.target.closest(".productsContain").querySelector('input').value))
 });
+
+document.querySelector(".proceesBtn")?.addEventListener("click", () => {
+  setStorage("details", JSON.stringify(uniqueObjects))
+})

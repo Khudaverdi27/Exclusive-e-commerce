@@ -30,36 +30,46 @@
             <h2 class="my-3">Billing Details</h2>
             <div class="row my-5">
                 <div class="col-xl-6 col-md-6 col-sm-12">
-                    <div class="mb-3">
-                        <label class="text-secondary form-label">First Name<span class="text-danger">*</span></label>
-                        <input type="text" class="form-control w-full width-75 bg-solid-secondary">
-                    </div>
-                    <div class="mb-3">
-                        <label class="text-secondary form-label">Company Name</label>
-                        <input type="text" class="form-control w-full bg-solid-secondary">
-                    </div>
-                    <div class="mb-3">
-                        <label class="text-secondary form-label">Street Address<span
-                                class="text-danger">*</span></label>
-                        <input type="text" class="form-control w-full bg-solid-secondary">
-                    </div>
-                    <div class="mb-3">
-                        <label class="text-secondary form-label">Apartment, floor, etc.
-                            (optional)</label>
-                        <input type="text" class="form-control w-full bg-solid-secondary">
-                    </div>
-                    <div class="mb-3">
-                        <label class="text-secondary form-label">Town/City<span class="text-danger">*</span></label>
-                        <input type="text" class="form-control w-full bg-solid-secondary">
-                    </div>
-                    <div class="mb-3">
-                        <label class="text-secondary form-label">Phone Number<span class="text-danger">*</span></label>
-                        <input type="number" class="form-control w-full bg-solid-secondary">
-                    </div>
-                    <div class="mb-3">
-                        <label class="text-secondary form-label">Email address</label>
-                        <input type="email" class="form-control w-full bg-solid-secondary">
-                    </div>
+                    <form id="formCheckout">
+                        <div class="mb-3">
+                            <label class="text-secondary form-label">First Name<span
+                                    class="text-danger">*</span></label>
+                            <input id="checkoutName" type="text"
+                                class="form-control w-full width-75 bg-solid-secondary">
+                            <p id="checkoutNameErr" class="text-danger fs-14 d-none">Please fill this area!</p>
+                        </div>
+                        <div class="mb-3">
+                            <label class="text-secondary form-label">Company Name</label>
+                            <input type="text" class="form-control w-full bg-solid-secondary">
+                        </div>
+                        <div class="mb-3">
+                            <label class="text-secondary form-label">Street Address<span
+                                    class="text-danger">*</span></label>
+                            <input id="checkoutAdress" type="text" class="form-control w-full bg-solid-secondary">
+                            <p id="checkoutAdressErr" class="text-danger fs-14 d-none">Please fill this area!</p>
+                        </div>
+                        <div class="mb-3">
+                            <label class="text-secondary form-label">Apartment, floor, etc.
+                                (optional)</label>
+                            <input type="text" class="form-control w-full bg-solid-secondary">
+                        </div>
+                        <div class="mb-3">
+                            <label class="text-secondary form-label">Town/City<span class="text-danger">*</span></label>
+                            <input id="checkoutCity" type="text" class="form-control w-full bg-solid-secondary">
+                            <p id="checkoutCityErr" class="text-danger fs-14 d-none">Please fill this area!</p>
+                        </div>
+                        <div class="mb-3">
+                            <label class="text-secondary form-label">Phone Number<span
+                                    class="text-danger">*</span></label>
+                            <input placeholder="+11234567890" id="checkoutNumber" type="number"
+                                class="form-control w-full bg-solid-secondary">
+                            <p id="checkoutNumErr" class="text-danger fs-14 d-none">Please fill this area!</p>
+                        </div>
+                        <div class="mb-3">
+                            <label class="text-secondary form-label">Email address</label>
+                            <input type="email" class="form-control w-full bg-solid-secondary">
+                        </div>
+                    </form>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" checked type="checkbox" id="inlineCheckbox1" value="option1">
                         <label class="form-check-label" for="inlineCheckbox1">Save this information for faster check-out
@@ -68,27 +78,13 @@
                 </div>
                 <div class="col-xl-5 col-md-6 col-sm-12 mtop-5">
                     <div class="p-end">
-                        <div class="d-flex ">
-                            <div class="box-btn-l">
-                                <img class=" img-fluid" src="./assets/images/products/joystick.png" alt="" srcset="">
-                            </div>
-                            <div class="d-flex justify-content-between w-100 ms-3">
-                                <h6>H1 Gamepad</h6>
-                                <span>$650</span>
-                            </div>
+                        <div id="checkout-container">
+                            <!-- from storage -->
                         </div>
-                        <div class="d-flex my-2">
-                            <div class="box-btn-l">
-                                <img class=" img-fluid" src="./assets/images/products/tv.png" alt="" srcset="">
-                            </div>
-                            <div class="d-flex justify-content-between w-100 ms-3">
-                                <h6>LCD Monitor</h6>
-                                <span>$1100</span>
-                            </div>
-                        </div>
+
                         <div class="d-flex justify-content-between w-100 border-bottom my-3">
                             <h6>Subtotal:</h6>
-                            <span>$1750</span>
+                            <span id="subTotalPrice">$1750</span>
                         </div>
                         <div class="d-flex justify-content-between w-100 border-bottom my-3">
                             <h6>Shipping:</h6>
@@ -96,7 +92,7 @@
                         </div>
                         <div class="d-flex justify-content-between w-100">
                             <h6>Total:</h6>
-                            <span>$1750</span>
+                            <span id="totalPrice">$1750</span>
                         </div>
                         <div class="my-3">
                             <div class="d-flex justify-content-between">
@@ -132,7 +128,18 @@
                         <button type="button" class="btn bg-light-orange btn-lg text-white fs-16 me-3">Apply
                             Coupon</button>
                     </div>
-                    <button type="button" class="btn bg-light-orange btn-lg text-white fs-16 mt-4 ">Place Order</button>
+                    <!-- <button id="placeOrder" type="button"
+                        class="btn bg-light-orange btn-lg text-white fs-16 mt-4 ">Place Order</button> -->
+                    <button id="placeOrder"
+                        class="place-order place-order--default btn bg-light-orange btn-lg text-white fs-16 mt-4">
+                        <div class="default text">Place Order</div>
+                        <div class="forklift">
+                            <div class="upper"></div>
+                            <div class="lower"></div>
+                        </div>
+                        <div class="box animation"></div>
+                        <div class="done text">Done</div>
+                    </button>
                 </div>
             </div>
             </div>
@@ -152,7 +159,7 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <script type="module" src="./assets/js/main.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 

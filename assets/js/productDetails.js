@@ -31,16 +31,17 @@ const setElementSrc = (selector, src) => document.querySelectorAll(selector).for
 const sizeContainer = document.getElementById("sizeContainer");
 
 if (sizeContainer) {
-    setElementText("detail--name", detailFromStorage.name);
-    setElementText("detail--title", detailFromStorage.name);
-    setElementText("detail-category", detailFromStorage.category + "/");
-    setElementText("detail--desc", detailFromStorage.description);
-    setElementText("detail--price", "$" + detailFromStorage.price + ".00");
+    const firstDetail = detailFromStorage[0] || {};
+    setElementText("detail--name", firstDetail.name || "");
+    setElementText("detail--title", firstDetail.name || "");
+    setElementText("detail-category", firstDetail.category + "/");
+    setElementText("detail--desc", firstDetail.description || "");
+    setElementText("detail--price", "$" + (firstDetail.price || ""));
 
-    setElementSrc(".img-w", detailFromStorage.image);
-    setElementSrc(".slide-img", detailFromStorage.image);
+    setElementSrc(".img-w", firstDetail.image || "");
+    setElementSrc(".slide-img", firstDetail.image || "");
 
-    const sizeHTML = detailFromStorage.size ? `
+    const sizeHTML = firstDetail.size ? `
         <span class="fs-4">Size:</span>
         <button class="btn btn-sm border border-2 box-btn fw-bold">XS</button>
         <button class="btn btn-sm border border-2 box-btn fw-bold mx-1">S</button>
@@ -51,6 +52,7 @@ if (sizeContainer) {
 
     sizeContainer.innerHTML = sizeHTML;
 }
+
 
 let boolean = window.location.search.startsWith('?true');
 
@@ -77,3 +79,127 @@ if (!boolean && addWish) {
 document.getElementById("buyFromDetail")?.setAttribute("href", `${boolean ? "check-out.html" + "?" + "true" : "sign-Up.html"}`)
 
 
+
+export const productsToCheckout = (check) => {
+    return check.map(product => {
+        return `      <div class="d-flex ">
+    <div class="box-btn-l d-flex-container">
+        <img class=" img-fluid" src="${product.image}">
+    </div>
+    <div class="d-flex justify-content-between align-items-center w-100 ms-3">
+        <h6>${product.name}</h6>
+        <span>$${product.price}</span>
+    </div>
+</div>`
+    }).join("")
+
+}
+
+function calcTotalCost(products) {
+    if (!products || products.length === 0) {
+        return 0;
+    }
+    const totalSum = products.reduce((sum, product) => {
+        if (typeof product.price === 'number') {
+            return sum + product.price;
+        }
+        // if product.price is not a number
+        return sum;
+    }, 0);
+
+    return totalSum;
+}
+
+
+const total = calcTotalCost(detailFromStorage);
+
+const checkout = productsToCheckout(detailFromStorage)
+
+const checkContainer = document.getElementById("checkout-container");
+if (checkContainer) {
+    checkContainer.innerHTML = checkout
+    document.getElementById("subTotalPrice").textContent = "$" + total
+    document.getElementById("totalPrice").textContent = "$" + total
+}
+
+
+
+const checkoutName = document.getElementById("checkoutName");
+const checkoutAdress = document.getElementById("checkoutAdress");
+const checkoutCity = document.getElementById("checkoutCity");
+const checkoutNumber = document.getElementById("checkoutNumber");
+
+const checkoutNameErr = document.getElementById("checkoutNameErr");
+const checkoutAdressErr = document.getElementById("checkoutAdressErr");
+const checkoutCityErr = document.getElementById("checkoutCityErr");
+const checkoutNumErr = document.getElementById("checkoutNumErr");
+
+const btn = document.querySelector(".place-order");
+
+function validate() {
+    const nameRegex = /^[a-zA-Z]{2,25}$/;
+    const phoneRegex = /^(\+\d{1,3})?(\(\d{1,4}\))?[\d\-]+$/;
+    const addressRegex = /^[a-zA-Z0-9\s,'.-]+$/;
+
+    const isValidName = nameRegex.test(checkoutName.value);
+    const isValidPhone = phoneRegex.test(checkoutNumber.value);
+    const isValidAdress = addressRegex.test(checkoutAdress.value);
+    const isValidCity = addressRegex.test(checkoutCity.value);
+
+    if (!isValidName) {
+        checkoutNameErr.classList.remove("d-none");
+    } else {
+        checkoutNameErr.classList.add("d-none");
+    }
+    if (!isValidAdress) {
+        checkoutAdressErr.classList.remove("d-none");
+    } else {
+        checkoutAdressErr.classList.add("d-none");
+    }
+    if (!isValidCity) {
+        checkoutCityErr.classList.remove("d-none");
+    } else {
+        checkoutCityErr.classList.add("d-none");
+    }
+
+    if (!isValidPhone) {
+        checkoutNumErr.classList.remove("d-none");
+    } else {
+        checkoutNumErr.classList.add("d-none");
+    }
+
+    // Check if all validations are successful
+    const isAllValid = isValidName && isValidAdress && isValidPhone && isValidCity;
+
+    if (isAllValid) {
+        setTimeout(() => {
+            Swal.fire({
+                title: "Good job!",
+                text: "Your order has been received",
+                icon: "success"
+            });
+        }, 5000)
+
+    }
+
+    return isAllValid;
+}
+
+
+
+btn?.addEventListener("click", () => {
+    const resultValidate = validate()
+    if (resultValidate) {
+        btn.classList.remove("place-order--default");
+        btn.classList.add("place-order--placing");
+        setTimeout(() => {
+            btn.classList.remove("place-order--placing");
+            btn.classList.add("place-order--done");
+        }, 4000);
+        setTimeout(() => {
+            btn.classList.remove("place-order--done");
+            btn.classList.add("place-order--default");
+        }, 6000);
+    }
+
+})
