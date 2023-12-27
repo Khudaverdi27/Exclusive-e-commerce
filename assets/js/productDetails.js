@@ -188,7 +188,16 @@ function validate() {
 
 
 btn?.addEventListener("click", () => {
-    const resultValidate = validate()
+    handleButtonClick();
+});
+
+// for mobile devices
+btn?.addEventListener("touchstart", () => {
+    handleButtonClick();
+});
+
+function handleButtonClick() {
+    const resultValidate = validate();
     if (resultValidate) {
         btn.classList.remove("place-order--default");
         btn.classList.add("place-order--placing");
@@ -201,5 +210,5 @@ btn?.addEventListener("click", () => {
             btn.classList.add("place-order--default");
         }, 6000);
     }
+}
 
-})
