@@ -84,7 +84,6 @@ export function updateCount(action, inputElement, checkData) {
   if (checkData) {
     const productId = inputElement.getAttribute("data-id")
     const item = uniqueObjects.find(item => item.id === productId);
-
     if (item) {
       let currentCount = parseInt(inputElement.value);
       inputElement.value = (action === 'increase') ? (currentCount > 0 ? --currentCount : 0) : ++currentCount;
@@ -134,6 +133,7 @@ document.getElementById("returnShopBtn")?.setAttribute("href", `${boolean ? "ind
 
 const deleteProduct = (deletedItemContainer, count) => {
   let productContain = deletedItemContainer
+
   if (productContain) {
     Swal.fire({
       title: "Are you sure?",
@@ -159,6 +159,7 @@ const deleteProduct = (deletedItemContainer, count) => {
 
       } else {
         productContain.querySelector('input').value = count ? count : 1
+        productContain.querySelector('.subtotalPrice').textContent = productContain.querySelector('.productPrice').textContent
       }
     });
   }
@@ -173,5 +174,16 @@ cancelButtons.forEach((cancelBtn) => {
 });
 
 document.querySelector(".proceesBtn")?.addEventListener("click", () => {
+  document.querySelectorAll('.subtotalPrice').forEach((cost, index) => {
+    let subPrice = parseFloat(cost.textContent.slice(1));
+
+    if (index < uniqueObjects.length) {
+      uniqueObjects[index].price = subPrice;
+    }
+  });
   setStorage("details", JSON.stringify(uniqueObjects))
 })
+
+
+
+

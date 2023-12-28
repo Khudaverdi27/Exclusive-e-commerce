@@ -31,7 +31,8 @@
 }
 
 
-.cancelBtn {
+.cancelBtn,
+.cancelAccount {
   padding: 10px 25px;
   background-color: #fff;
   border: none;
