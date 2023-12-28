@@ -188,7 +188,7 @@ function validate() {
             Swal.fire({
                 title: "Thank You!",
                 text: "Your order has been received",
-                icon: "success"
+                icon: "success",
             });
         }, 5000)
 
@@ -215,3 +215,4 @@ btn?.addEventListener("click", () => {
     }
 
 })
+

@@ -86,6 +86,7 @@ if (accountName && accountMail && accountSurname) {
 }
 
 const btn = document.querySelector(".savechangesBtn");
+const cancelAccount = document.querySelector(".cancelAccount");
 const editingInput = document.querySelector(".editingInput");
 const snackbar = document.getElementById("snackbar");
 
@@ -103,7 +104,7 @@ document.getElementById("MyProfile")?.addEventListener('click', () => {
 
 document.addEventListener("click", (e) => {
   if (!e.target.closest('.editingInput') && !e.target.closest('.MyProfile')) {
-    editingInput.classList.add("d-none")
+    editingInput?.classList.add("d-none")
   }
 })
 
@@ -181,3 +182,12 @@ function validateAccount() {
 }
 
 btn?.addEventListener("click", validateAccount)
+cancelAccount?.addEventListener("click", () => {
+  accountName.value = ""
+  accountSurname.value = ""
+  accountMail.value = ""
+  accountAdress.value = ""
+  accountcurrPass.value = ""
+  accountNewPass.value = ""
+  confrimPass.value = ""
+})
