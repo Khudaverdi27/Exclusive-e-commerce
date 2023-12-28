@@ -191,7 +191,9 @@ function validate() {
                 icon: "success",
             });
         }, 5000)
-
+        setTimeout(() => {
+            window.location.href = "index.html?true"
+        }, 6000)
     }
 
     return isAllValid;

@@ -59,9 +59,9 @@ const navbar = () => {
                 </div>
                 <div class="offcanvas-body">
                     <div>
-                        <ul class="navbar-nav mt-1 mb-lg-0 nav-underline crusor-p fs-16 ">
+                        <ul class="navbar-nav mt-1 mb-lg-0 nav-underline crusor-p fs-5 ">
                             <li class="nav-item">
-                                <a class="nav-link " href=${boolean ? "index.html" + "?" + "true" : "index.html"}>Home
+                                <a class="nav-link" href=${boolean ? "index.html" + "?" + "true" : "index.html"}>Home
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -83,7 +83,7 @@ const navbar = () => {
                     <div>
                         <ul class="list-group left-navbar ">
                             <li class="list-group-item border-0 ">
-                                <a class="d-flex justify-content-between link-underline-light text-dark"
+                                <a class="d-flex justify-content-between link-underline-light text-solid-secondary"
                                     href="#">Woman’s
                                     Fashion
                                     <img class="left-navbar-icons" src="assets/images/svg/arrowRight.svg"
@@ -91,7 +91,7 @@ const navbar = () => {
                                 </a>
                             </li>
                             <li class="list-group-item border-0 ">
-                                <a class="d-flex justify-content-between link-underline-light text-dark"
+                                <a class="d-flex justify-content-between link-underline-light text-solid-secondary"
                                     href="#">Men’s
                                     Fashion
                                     <img class="left-navbar-icons" src="assets/images/svg/arrowRight.svg"
@@ -99,37 +99,37 @@ const navbar = () => {
                                 </a>
                             </li>
                             <li class="list-group-item border-0 ">
-                                <a class="link-underline-light text-dark" href="#">Electronics
+                                <a class="link-underline-light text-solid-secondary" href="#">Electronics
 
                                 </a>
                             </li>
                             <li class="list-group-item border-0 ">
-                                <a class="link-underline-light text-dark" href="#">Home & Lifestyle
+                                <a class="link-underline-light text-solid-secondary" href="#">Home & Lifestyle
 
                                 </a>
                             </li>
                             <li class="list-group-item border-0 ">
-                                <a class="link-underline-light text-dark" href="#">Medicine
+                                <a class="link-underline-light text-solid-secondary" href="#">Medicine
 
                                 </a>
                             </li>
                             <li class="list-group-item border-0 ">
-                                <a class="link-underline-light text-dark" href="#">Sports & Outdoor
+                                <a class="link-underline-light text-solid-secondary" href="#">Sports & Outdoor
 
                                 </a>
                             </li>
                             <li class="list-group-item border-0 ">
-                                <a class="link-underline-light text-dark" href="#">Baby’s & Toys
+                                <a class="link-underline-light text-solid-secondary" href="#">Baby’s & Toys
 
                                 </a>
                             </li>
                             <li class="list-group-item border-0 ">
-                                <a class="link-underline-light text-dark" href="#">Groceries & Pets
+                                <a class="link-underline-light text-solid-secondary" href="#">Groceries & Pets
 
                                 </a>
                             </li>
                             <li class="list-group-item border-0 ">
-                                <a class="link-underline-light text-dark" href="#">Health & Beauty
+                                <a class="link-underline-light text-solid-secondary" href="#">Health & Beauty
 
                                 </a>
                             </li>
