@@ -24,6 +24,10 @@
     color: var(--color-light-orange) !important;
 }
 
+.text-solid-secondary {
+    color: var(--color-solid-secondary);
+}
+
 
 
 .bg-light-green {

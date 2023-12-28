@@ -109,22 +109,22 @@ function updateSubtotal(item, quantity) {
   subtotalPrice.textContent = `$${(item.price * quantity).toFixed(2)}`;
 };
 
-
+const clickUpdateBtn = () => {
+  let total = 0;
+  document.querySelectorAll(".subtotalPrice").forEach((subtotal) => {
+    total += parseFloat(subtotal.textContent.replace("$", ""));
+  });
+  subtotalResult.forEach((items) => {
+    items.textContent = `$${total.toFixed(2)}`;
+  });
+}
 
 const updateBtn = document.querySelector(".updateBtn");
 const subtotalResult = document.querySelectorAll(".subtotalResult");
 if (updateBtn) {
-  updateBtn.addEventListener("click", () => {
-
-    let total = 0;
-    document.querySelectorAll(".subtotalPrice").forEach((subtotal) => {
-      total += parseFloat(subtotal.textContent.replace("$", ""));
-    });
-    subtotalResult.forEach((items) => {
-      items.textContent = `$${total.toFixed(2)}`;
-    });
-  });
+  updateBtn.addEventListener("click", clickUpdateBtn);
 }
+
 
 let boolean = window.location.search.startsWith('?true')
 
@@ -174,6 +174,7 @@ cancelButtons.forEach((cancelBtn) => {
 });
 
 document.querySelector(".proceesBtn")?.addEventListener("click", () => {
+  clickUpdateBtn()
   document.querySelectorAll('.subtotalPrice').forEach((cost, index) => {
     let subPrice = parseFloat(cost.textContent.slice(1));
 
