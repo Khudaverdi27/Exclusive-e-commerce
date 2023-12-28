@@ -53,7 +53,7 @@ const footer = () => {
 
                 <h5 class="text-white mb-4">Download App</h5>
                 <p class="text-light saveApp">Save $3 with App New User Only</p>
-                <div class="qrAndStores d-flex  ">
+                <div class="qrAndStores d-flex  toaster">
                     <a href="#"><img src="assets/images/other/Qr Code (1).png" alt=""></a>
                     <div class="stores d-flex flex-column  gap-2 ms-2">
                         <a href="#"><img src="assets/images/icon/download-appstore.png" alt=""></a>
@@ -78,3 +78,22 @@ const footer = () => {
 footer();
 
 
+document.querySelectorAll(".toaster").forEach((noitfy) => {
+    noitfy.addEventListener("click", () => {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+        Toast.fire({
+            icon: "warning",
+            title: "This section will be activated very soon"
+        });
+    })
+})

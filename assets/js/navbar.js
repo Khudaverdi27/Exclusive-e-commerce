@@ -16,7 +16,7 @@ const navbar = () => {
                 class=" fw-bold text-white">ShopNow</a></span>
     </p>
     <ul class="nav nav-tabs border-0">
-        <li class="nav-item dropdown fs-14">
+        <li class="nav-item dropdown fs-14 toaster">
             <a class="nav-link dropdown-toggle text-white border-0" data-bs-toggle="dropdown" href="#"
                 role="button" aria-expanded="false">English</a>
             <ul class="dropdown-menu fs-14 p-0">
@@ -81,7 +81,7 @@ const navbar = () => {
 
                     </div>
                     <div>
-                        <ul class="list-group left-navbar ">
+                        <ul class="list-group left-navbar toaster">
                             <li class="list-group-item border-0 ">
                                 <a class="d-flex justify-content-between link-underline-light text-solid-secondary"
                                     href="#">Woman’s

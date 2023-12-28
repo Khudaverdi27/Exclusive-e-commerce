@@ -497,7 +497,7 @@ const category = document.querySelector('.category')
 
 const categoryItem = categories.map((item) => {
     return `
-    <div class="categoryBoxes d-flex-container flex-column position-relative"> <svg  class="svg" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">${item.image}
+    <div class="categoryBoxes d-flex-container flex-column position-relative toaster"> <svg  class="svg" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">${item.image}
 <span class="categoryTitle d-block">${item.name}</span>
 <div class="layerCategory"></div>
 </div>`
