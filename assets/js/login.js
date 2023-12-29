@@ -17,9 +17,10 @@ const createloginUi = () => {
                 <input data-email="emailLogin" name="email" type="text"
                     class="borderlessInput form-control mt-3 mb-1 py-2 ps-1" id="exampleFormControlInput1"
                     placeholder="Email or Phone Number">
+                    <p id="email_error" class='fs-12 text-danger bg-light-red rounded px-2 d-none'>Wrong email or password
+                    </p>
             </div>
-            <div id="email_error" class='fs-12 text-danger bg-light-red rounded px-2 d-none'>Wrong email or password
-            </div>
+
             <div class="input-group mb-1">
                 <input id="inputPassLoginPage" type="password" name="password"
                     class="form-control  borderlessInput py-2 ps-1" placeholder="Password"
@@ -37,7 +38,7 @@ const createloginUi = () => {
     </form>
 </div>`;
 }
-export default createloginUi
+
 
 const loginPage = () => {
     const login = document.getElementById('logIn');
@@ -147,11 +148,10 @@ function selectElement(form, email, email_error, pass, pass_error, nameInput, na
                     spinner.classList.add('d-none')
                     if (value) {
                         createloginUi()
-                        formContainer.innerHTML += '<span class="text-success">Your account has been successfully created, please log in.<span/>'
-                        const log = loginPage()
-                        if (log) {
-                            validateForm()
-                        }
+
+                        loginPage()
+                        validateForm()
+
                     }
                 }, 1000)
 

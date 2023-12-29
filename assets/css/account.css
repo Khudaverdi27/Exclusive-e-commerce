@@ -34,22 +34,22 @@
 .cancelBtn,
 .cancelAccount {
   padding: 10px 25px;
-  background-color: #fff;
+  background-color: var(--color-white);
   border: none;
   margin-right: 10px;
 }
 
 .savechangesBtn {
-  background-color: #db4444;
-  color: #fff;
+  background-color: var(--color-light-orange);
+  color: var(--color-white);
   padding: 10px 25px;
   border: none;
   border-radius: 5px;
 
   &:hover {
     color: black;
-    background-color: #fff;
-    outline: 1px solid #db4444;
+    background-color: var(--color-white);
+    outline: 1px solid var(--color-light-orange);
   }
 }
 
