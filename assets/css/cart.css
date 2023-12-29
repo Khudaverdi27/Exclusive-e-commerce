@@ -4,15 +4,15 @@
 
 .buttonsCart button {
   padding: 10px 25px;
-  border: 1px solid black;
+  border: 1px solid var(--color-black);
   border-radius: 5px;
-  background-color: #fff;
+  background-color: var(--color-white);
   transition: 0.5s;
 
   &:hover {
-    background-color: black;
-    color: #fff;
-    border: 1px solid #fff;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
   }
 }
 
@@ -23,7 +23,7 @@
 .couponInput {
   padding: 10px 20px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid var(--color-black);
 }
 
 .couponInput::placeholder {
@@ -31,22 +31,22 @@
 }
 
 .btnMyDesign {
-  background-color: #db4444;
-  color: #fff;
+  background-color: var(--color-light-orange);
+  color: var(--color-white);
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   transition: 0.5s;
 
   &:hover {
-    background-color: #fff;
+    background-color: var(--color-white);
     color: black;
-    outline: 1px solid #db4444;
+    outline: 1px solid var(--color-light-orange);
   }
 }
 
 .btnMyDesign:hover a {
-  color: black;
+  color: var(--color-black);
 }
 
 .cartTotal {

@@ -10,11 +10,11 @@
 
 .btnSend {
   right: 0;
-  color: white;
+  color: var(--color-white);
   padding: 10px 30px;
 
   &:hover {
-    border: 1px solid #db4444;
+    border: 1px solid var(--color-light-orange);
   }
 }
 

@@ -87,19 +87,19 @@
 }
 
 .svg {
-    stroke: #121212;
+    stroke: var(--color-black);
 }
 
 .categoryBoxes:hover svg {
-    stroke: #ffff;
+    stroke: var(--color-white);
 }
 
 .categoryBoxes:hover .categoryTitle {
-    color: #fff;
+    color: var(--color-white);
 }
 
 .layerCategory {
-    background-color: #DB4444;
+    background-color: var(--color-light-orange)
 }
 
 /* poster section */
@@ -122,7 +122,7 @@
 
 .inner-poster::-webkit-scrollbar-track,
 .inner-poster::-webkit-scrollbar-thumb {
-    background: #0a0a0a;
+    background: var(--color-black);
 }
 
 .inner-poster::-webkit-scrollbar-thumb {
@@ -162,8 +162,8 @@
 }
 
 .form-check-input:checked {
-    background-color: #DB4444;
-    border: 2px solid #0a0a0a;
+    background-color: var(--color-light-orange);
+    border: 2px solid var(--color-black);
 }
 
 
