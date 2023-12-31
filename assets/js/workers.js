@@ -34,7 +34,10 @@ const workers = [
 const worker = workers
   .map((item) => {
     return `<div class=" col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 mx-auto text-center mt-5 ">
-  <img src="${item.imgSrc}" class="workersImages" alt="">
+    <div class="workersImages">
+    <img src="${item.imgSrc}" class="workersImages img-fluid w-100 h-100" alt="">
+    </div>
+  
     <h3>${item.name}</h3>
     <p>${item.position}</p>
     <div class="socialIcons">
