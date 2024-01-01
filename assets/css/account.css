@@ -6,25 +6,16 @@
   font-size: 14px;
 }
 
-.labelForControlled {
-  font-weight: 600;
-}
-
-.loginedUserName {
-  color: red;
-}
 
 .linksControlled {
   color: #ccc;
 
   &:hover {
-    color: red;
+    color: var(--color-red);
   }
 }
 
 .linksForControlled {
-  display: flex;
-  flex-direction: column;
   gap: 10px;
   margin-left: 30px;
   text-align: left;

@@ -30,29 +30,29 @@
             </div>
             <div class="loginedUser d-flex gap-1 m-top-5">
                 <p>Welcome!</p>
-                <span class="loginedUserName">Md Rimel</span>
+                <span class="loginedUserName text-danger">Md Rimel</span>
             </div>
         </div>
         <div class="row d-flex ">
             <div class="controlSection col-xl-4 col-md-12 col-sm-12 mx-sm-auto mx-md-auto crusor-p">
                 <div class="controlledSectionCart m-4 ">
                     <div class="manageAccount d-flex flex-column" x-data="{ open: false }">
-                        <p class="labelForControlled" @click="open = ! open">Manage My Account</p>
-                        <div class="linksForControlled " x-show="open" @click.outside="open = false">
+                        <p class="labelForControlled fw-bold " @click="open = ! open">Manage My Account</p>
+                        <div class="d-flex flex-column " x-show="open" @click.outside="open = false">
                             <a id="MyProfile" href="#" class="linksControlled MyProfile">My profile</a>
                             <a href="#" class="linksControlled ">Address Book</a>
                             <a href="#" class="linksControlled ">My Payment Options</a>
                         </div>
                     </div>
                     <div class="myOrders d-flex flex-column  my-4" x-data="{ open: false }">
-                        <p class="labelForControlled" @click="open = ! open">My Orders</p>
-                        <div class="linksForControlled" x-show="open" @click.outside="open = false">
+                        <p class="labelForControlled fw-bold" @click="open = ! open">My Orders</p>
+                        <div class="d-flex flex-column" x-show="open" @click.outside="open = false">
                             <a href="#" class="linksControlled myOrdersLinks">My Returns</a>
                             <a href="#" class="linksControlled myOrdersLinks">My Cancellations</a>
                         </div>
                     </div>
                     <div class="myWishList">
-                        <p class="labelForControlled">My Wishlist</p>
+                        <p class="labelForControlled fw-bold">My Wishlist</p>
                     </div>
                 </div>
             </div>

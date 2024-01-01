@@ -33,10 +33,10 @@ const renderProducts = () => {
     productContainer.innerHTML = uniqueObjects.map((item) =>
       `
       <div data-cartId="${item?.id}" class="productsContain card-body d-flex justify-content-between align-items-center">
-        <div class="productName col-2">
-          <div class="imgAndBtn">
+        <div class="productName col-2 crusor-p">
+          <div class="position-relative">
             <div class="cancelBtn d-flex-container fs-12 fw-bold bg-light-orange text-white rounded-circle position-absolute">x</div>
-            <img class="imgBox imgFluid rounded p-1" src="${item?.image}" alt="">
+            <img class="imgBox crusor-p imgFluid rounded p-1" src="${item?.image}" alt="">
             <span class="fs-14 text-nowrap">${item?.name?.split(' ').pop()}</span>
           </div>
         </div>

@@ -30,17 +30,11 @@
   cursor: pointer;
 }
 
-.staticsCount {
-  font-weight: 600;
-}
 
 .servicesContainer {
   width: 50px;
 }
 
-.workersContainer {
-  width: 100%;
-}
 
 @media (max-width: 992px) {
   .statitcsCard {

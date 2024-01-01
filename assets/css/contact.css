@@ -23,7 +23,7 @@ textarea {
 }
 
 .errorMsj {
-  color: red;
+  color: var(--color-red);
   font-size: 10px;
 }
 
