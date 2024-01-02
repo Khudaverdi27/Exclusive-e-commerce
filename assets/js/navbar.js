@@ -176,7 +176,7 @@ const navbar = () => {
                                 </div>
                             </a>
                             <a href="#">
-                                <div class="d-flex">
+                                <div class="d-flex myOrder">
                                     <figure class="me-4"><img src="./assets/images/svg/Group-order.svg" alt="">
                                     </figure>
                                     <span class="fs-14 ps-1">My Order</span>

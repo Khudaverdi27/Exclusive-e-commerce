@@ -96,7 +96,7 @@ export const productsToCheckout = (check) => {
 
 }
 
-function calcTotalCost(products) {
+export const calcTotalCost = (products) => {
     if (!products || products.length === 0) {
         return 0;
     }
