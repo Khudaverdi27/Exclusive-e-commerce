@@ -193,6 +193,7 @@ function validate() {
         }, 5000)
         setTimeout(() => {
             window.location.href = "index.html?true"
+            sessionStorage.setItem('cartItems', JSON.stringify([]));
         }, 6000)
     }
 

@@ -19,65 +19,68 @@
     </header>
     <!-- Navbar end -->
     <!-- Content start -->
-    <div class="container">
-        <div class="cartTopSection d-flex justify-content-between">
-            <div class="pathLinks m-4">
-                <span class="arrivingPage">Home</span>
-                <span class="currentPage">Cart</span>
+    <section id="hero-section" class="position-relative">
+        <div class="container">
+            <div class="cartTopSection d-flex justify-content-between">
+                <div class="pathLinks m-4">
+                    <span class="arrivingPage">Home</span>
+                    <span class="currentPage">Cart</span>
+                </div>
             </div>
-        </div>
-        <div class="container cartContainer">
-            <div class="d-flex flex-column gap-3">
-                <div class="card mt-1 cardShadowContainer border-0  ">
-                    <div class="cardTitles card-body d-flex justify-content-between align-items-center">
-                        <span class="fw-bold">Products</span>
-                        <span class="fw-bold">Prices</span>
-                        <span class="fw-bold">Quantity</span>
-                        <span class="fw-bold">Subtotal</span>
+            <div class="container cartContainer">
+                <div class="d-flex flex-column gap-3">
+                    <div class="card mt-1 cardShadowContainer border-0  ">
+                        <div class="cardTitles card-body d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">Products</span>
+                            <span class="fw-bold">Prices</span>
+                            <span class="fw-bold">Quantity</span>
+                            <span class="fw-bold">Subtotal</span>
+                        </div>
+                    </div>
+                    <div class="card mt-1 cardShadowContainer product-container border-0">
                     </div>
                 </div>
-                <div class="card mt-1 cardShadowContainer product-container border-0">
+                <div class="buttonsCart d-flex justify-content-between mt-5">
+                    <a id="returnShopBtn"> <button>Return to Shop</button></a>
+                    <button class="updateBtn">Update cart</button>
                 </div>
-            </div>
-            <div class="buttonsCart d-flex justify-content-between mt-5">
-                <a id="returnShopBtn"> <button>Return to Shop</button></a>
-                <button class="updateBtn">Update cart</button>
-            </div>
-            <div class="row d-flex mt-5">
-                <div class="col-xl-5 mx-auto">
-                    <div class="cupponApply ">
-                        <input type="text" placeholder="Coupon Code" class="couponInput">
-                        <button class="btnMyDesign applyBtn">Apply Coupon</button>
+                <div class="row d-flex mt-5">
+                    <div class="col-xl-5 mx-auto">
+                        <div class="cupponApply ">
+                            <input type="text" placeholder="Coupon Code" class="couponInput">
+                            <button class="btnMyDesign applyBtn">Apply Coupon</button>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 d-flex justify-content-end mb-5 mx-auto ">
+                        <div class="cartTotal">
+                            <p class="cartTotalTitle fw-bolder px-4 py-4 my-2">Cart total</p>
+                            <div class="cardTotalSection d-flex justify-content-between align-items-center px-3 ">
+                                <p>Subtotal</p>
+                                <p class="subtotalResult">0$</p>
+                            </div>
+                            <div class="cardTotalSection d-flex justify-content-between align-items-center px-3">
+                                <p>Shipping</p>
+                                <p>Free</p>
+                            </div>
+                            <div
+                                class="cardTotalSection d-flex justify-content-between align-items-center px-3 border-0">
+                                <p>Total</p>
+                                <p class="subtotalResult">0$</p>
+                            </div>
+                            <button class="proceesBtn btnMyDesign d-block mx-auto"><a id="checkoutFromCart">Procees to
+                                    checkout</a></button>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xl-7 d-flex justify-content-end mb-5 mx-auto ">
-                    <div class="cartTotal">
-                        <p class="cartTotalTitle fw-bolder px-4 py-4 my-2">Cart total</p>
-                        <div class="cardTotalSection d-flex justify-content-between align-items-center px-3 ">
-                            <p>Subtotal</p>
-                            <p class="subtotalResult">0$</p>
-                        </div>
-                        <div class="cardTotalSection d-flex justify-content-between align-items-center px-3">
-                            <p>Shipping</p>
-                            <p>Free</p>
-                        </div>
-                        <div class="cardTotalSection d-flex justify-content-between align-items-center px-3 border-0">
-                            <p>Total</p>
-                            <p class="subtotalResult">0$</p>
-                        </div>
-                        <button class="proceesBtn btnMyDesign d-block mx-auto"><a id="checkoutFromCart">Procees to
-                                checkout</a></button>
-                    </div>
-                </div>
             </div>
-        </div>
 
+    </section>
+    <!-- Content end -->
+    <div class="card position-fixed loader-card rounded d-none">
 
-        <!-- Content end -->
-        <div class="card position-fixed loader-card rounded d-none">
-
-        </div>
     </div>
+    </div>
+
     <!-- Footer start -->
     <footer class="footerContainer bg-dark ">
     </footer>

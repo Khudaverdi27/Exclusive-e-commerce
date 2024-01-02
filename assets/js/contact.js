@@ -90,14 +90,14 @@ const myOrderFunc = () => {
       <div class="col-lg-10 col-xl-12">
         <div class="card" style="border-radius: 10px;">
           <div class="card-header px-4 py-5">
-            <h5 class="text-muted mb-0">Thanks for your Order, <span style="color: #a8729a;">${userName}</span>!</h5>
+            <h5 class="text-muted mb-0">Thanks for your Order, <span style="color: #a8729a;">${userName ? userName : "Customer"}</span>!</h5>
           </div>
           <div class="card-body p-4">
             <div class="d-flex justify-content-between align-items-center mb-4">
               <p class="lead fw-normal mb-0" style="color: #a8729a;">Receipt</p>
               <p class="small text-muted mb-0">Receipt Voucher : 1KAU9-84UIL</p>
             </div>`
-  placeProducts.forEach(data => {
+  placeProducts?.forEach(data => {
 
     html += `
 
@@ -178,7 +178,38 @@ style="background-color: #a8729a; border-bottom-left-radius: 10px; border-bottom
 </div>
 </div>
 </section>`
-  element.innerHTML = html
+  if (element) {
+    element.innerHTML = html
+  }
+
 }
 
-myOrder.addEventListener("click", myOrderFunc)
+if (placeProducts) {
+  myOrder.addEventListener("click", myOrderFunc)
+} else {
+  if (element) {
+    myOrder.addEventListener("click", () => {
+      element.innerHTML = `  <section class=" container mt-5" >
+      <div class="d-flex ">
+          <p class="text-secondary me-1 fs-14">Home /</p>
+          <p class="text-dark me-1 fs-14">404 Error</p>
+      </div>
+      <div class="d-flex-container flex-column my-5">
+          <p class="fs-1">Your order list is empty</p>
+          <p>Go to shopping</p>
+          <button class="btn bg-light-orange text-white px-5 py-2 my-2" type="button">
+          <a  href= "index.html" + "?" + "true"> Back to home page</a>
+         </button>
+      </div>
+  
+  </section>
+  
+  </section>`
+    })
+  }
+
+}
+
+
+
+
