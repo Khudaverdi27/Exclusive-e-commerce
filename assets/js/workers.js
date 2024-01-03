@@ -33,19 +33,21 @@ const workers = [
 
 const worker = workers
   .map((item) => {
-    return `<div class=" col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 mx-auto text-center mt-5 ">
-    <div class="workersImages">
-    <img src="${item.imgSrc}" class="workersImages img-fluid w-100 h-100" alt="">
+    return `<div class=" col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4  my-5 d-flex-container flex-column">
+    <div class="workersImages d-flex-container flex-column ">
+        <img src="${item.imgSrc}" class=" img-fluid object-fit-cover" alt="">
+     
     </div>
-  
+    <div>
     <h3>${item.name}</h3>
     <p>${item.position}</p>
-    <div class="socialIcons">
+</div>
+<div class="socialIcons ">
     <a href=""><img src="${item.socaialIcon1}" alt=""></a>
     <a href=""><img src="${item.socaialIcon2}" alt=""></a>
     <a href=""><img src="${item.socaialIcon3}" alt=""></a>
-    </div>
-    </div>
+</div>
+</div>
     `;
   })
   .join("");

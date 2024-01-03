@@ -95,7 +95,7 @@ const myOrderFunc = () => {
           <div class="card-body p-4">
             <div class="d-flex justify-content-between align-items-center mb-4">
               <p class="lead fw-normal mb-0" style="color: #a8729a;">Receipt</p>
-              <p class="small text-muted mb-0">Receipt Voucher : 1KAU9-84UIL</p>
+              <p class="small text-muted mb-0">Voucher : 1KAU9-84UIL</p>
             </div>`
   placeProducts?.forEach(data => {
 
@@ -103,7 +103,7 @@ const myOrderFunc = () => {
 
                 <div class="card shadow-0 border mb-4">
                   <div class="card-body">
-                    <div class="row">
+                    <div class="row ">
                       <div class="col-md-2 text-center">
                         <img src="${data.image}"
                           class="img-fluid" alt="Phone">
@@ -111,21 +111,21 @@ const myOrderFunc = () => {
                       <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
                         <p class="text-muted mb-0">${data.name}</p>
                       </div>
-                      <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                      <div class="col-md-2 text-center d-flex justify-content-center align-items-center  ">
                         <p class="text-muted mb-0 small">White</p>
                       </div>
-                      <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                      <div class="col-md-2 text-center d-flex justify-content-center align-items-center ">
                         <p class="text-muted mb-0 small">Category: ${data.category}</p>
                       </div>
-                      <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                      <div class="col-md-2 text-center d-flex justify-content-center align-items-center ">
                         <p class="text-muted mb-0 small">Qty: 1</p>
                       </div>
-                      <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                      <div class="col-md-2 text-center d-flex justify-content-center align-items-center ">
                         <p class="text-muted mb-0 small">$${data.price}</p>
                       </div>
                     </div>
                     <hr class="mb-4" style="background-color: #e0e0e0; opacity: 1;">
-                    <div class="row d-flex align-items-center">
+                    <div class="row d-flex align-items-center ">
                       <div class="col-md-2">
                         <p class="text-muted mb-0 small">Track Order</p>
                       </div>
@@ -148,29 +148,29 @@ const myOrderFunc = () => {
   });
 
 
-  html += ` <div class="d-flex justify-content-between pt-2">
+  html += ` <div class="d-flex fs-14 justify-content-between pt-2">
   <p class="fw-bold mb-0">Order Details</p>
   <p class="text-muted mb-0"><span class="fw-bold me-4">Total</span> $${orderTotalcost}</p>
 </div>
 
-<div class="d-flex justify-content-between pt-2">
+<div class="d-flex fs-14 justify-content-between pt-2 text-end">
   <p class="text-muted mb-0">Invoice Number : 788152</p>
-  <p class="text-muted mb-0"><span class="fw-bold me-4">Discount</span> $19.00</p>
+  <p class="text-muted mb-0"><span class="fw-bold me-2">Discount</span> $19.00</p>
 </div>
 
-<div class="d-flex justify-content-between">
+<div class="d-flex fs-14 justify-content-between">
   <p class="text-muted mb-0">Invoice Date : 22 Dec,2019</p>
   <p class="text-muted mb-0"><span class="fw-bold me-4">GST 18%</span> 123</p>
 </div>
 
-<div class="d-flex justify-content-between mb-5">
+<div class="d-flex fs-14 justify-content-between mb-5 text-end">
   <p class="text-muted mb-0">Recepits Voucher : 18KU-62IIK</p>
-  <p class="text-muted mb-0"><span class="fw-bold me-4">Delivery Charges</span> Free</p>
+  <p class="text-muted mb-0"><span class="fw-bold me-1">Delivery Charges</span> Free</p>
 </div>
 </div>
 <div class="card-footer border-0 px-4 py-5"
 style="background-color: #a8729a; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-<h5 class="d-flex align-items-center justify-content-end text-white text-uppercase mb-0">Total
+<h5 class="d-flex fs-14 align-items-center justify-content-end text-white text-uppercase mb-0">Total
   paid: <span class="h2 mb-0 ms-2">$${orderTotalcost}</span></h5>
 </div>
 </div>
