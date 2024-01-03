@@ -220,15 +220,19 @@ const navbar = () => {
 
 
     // profile dropdown
-    document.querySelector('.userIcon').addEventListener('click', () => {
-        const dropdown = document.getElementById('profile-dropdown');
-        if (dropdown.classList.contains('d-none')) {
+    const dropdown = document.getElementById('profile-dropdown');
+    const userIcon = document.querySelector('.userIcon');
 
-            dropdown.classList.remove('d-none');
-        } else {
-            dropdown.classList.add('d-none');
-        }
+    userIcon.addEventListener('click', (e) => {
+        e.stopPropagation(); // This line ensures that the click event is forwarded to other listeners.
+        dropdown.classList.toggle('d-none');
     });
+
+    document.querySelector('body').addEventListener('click', () => {
+        dropdown.classList.add('d-none');
+    });
+
+
     document.getElementById('logoutProfile').addEventListener('click', () => {
         loading()
         setTimeout(() => {

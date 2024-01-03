@@ -189,13 +189,13 @@ if (placeProducts) {
 } else {
   if (element) {
     myOrder.addEventListener("click", () => {
-      element.innerHTML = `  <section class=" container mt-5" >
+      element.innerHTML = `  <section class=" container m-top-5 pt-3" >
       <div class="d-flex ">
           <p class="text-secondary me-1 fs-14">Home /</p>
           <p class="text-dark me-1 fs-14">404 Error</p>
       </div>
       <div class="d-flex-container flex-column my-5">
-          <p class="fs-1">Your order list is empty</p>
+          <p class="fs-2">Your order list is empty :(</p>
           <p>Go to shopping</p>
           <button class="btn bg-light-orange text-white px-5 py-2 my-2" type="button">
           <a  href= "index.html" + "?" + "true"> Back to home page</a>
