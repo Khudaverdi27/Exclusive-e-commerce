@@ -38,7 +38,7 @@ const worker = workers
         <img src="${item.imgSrc}" class=" img-fluid object-fit-cover" alt="">
      
     </div>
-    <div>
+    <div class='text-center'>
     <h3>${item.name}</h3>
     <p>${item.position}</p>
 </div>
