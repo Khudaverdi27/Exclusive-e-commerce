@@ -1,9 +1,9 @@
 const footerContainer = document.querySelector(".footerContainer");
 let boolean = window.location.search.startsWith('?true')
 const footer = () => {
-    const div = document.createElement("div");
 
-    div.innerHTML = `
+
+    footerContainer.innerHTML = `
      <div class="container fs-14">
         <div class="footerSection row footerRes ">
             <div class="my-4 col-sm-6 col-md-6 col-lg-6 col-xl-3 col-xxl-3">
@@ -73,7 +73,7 @@ const footer = () => {
             </div>
             </div>
             <p class="text-white text-center mt-5"> © Copyright Exclusive 2023. All right reserved</p>`;
-    footerContainer.appendChild(div);
+
 };
 footer();
 

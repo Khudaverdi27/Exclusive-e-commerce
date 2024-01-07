@@ -429,7 +429,7 @@ const categories = [
     },
     {
         id: 3,
-        name: 'SmartWatch',
+        name: 'Smart Watch',
         image: `<svg  class="svg" width="56" height="56" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path id="Vector" d="M22 1H8C4.13401 1 1 4.13401 1 8V22C1 25.866 4.13401 29 8 29H22C25.866 29 29 25.866 29 22V8C29 4.13401 25.866 1 22 1Z" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -454,7 +454,7 @@ const categories = [
     },
     {
         id: 5,
-        name: 'HeadPhones',
+        name: 'Head Phones',
         image: `
         <g id="Category-Headphone" clip-path="url(#clip0_138_1572)">
         <path id="Vector" d="M16.3334 30.3333H14C11.4227 30.3333 9.33337 32.4227 9.33337 35V42C9.33337 44.5773 11.4227 46.6666 14 46.6666H16.3334C18.9107 46.6666 21 44.5773 21 42V35C21 32.4227 18.9107 30.3333 16.3334 30.3333Z" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -498,7 +498,7 @@ const category = document.querySelector('.category')
 const categoryItem = categories.map((item) => {
     return `
     <div class="categoryBoxes d-flex-container flex-column position-relative toaster"> <svg  class="svg" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">${item.image}
-<span class="categoryTitle d-block">${item.name}</span>
+<span class="categoryTitle text-nowrap">${item.name}</span>
 <div class="layerCategory"></div>
 </div>`
 

@@ -6,6 +6,29 @@ import loading from "./spinner.js";
 
 export const products = JSON.parse(sessionStorage.getItem('cartItems')) || [];
 
+const cartContainer = document.querySelector(".cartContainer");
+
+if (products.length > 0) {
+  cartContainer?.classList.remove('d-none');
+} else {
+  if (cartContainer) {
+    cartContainer.innerHTML = ` <section class=" container my-4 pt-3" >
+  <div class="d-flex-container flex-column my-5">
+      <p class="fs-2">Your cart is empty :(</p>
+      <p>Go to shopping</p>
+      <button class="btn bg-light-orange text-white px-5 py-2 my-2" type="button">
+      <a  href= "index.html?true"> Back to home page</a>
+     </button>
+  </div>
+
+</section>
+
+</section>`
+  }
+
+}
+
+
 let counts = {}
 
 function findAndRemoveDuplicates(array, property) {
