@@ -60,6 +60,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 999;
+  opacity: 0.8;
 }
 
 /* The snackbar - position it at the bottom and in the middle of the screen */

@@ -11,6 +11,7 @@
 
 body {
     overflow-x: hidden;
+    background-color: rgb(239, 239, 239);
 }
 
 input {
@@ -91,6 +92,11 @@ input[type="number"] {
 .box-product {
     width: 107px;
     height: 180px;
+}
+
+.box-spinner {
+    width: 70px;
+
 }
 
 .crusor-p {
