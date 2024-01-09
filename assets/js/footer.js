@@ -72,7 +72,7 @@ const footer = () => {
             <hr class="borderHr d-none d-md-block col-lg-none d-xl-none">
             </div>
             </div>
-            <p class="text-white text-center mt-5">© Copyright Exclusive ${new Date().getFullYear()}. All rights reserved</p>`
+            <p class="text-white text-center mt-2 mb-0 fs-14">© Copyright Exclusive ${new Date().getFullYear()}. All rights reserved</p>`
 };
 footer();
 
