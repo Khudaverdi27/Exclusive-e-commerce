@@ -4,7 +4,7 @@ import loading from "./spinner.js";
 
 const navbarContainer = document.querySelector('.header-top');
 let boolean = window.location.search.startsWith('?true');
-
+let searchInfo=false
 const navbar = () => {
     if (navbarContainer) {
         navbarContainer.innerHTML = `
@@ -141,13 +141,18 @@ const navbar = () => {
         <!-- input field and icon in navbar -->
         <div class="input-section ">
             <div class="d-flex justify-content-between align-items-center" role="search">
-                <div class="input-group">
+                <div class="input-group relative">
                     <input id="searchInput" type="search"
                         class="form-control srch-input bg-solid-secondary border border-end-0"
                         placeholder="What are you looking for?" aria-label="Search"
                         aria-describedby="basic-addon2">
                     <span class="input-group-text bg-solid-secondary " id="basic-addon2"><img id="search-icon"
                             src="assets/images/svg/searcg-icon.svg" class="search-icon crusor-p" </span>
+
+                            <div class="card position-absolute search-card ${searchInfo? "d-block" :"d-none"}">
+                          
+                            </ul>
+                        </div>
                 </div>
 
                 <div class="input-svg d-flex justify-content-between position-relative">
@@ -246,6 +251,7 @@ const navbar = () => {
 
 navbar();
 function searchArrays() {
+    searchInfo=true
     const searchInput = document.getElementById('searchInput').value.toLowerCase();
     const result = [];
 
@@ -284,10 +290,19 @@ function searchArrays() {
 </section>`;
         productsByIndex(result, '.products-container', true)
     }
+const search= document.querySelector(".search-card")
+result.forEach(productCard=>
+    search.innerHTML+=`
+  
+    <li class="list-group-item">${productCard.name}</li>
+
+    `
+    )
 
 }
 document.getElementById('search-icon').addEventListener('click', searchArrays);
 document.getElementById('searchInput').addEventListener('keypress', (e) => e.key === 'Enter' && searchArrays());
+document.getElementById('searchInput').addEventListener("input",  searchArrays);
 
 
 export const changePath = () => {
