@@ -22,11 +22,7 @@
   border: 1px solid #ccc;
 }
 
-.haveAccount {
-  display: flex;
-  justify-content: center;
-  width: 30rem;
-}
+
 
 .content {
   margin-top: 100px;
@@ -88,22 +84,9 @@
 }
 
 
-/* responsive signUp */
-@media (min-width: 368px) and (max-width: 767px) {
-  .haveAccount {
-    width: 22rem;
-  }
-}
-
 @media (min-width: 768px) and (max-width: 992px) {
 
-
-  .haveAccount {
-    width: 20rem !important;
-  }
-
   .controlledSectionCart {
-
     justify-content: center;
   }
 }
